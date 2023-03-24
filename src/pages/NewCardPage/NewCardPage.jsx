@@ -1,10 +1,17 @@
 import { useState } from "react";
+import './NewCard.css'
 
 export default function NewCardPage() {
-  const [newCard, setNewCard] =useState({});
+  const [newCard, setNewCard] = useState({
+    sideOneWord: "",
+    sideTwoWord: "",
+    image:"",
+    text: "",
+    
+  });
 
   function handleChange(evt) {
-    setNewCard({...newCard, [evt.target.name]: evt.targe.value})
+    setNewCard({...newCard, [evt.target.name]: evt.target.value})
   }
 
   function handleSubmit(evt) {
@@ -12,16 +19,36 @@ export default function NewCardPage() {
     // Baby steps
     console.log(newCard);
     alert({newCard})
+    setNewCard({
+      sideOneWord: "",
+      sideTwoWord: "",
+      image:"",
+      text: "",
+      
+    });
+
   }
 
   return (
     <div className="NewCardPage">
       <h4>Add A Card</h4>
-      <form action="submit" className="NewCardForm" onSubmit={handleSubmit}>
+      <form className="NewCardForm" onSubmit={handleSubmit}>
         <input type="text" 
         name="sideOneWord" 
-        value={newCard.text}
         placeholder="Side One Phrase..."
+        value={newCard.sideOneWord}
+        onChange={handleChange}
+        />
+        <input type="text" 
+        name="sideTwoWord" 
+        placeholder="Side Two Phrase..."
+        value={newCard.sideTwoWord}
+        onChange={handleChange}
+        />
+        <input type="text" 
+        name="image" 
+        placeholder="Add link to an image..."
+        value={newCard.image}
         onChange={handleChange}
         />
         <button type="submit">Add A Card</button>

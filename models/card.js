@@ -15,6 +15,7 @@ const cardSchema = new Schema({
   priority: { Number,
   default: 0,
   },
+  text: String,
 }, {
   timestamps: true,
 }
