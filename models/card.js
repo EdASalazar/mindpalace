@@ -11,8 +11,8 @@ const cardSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {type: String,
-  priority: Number,
+  image: String,
+  priority: { Number,
   default: 0,
   },
 }, {
