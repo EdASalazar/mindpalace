@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const user = require('./user');
+const card = require('./card')
 
 // Trying to think ahead about what I might need down the road
 // Debating about how I want to share decks. 
