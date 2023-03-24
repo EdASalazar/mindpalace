@@ -1,5 +1,10 @@
-export default function NewOrderPage() {
+export default function NewCardPage() {
   return (
-    <h1>New Card Page</h1>
+    <div className="NewCardPage">
+      <h4>Add A Card</h4>
+      <form action="submit">
+        
+      </form>
+    </div>
   );
 }
