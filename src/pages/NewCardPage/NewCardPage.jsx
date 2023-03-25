@@ -4,7 +4,6 @@ import './NewCardPage.css'
 export default function NewCardPage({ addCard, decks }) {
   const [currentDeckId, setCurrentDeckId] = useState(decks[0]._id);
   const deckValue = [currentDeckId][0]
-  console.log("currentDeckId", deckValue)
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
