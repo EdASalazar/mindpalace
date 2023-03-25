@@ -7,6 +7,7 @@ module.exports = {
 
 async function create(req, res){
   try {
+    console.log("coming into create", req.body)
     req.body.user = req.user._id;
     const card = await Card.create(req.body);
     res.json(card);

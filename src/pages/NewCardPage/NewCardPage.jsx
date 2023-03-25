@@ -16,10 +16,10 @@ export default function NewCardPage({ addCard }) {
     // Baby steps
     console.log("New Card:",newCard);
     addCard(newCard);
-    setNewCard({
-      sideOneWord: "",
-      sideTwoWord: "",
-    });
+    // setNewCard({
+    //   sideOneWord: "",
+    //   sideTwoWord: "",
+    // });
 
   }
 
