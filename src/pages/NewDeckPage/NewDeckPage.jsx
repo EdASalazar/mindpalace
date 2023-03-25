@@ -12,7 +12,7 @@ function handleChange(evt) {
 function handleSubmit(evt) {
   evt.preventDefault();
   addDeck(newDeck);
-  // setNewDeck({name: ""});
+  setNewDeck({name: ""});
   }
 
 

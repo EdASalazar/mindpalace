@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
@@ -28,7 +28,13 @@ async function addDeck(deck) {
   setDecks([...decks, newDeck])
 };
 
-
+useEffect(function() {
+  async function getDecks() {
+    const decks = await decksAPI.getAllForUser();
+    setDecks(decks);
+  }
+  getDecks();
+}, []);
 
   // async (function() {
   //   async function getCards() {
@@ -46,7 +52,7 @@ async function addDeck(deck) {
             <Routes>
               {/* Route components in here */}
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} />} />
-              <Route path="/decks" element={<DeckListPage />} />
+              <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
             </Routes>
           </>
