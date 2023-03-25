@@ -13,6 +13,8 @@ export default function NavBar({ user, setUser }) {
       &nbsp;&nbsp;
       <Link to="/decks">Decks</Link>
       &nbsp; | &nbsp;
+      <Link to="/decks/new">Add A Deck</Link>
+      &nbsp; | &nbsp;
       <Link to="/cards/new">New Card</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
