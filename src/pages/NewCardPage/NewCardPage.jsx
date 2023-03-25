@@ -3,15 +3,15 @@ import DeckDropdownSelector from "../../components/DeckDropdownSelector/DeckDrop
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks }) {
-  const [currentDeckId, setCurrentDeckId] = useState(null)
+  const [currentDeckId, setCurrentDeckId] = useState(decks[0]._id);
 
-  const deckChoices = decks.map((deck, idx) =>
-   <DeckDropdownSelector 
-   deckName={deck.name} 
-   deckId={deck._id}
-   setCurrentDeckId={setCurrentDeckId}
-   key={deck._id}
-   /> );
+  // const deckChoices = decks.map((deck, idx) =>
+  //  <DeckDropdownSelector 
+  //  deckName={deck.name} 
+  //  deckId={deck._id}
+  //  setCurrentDeckId={setCurrentDeckId}
+  //  key={deck._id}
+  //  /> );
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
@@ -43,10 +43,20 @@ export default function NewCardPage({ addCard, decks }) {
       <h4>Add A Card</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
       {/*---- Select the deck you want to add the card to  */}
-      <select>
+      {/* <select value={selected} onChange={(e) => setCurrentDeckId(e.target.value)}>
               {deckChoices}
-      </select>
+      </select> */}
       {/* --- form inputs for the flash card below -- */}
+
+      <select value={currentDeckId} onChange={(e) => setCurrentDeckId(e.target.value)}>
+        {decks.map((deck)=>(
+          <option value={deck._id} key={deck._id}>
+            {deck.name}
+          </option>
+        ))}
+
+      </select>
+
 
         <input type="text" 
         name="sideOneWord" 
