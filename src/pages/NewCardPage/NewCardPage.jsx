@@ -1,24 +1,17 @@
 import { useState } from "react";
-import DeckDropdownSelector from "../../components/DeckDropdownSelector/DeckDropdownSelector";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks }) {
   const [currentDeckId, setCurrentDeckId] = useState(decks[0]._id);
-
-  // const deckChoices = decks.map((deck, idx) =>
-  //  <DeckDropdownSelector 
-  //  deckName={deck.name} 
-  //  deckId={deck._id}
-  //  setCurrentDeckId={setCurrentDeckId}
-  //  key={deck._id}
-  //  /> );
+  const deckValue = [currentDeckId][0]
+  console.log("currentDeckId", deckValue)
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
     sideTwoWord: "",
     image:"",
     text: "",
-    deck: {currentDeckId},
+    deck: deckValue,
     
   });
 
@@ -30,8 +23,8 @@ export default function NewCardPage({ addCard, decks }) {
     evt.preventDefault();
     addCard(newCard);
     setNewCard({
-      sideOneWord: "",
-      sideTwoWord: "",
+      // sideOneWord: "",
+      // sideTwoWord: "",
       image:"",
       text: "",
     });
@@ -43,20 +36,15 @@ export default function NewCardPage({ addCard, decks }) {
       <h4>Add A Card</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
       {/*---- Select the deck you want to add the card to  */}
-      {/* <select value={selected} onChange={(e) => setCurrentDeckId(e.target.value)}>
-              {deckChoices}
-      </select> */}
-      {/* --- form inputs for the flash card below -- */}
-
-      <select value={currentDeckId} onChange={(e) => setCurrentDeckId(e.target.value)}>
+      <select name="deck" value={currentDeckId} onChange={(e) => setCurrentDeckId(e.target.value)}>
         {decks.map((deck)=>(
-          <option value={deck._id} key={deck._id}>
+          <option value={deck._id} key={deck._id} >
             {deck.name}
           </option>
         ))}
-
       </select>
 
+        {/* --- form inputs for the flash card below -- */}
 
         <input type="text" 
         name="sideOneWord" 
