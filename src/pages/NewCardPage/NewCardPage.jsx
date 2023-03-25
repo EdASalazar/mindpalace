@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './NewCard.css'
+import './NewCardPage.css'
 
 export default function NewCardPage({ addCard }) {
   const [newCard, setNewCard] = useState({

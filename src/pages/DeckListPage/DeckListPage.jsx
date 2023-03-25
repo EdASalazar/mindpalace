@@ -1,6 +1,6 @@
 import FlashCard from "../../components/FlashCard/FlashCard";
 
-export default function CardDecks() {
+export default function DeckListPage() {
   return (
     <h1>Card Decks</h1>
   );

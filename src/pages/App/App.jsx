@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import NewCardPage from '../NewCardPage/NewCardPage'
-import CardDecks from '../CardDecks/CardDecks';
 import NewDeckPage from '../NewDeckPage/NewDeckPage';
+import DeckListPage from '../DeckListPage/DeckListPage';
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
@@ -46,7 +46,7 @@ async function addDeck(deck) {
             <Routes>
               {/* Route components in here */}
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} />} />
-              <Route path="/decks" element={<CardDecks />} />
+              <Route path="/decks" element={<DeckListPage />} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
             </Routes>
           </>
