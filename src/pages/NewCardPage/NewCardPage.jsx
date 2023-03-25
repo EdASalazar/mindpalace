@@ -1,8 +1,17 @@
 import { useState } from "react";
+import DeckDropdownSelector from "../../components/DeckDropdownSelector/DeckDropdownSelector";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks }) {
   const [currentDeckId, setCurrentDeckId] = useState(null)
+
+  const deckChoices = decks.map((deck, idx) =>
+   <DeckDropdownSelector 
+   deckName={deck.name} 
+   key={idx} 
+   deckId={deck._id}
+   setCurrentDeckId={setCurrentDeckId}
+   /> );
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
@@ -33,17 +42,10 @@ export default function NewCardPage({ addCard, decks }) {
       <h4>Add A Card</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
       {/*---- Select the deck you want to add the card to  */}
-        
-      {decks.map((deck, idx) =>(
-        <div className="DeckItems" key={idx}>
-          <ul>
-            <li>
-                { deck.name }
-            </li>
-          </ul>
-        </div>
-      ))}
-
+      <select name="" id="">
+              {deckChoices}
+      </select>
+      {/* --- form inputs for the flash card below -- */}
 
         <input type="text" 
         name="sideOneWord" 
