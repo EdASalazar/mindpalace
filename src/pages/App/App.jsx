@@ -51,7 +51,7 @@ useEffect(function() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/cards/new" element={<NewCardPage addCard={addCard} />} />
+              <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
               <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
             </Routes>

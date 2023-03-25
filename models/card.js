@@ -19,6 +19,10 @@ const cardSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
    },
+   deck:{
+    type: Schema.Types.ObjectId,
+    ref: 'Deck'
+   },
   text: String,
 }, {
   timestamps: true,
