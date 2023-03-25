@@ -8,9 +8,9 @@ export default function NewCardPage({ addCard, decks }) {
   const deckChoices = decks.map((deck, idx) =>
    <DeckDropdownSelector 
    deckName={deck.name} 
-   key={idx} 
    deckId={deck._id}
    setCurrentDeckId={setCurrentDeckId}
+   key={deck._id}
    /> );
 
   const [newCard, setNewCard] = useState({
@@ -18,6 +18,7 @@ export default function NewCardPage({ addCard, decks }) {
     sideTwoWord: "",
     image:"",
     text: "",
+    deck: {currentDeckId},
     
   });
 
