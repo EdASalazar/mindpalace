@@ -5,7 +5,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 // All paths start with '/api/cards'
 
-// POST /api/cards (create a user - sign up)
+// POST /api/decks (create a user - sign up)
 router.post('/', decksCtrl.create)
 
 

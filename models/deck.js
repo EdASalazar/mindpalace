@@ -25,4 +25,4 @@ const deckSchema = new Schema({
 }
 );
 
-module.export = mongoose.model('Deck', deckSchema)
+module.exports = mongoose.model('Deck', deckSchema)

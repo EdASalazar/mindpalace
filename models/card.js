@@ -15,6 +15,10 @@ const cardSchema = new Schema({
   priority: { Number,
   default: 0,
   },
+  user:{
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+   },
   text: String,
 }, {
   timestamps: true,
