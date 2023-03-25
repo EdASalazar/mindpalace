@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewCardPage from '../NewCardPage/NewCardPage'
 import CardDecks from '../CardDecks/CardDecks';
 import NavBar from '../../components/NavBar/NavBar';
+import * as cardsAPI from '../../utilities/cards-api'
 
 
 export default function App() {
@@ -13,7 +14,7 @@ export default function App() {
   const [cards, setCards] = useState([]);
 
 async function addCard(card) {
-  const newCard = await cardsAPI.create(note);
+  const newCard = await cardsAPI.create(card);
   setCards([...cards, newCard])
 };
 
