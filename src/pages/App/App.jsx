@@ -14,6 +14,7 @@ export default function App() {
   const [cards, setCards] = useState([]);
 
 async function addCard(card) {
+  console.log("Card at app", card)
   const newCard = await cardsAPI.create(card);
   setCards([...cards, newCard])
 };

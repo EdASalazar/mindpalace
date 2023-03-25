@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const usersCtrl = require('../../controllers/api/users');
+const cardsCtrl = require('../../controllers/api/cards')
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 // All paths start with '/api/cards'
 
 // POST /api/cards (create a user - sign up)
-router.post('/', usersCtrl.create);
+router.post('/', cardsCtrl.create)
 
 
 module.exports = router;

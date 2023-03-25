@@ -5,9 +5,6 @@ export default function NewCardPage({ addCard }) {
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
     sideTwoWord: "",
-    image:"",
-    text: "",
-    
   });
 
   function handleChange(evt) {
@@ -17,14 +14,11 @@ export default function NewCardPage({ addCard }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     // Baby steps
-    console.log(newCard);
-    alert({newCard})
+    console.log("New Card:",newCard);
     addCard(newCard);
     setNewCard({
       sideOneWord: "",
       sideTwoWord: "",
-      image:"",
-      text: "",
     });
 
   }
@@ -43,12 +37,6 @@ export default function NewCardPage({ addCard }) {
         name="sideTwoWord" 
         placeholder="Side Two Phrase..."
         value={newCard.sideTwoWord}
-        onChange={handleChange}
-        />
-        <input type="text" 
-        name="image" 
-        placeholder="Add link to an image..."
-        value={newCard.image}
         onChange={handleChange}
         />
         <button type="submit">Add A Card</button>
