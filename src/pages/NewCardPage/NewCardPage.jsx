@@ -43,7 +43,7 @@ export default function NewCardPage({ addCard, decks }) {
       <h4>Add A Card</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
       {/*---- Select the deck you want to add the card to  */}
-      <select name="" id="">
+      <select>
               {deckChoices}
       </select>
       {/* --- form inputs for the flash card below -- */}
