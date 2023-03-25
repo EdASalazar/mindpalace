@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './NewCard.css'
 
-export default function NewCardPage() {
+export default function NewCardPage({ addCard }) {
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
     sideTwoWord: "",
@@ -19,12 +19,12 @@ export default function NewCardPage() {
     // Baby steps
     console.log(newCard);
     alert({newCard})
+    addCard(newCard);
     setNewCard({
       sideOneWord: "",
       sideTwoWord: "",
       image:"",
       text: "",
-      
     });
 
   }

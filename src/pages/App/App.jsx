@@ -10,6 +10,22 @@ import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [cards, setCards] = useState([]);
+
+async function addCard(card) {
+  const newCard = await cardsAPI.create(note);
+  setCards([...cards, newCard])
+};
+
+
+
+  // async (function() {
+  //   async function getCards() {
+  //     const cards = await cardsAPI.getAll();
+  //     setCards(cards)
+  //   }
+  //   getCards();
+  // }, []);
 
   return (
     <main className="App">
@@ -18,7 +34,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/cards/new" element={<NewCardPage />} />
+              <Route path="/cards/new" element={<NewCardPage addCard={addCard} />} />
               <Route path="/decks" element={<CardDecks />} />
             </Routes>
           </>
