@@ -21,8 +21,8 @@ export default function NewCardPage({ addCard, decks }) {
     evt.preventDefault();
     addCard(newCard);
     setNewCard({
-      // sideOneWord: "",
-      // sideTwoWord: "",
+      sideOneWord: "",
+      sideTwoWord: "",
       image:"",
       text: "",
     });
