@@ -1,9 +1,17 @@
 import FlashCard from "../../components/FlashCard/FlashCard";
 
 export default function DeckListPage({ decks }) {
- console.log(decks)
+ console.log("DeckListPage", decks)
   return (
-    <h1>Card Decks</h1>
+    <div className="DeckListPage">
+      {decks.map((deck, idx) =>(
+        <div className="DeckItems" key={idx}>
+          <h2>{ deck.name }</h2>
+          <p>{deck._id}</p>
+          <p>{deck.user}</p>
+        </div>
+      ))}
+    </div>
 
   );
 }
