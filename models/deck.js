@@ -7,10 +7,7 @@ const card = require('./card')
 // Debating about how I want to share decks. 
 
 const deckSchema = new Schema({
-  name: {
-    type: String,
-    require: true
-  }, 
+  name: String,
   catagory: String,
   subject: String,
   lastUsed: Date,
@@ -18,7 +15,6 @@ const deckSchema = new Schema({
    card: [{
     type: Schema.Types.ObjectId,
     ref: 'Card',
-    required: true,
    }],
    user:{
     type: Schema.Types.ObjectId,

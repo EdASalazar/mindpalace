@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function NewDeck() {
+export default function NewDeck({ addDeck }) {
 const [newDeck, setNewDeck] = useState({
   name: "",
 })
@@ -11,7 +11,10 @@ function handleChange(evt) {
 
 function handleSubmit(evt) {
   evt.preventDefault();
-}
+  addDeck(newDeck);
+  // setNewDeck({name: ""});
+  }
+
 
 
   return (
@@ -19,8 +22,9 @@ function handleSubmit(evt) {
       <h1>Add A New Deck</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" 
-        name="text"
-        value={newDeck.text}
+        name="name"
+        placeholder='Description...'
+        value={newDeck.name}
         onChange={handleChange}
         />
         <button type='submit'>Add A Deck</button>
