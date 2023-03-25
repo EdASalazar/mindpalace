@@ -11,7 +11,6 @@ export default function NewCardPage({ addCard, decks }) {
     image:"",
     text: "",
     deck: deckValue,
-    
   });
 
   function handleChange(evt) {
