@@ -11,3 +11,9 @@ form {
   flex-direction: column;
   justify-content: center;
 }
+
+.DeckItems > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

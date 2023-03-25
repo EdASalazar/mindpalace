@@ -2,7 +2,7 @@ import { useState } from "react";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks }) {
-  const [currentDeck, setCurrentDeck] = useState(null)
+  const [currentDeckId, setCurrentDeckId] = useState(null)
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
@@ -33,15 +33,16 @@ export default function NewCardPage({ addCard, decks }) {
       <h4>Add A Card</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
       {/*---- Select the deck you want to add the card to  */}
+        
       {decks.map((deck, idx) =>(
-        <div className="DeckItems" key={idx} deckId={deck._id}>
-          <h2>{ deck.name }</h2>
+        <div className="DeckItems" key={idx}>
+          <ul>
+            <li>
+                { deck.name }
+            </li>
+          </ul>
         </div>
       ))}
-
-
-
-
 
 
         <input type="text" 
