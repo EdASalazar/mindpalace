@@ -4,6 +4,7 @@ const Deck =require('../../models/deck');
 
 module.exports = {
   create,
+  index,
 };
 
 async function create(req, res){
@@ -16,4 +17,11 @@ async function create(req, res){
   } catch (err) {
     res.status(400).json(err)
   }
+}
+
+async function index(req, res) {
+  console.log("contr going in", req.body)
+  const cards = Card.find({deck:req.deckId}).sort(_id);
+  console.log("after fetch cards", cards)
+  res.json(cards)
 }
