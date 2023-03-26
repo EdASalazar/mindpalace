@@ -4,6 +4,9 @@ export default function DeckDetailPage({ setActiveDeck, deckId, deckName, }) {
   
   
   return (
-    <h4>{deckName}</h4>
+    <>
+      <h4>{deckName}</h4>
+      <p>{deckId}</p>
+    </>
   );
 }

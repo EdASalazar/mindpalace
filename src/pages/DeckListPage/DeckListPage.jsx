@@ -15,6 +15,7 @@ setActiveDeck={setActiveDeck}
 console.log('DeckList', deckList)
   return (
     <div className="DeckListPage">
+      {deckList}
     </div>
 
   );
