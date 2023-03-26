@@ -1,4 +1,4 @@
-import FlashCard from "../../components/FlashCard/FlashCard";
+import FlashCard from "../FlashCard/FlashCard";
 
 export default function DeckDetailPage() {
   

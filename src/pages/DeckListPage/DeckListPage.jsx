@@ -1,7 +1,8 @@
-import FlashCard from "../../components/FlashCard/FlashCard";
+
 
 export default function DeckListPage({ decks }) {
  console.log("DeckListPage", decks)
+ 
   return (
     <div className="DeckListPage">
       {decks.map((deck, idx) =>(
