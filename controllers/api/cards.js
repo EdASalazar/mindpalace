@@ -4,7 +4,7 @@ const Deck =require('../../models/deck');
 
 module.exports = {
   create,
-  indexForDeck,
+  show,
 };
 
 async function create(req, res){
@@ -19,9 +19,9 @@ async function create(req, res){
   }
 }
 
-async function indexForDeck(req, res) {
-  // console.log("contr going in", req.body)
-  const cards = await Card.find({});
+async function show(req, res) {
+  console.log("contr going in", req.params.id)
+  const cards = await Card.find({deck: req.params.id});
   console.log("after fetch cards", cards)
   res.json(cards)
 }
