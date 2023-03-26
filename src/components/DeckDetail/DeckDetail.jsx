@@ -13,7 +13,7 @@ export default function DeckDetail({ setActiveDeck, deckId, deckName, cardsForDe
    )
   
   return (
-    <div className="DeckDetailPage" onClick={() => setActiveDeck(deckId)}>
+    <div className="DeckDetail" onClick={() => setActiveDeck(deckId)}>
       <h4>{deckName}</h4>
       <p>{deckId} </p>
       {CardsInDeck}
