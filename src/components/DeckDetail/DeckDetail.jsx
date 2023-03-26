@@ -1,6 +1,6 @@
 import { set } from "mongoose";
 
-export default function DeckDetailPage({ setActiveDeck, deckId, deckName, }) {
+export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsForDeck }) {
   
   
   return (
