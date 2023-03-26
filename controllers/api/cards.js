@@ -20,8 +20,8 @@ async function create(req, res){
 }
 
 async function indexForDeck(req, res) {
-  console.log("contr going in", req.body)
-  const cards = Card.find({deck:req.deckId}).sort(_id);
+  // console.log("contr going in", req.body)
+  const cards = await Card.find({});
   console.log("after fetch cards", cards)
   res.json(cards)
 }

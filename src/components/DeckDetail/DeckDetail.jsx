@@ -4,9 +4,9 @@ export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsF
   
   
   return (
-    <div className="DeckDetailPage" onClick={()=>setActiveDeck(deckId)}>
+    <div className="DeckDetailPage" onClick={() => setActiveDeck(deckId)}>
       <h4>{deckName}</h4>
-      <p>{deckId}</p>
+      <p>{deckId} </p>
     </div>
   );
 }
