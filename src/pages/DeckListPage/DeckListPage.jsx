@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import DeckDetail from '../../components/DeckDetail/DeckDetail'
+import DeckDetail from '../DeckDetailPage/DeckDetailPage'
 import * as cardsAPI from '../../utilities/cards-api'
 
 export default function DeckListPage({ decks, setActiveDeck, cardsForDeck }) {
