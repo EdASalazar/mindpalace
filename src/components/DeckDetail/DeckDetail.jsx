@@ -1,4 +1,3 @@
-import { set } from "mongoose";
 import DeckCardList from "../DeckCardList/DeckCardList";
 
 export default function DeckDetail({ setActiveDeck, deckId, deckName, cardsForDeck }) {
