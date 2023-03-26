@@ -18,7 +18,7 @@ cardsForDeck={cardsForDeck}
   return (
     <div className="DeckListPage">
       {deckList}
-      {DeckDetail}
+      {/* {DeckDetail} */}
     </div>
 
   );

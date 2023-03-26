@@ -18,6 +18,7 @@ export default function App() {
   const [activeDeck, setActiveDeck] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState([]);
   const deckId = [activeDeck][0]
+  console.log("activeDeck at the use state", activeDeck)
 
 async function addCard(card) {
   console.log("Card at app", card)
@@ -36,24 +37,24 @@ useEffect(function() {
     const decks = await decksAPI.getAllForUser();
     console.log("response at app getDecks", decks)
     setDecks(decks);
-    setActiveDeck(decks[0]._id)
+    setActiveDeck(decks[0])
   }
   getDecks();
 }, []);
 
-
-  useEffect(function() {
-    async function getCards() {
-      if (deckId === null) {
-        console.log("DeckId null", deckId)
-      } else {
-      const cards = await cardsAPI.getAllCardsForDeck(deckId);
-      setCardsForDeck(cards);
-      }
-    }
-      getCards();
-    }, [activeDeck]);
+useEffect(function() {
+  if (deckId === null) {
+    console.log("DeckId null", deckId)
+  } else {
+  async function getCards() {
+    console.log("DeckId not null", deckId)
+    const cards = await cardsAPI.getAllCardsForDeck(deckId);
+    setCardsForDeck(cards);
   }
+  getCards();
+  }
+}, [activeDeck]);
+
 
 
 
