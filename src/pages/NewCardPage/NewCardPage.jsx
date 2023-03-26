@@ -2,8 +2,8 @@ import { useState } from "react";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks }) {
-  const [currentDeckId, setCurrentDeckId] = useState(decks[0]._id);
-  const deckValue = [currentDeckId][0]
+  const [currentDeckId, setCurrentDeckId] = useState(decks[1]._id);
+  let deckValue = [currentDeckId][0]
 
   const [newCard, setNewCard] = useState({
     sideOneWord: "",
@@ -37,6 +37,7 @@ export default function NewCardPage({ addCard, decks }) {
       {/*---- Select the deck you want to add the card to  */}
      
      <select name="deck" value={currentDeckId} onChange={(e) => setCurrentDeckId(e.target.value)}>
+        <option value="">Select A Deck</option>
         {decks.map((deck)=>(
           <option value={deck._id} key={deck._id} >
             {deck.name}

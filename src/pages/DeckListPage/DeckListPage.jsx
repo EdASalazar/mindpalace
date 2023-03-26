@@ -5,9 +5,7 @@ import * as cardsAPI from '../../utilities/cards-api'
 export default function DeckListPage({ decks }) {
 const [activeDeck, setActiveDeck] = useState(decks[0]._id);
 const [cardsForDeck, setCardsForDeck] = useState();
-// const deckValue = [currentDeckId][0]
 const deckId = [activeDeck][0]
-console.log("activedeck Id", deckId)
 
 const deckList = decks.map((deck, idx) => 
 <DeckDetail 
@@ -25,7 +23,7 @@ useEffect(function() {
     setCardsForDeck(cards);
   }
   getCards();
-}, []);
+}, [activeDeck]);
 
 
   return (
