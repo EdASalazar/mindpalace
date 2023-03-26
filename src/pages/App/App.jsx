@@ -36,13 +36,6 @@ useEffect(function() {
   getDecks();
 }, []);
 
-  // async (function() {
-  //   async function getCards() {
-  //     const cards = await cardsAPI.getAll();
-  //     setCards(cards)
-  //   }
-  //   getCards();
-  // }, []);
 
   return (
     <main className="App">

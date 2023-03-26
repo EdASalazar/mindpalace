@@ -1,9 +1,9 @@
 import FlashCard from "../FlashCard/FlashCard";
 
-export default function DeckDetailPage() {
+export default function DeckDetailPage({ setActiveDeck, deckId, deckName, }) {
   
   
   return (
-    <h1>Card Decks</h1>
+    <h4>{deckName}</h4>
   );
 }

@@ -1,17 +1,20 @@
-
+import { useState } from 'react'
+import DeckDetail from '../../components/DeckDetail/DeckDetail'
 
 export default function DeckListPage({ decks }) {
- console.log("DeckListPage", decks)
- 
+const [activeDeck, setActiveDeck] = useState(null);
+
+const deckList = decks.map((deck, idx) => 
+<DeckDetail 
+deckId={deck._id}
+user={deck.user}
+deckName={deck.name}
+key={idx}
+setActiveDeck={setActiveDeck}
+/>)
+console.log('DeckList', deckList)
   return (
     <div className="DeckListPage">
-      {decks.map((deck, idx) =>(
-        <div className="DeckItems" key={idx}>
-          <h2>{ deck.name }</h2>
-          <p>{deck._id}</p>
-          <p>{deck.user}</p>
-        </div>
-      ))}
     </div>
 
   );
