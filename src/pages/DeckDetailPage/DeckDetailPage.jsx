@@ -2,7 +2,7 @@ import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsForDeck }) {
   
-   const CardsInDeck = cardsForDeck.map((card, idx) => 
+   const CardsInDeck = cardsForDeck.map((card) => 
    <DeckCardList 
     sideOneWord={card.sideOneWord}
     sideTwoWord={card.sideTwoWord}
@@ -18,7 +18,6 @@ export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsF
       <p>{deckId} </p>
       <ul>
        {CardsInDeck}
-
       </ul>
     </div>
   );

@@ -70,7 +70,7 @@ useEffect(function() {
               <Route path="/cards/:id" element={<NewCardPage addCard={addCard} decks={decks}/>} />
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck} setActiveDeck={setActiveDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
-              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck}/>}/>
+              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} activeDeck={activeDeck}/>}/>
 
             </Routes>
           </>
