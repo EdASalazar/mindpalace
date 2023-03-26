@@ -7,5 +7,5 @@ export async function create(newCard) {
 
 export async function getAllForDeck(deckId) {
   console.log("getCards at card-api", deckId)
-  return sendRequest(BASE_URL, 'GET', deckId)
+  return sendRequest(`${BASE_URL}/deckId`, 'GET')
 }
