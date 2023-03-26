@@ -18,6 +18,7 @@ async function create(req, res) {
     req.body.user = req.user._id;
     const deck = await Deck.create(req.body);
     res.json(deck);
+    console.log("deck after fetch", deck)
    
   } catch (err) {
     res.status(400).json(err)

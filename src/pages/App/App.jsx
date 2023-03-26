@@ -15,6 +15,9 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [cards, setCards] = useState([]);
   const [decks, setDecks] = useState([]);
+  const [activeDeck, setActiveDeck] = useState(null);
+  const [cardsForDeck, setCardsForDeck] = useState([]);
+  const deckId = [activeDeck][0]
 
 async function addCard(card) {
   console.log("Card at app", card)
@@ -31,10 +34,27 @@ async function addDeck(deck) {
 useEffect(function() {
   async function getDecks() {
     const decks = await decksAPI.getAllForUser();
+    console.log("response at app getDecks", decks)
     setDecks(decks);
+    setActiveDeck(decks[0]._id)
   }
   getDecks();
 }, []);
+
+
+  useEffect(function() {
+    async function getCards() {
+      if (deckId === null) {
+        console.log("DeckId null", deckId)
+      } else {
+      const cards = await cardsAPI.getAllCardsForDeck(deckId);
+      setCardsForDeck(cards);
+      }
+    }
+      getCards();
+    }, [activeDeck]);
+  }
+
 
 
   return (
@@ -45,7 +65,8 @@ useEffect(function() {
             <Routes>
               {/* Route components in here */}
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
-              <Route path="/decks" element={<DeckListPage decks={decks}/>} />
+              <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck} setActiveDeck={setActiveDeck}/>} />
+              <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
             </Routes>
           </>
