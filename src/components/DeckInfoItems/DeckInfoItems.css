@@ -8,3 +8,13 @@
   border-radius: 3%;
   filter: drop-shadow(5px 5px 4px darkgrey);
 }
+
+.DeckInfoItems > a {
+  text-decoration: none;
+  color: black
+}
+
+.DeckInfoItems > a:hover {
+  color: white;
+  background-color: #29c089;
+}
