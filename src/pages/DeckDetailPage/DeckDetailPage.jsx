@@ -1,6 +1,6 @@
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
-export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsForDeck }) {
+export default function DeckDetailPage({ setActiveDeck, activeDeck, deckId, deckName, cardsForDeck }) {
   
    const CardsInDeck = cardsForDeck.map((card) => 
    <DeckCardList 
@@ -14,7 +14,7 @@ export default function DeckDetailPage({ setActiveDeck, deckId, deckName, cardsF
   
   return (
     <div className="DeckDetailPage" onClick={() => setActiveDeck(deckId)}>
-      <h4>{deckName}</h4>
+      <h4>{activeDeck.name}</h4>
       <p>{deckId} </p>
       <ul>
        {CardsInDeck}
