@@ -17,7 +17,7 @@ export default function App() {
   const [cards, setCards] = useState([]);
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(null);
-  const [cardsForDeck, setCardsForDeck] = useState(decks[0]);
+  const [cardsForDeck, setCardsForDeck] = useState(null);
 
   // console.log("activeDeck at the use state", activeDeck)
 
@@ -52,9 +52,10 @@ useEffect(function() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
+
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
-              <Route path="/cards/:id" element={<NewCardPage addCard={addCard} decks={decks}/>} />
-              <Route path="/decks/:id" element={<DeckDetailPage decks={decks}/>}/>
+              <Route path="/cards/:cardId" element={<NewCardPage addCard={addCard} decks={decks}/>} />
+              <Route path="/decks/:deckId" element={<DeckDetailPage decks={decks}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
 

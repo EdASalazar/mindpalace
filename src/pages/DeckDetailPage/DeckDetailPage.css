@@ -1,3 +1,11 @@
+.DeckDetailPage {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+
+
+
 .DeckDetails {
   display: flex;
   flex-direction: column;
@@ -7,4 +15,17 @@
   width: 30vw;
   border-radius: 3%;
   filter: drop-shadow(5px 5px 4px darkgrey);
+  grid-column-start: 2;
+}
+
+aside {
+  width: 40vw;
+  border: solid lime .25vw;
+  background-color: bisque;
+  margin-bottom: 1vw;
+  width: 30vw;
+  border-radius: 3%;
+  filter: drop-shadow(5px 5px 4px darkgrey);
+  grid-column-start: 4;
+
 }

@@ -1,32 +1,25 @@
 import { useEffect } from "react";
 import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
+import './DeckCardList.css'
 
 export default function DeckCardList({ cardsForDeck }) {
+  console.log("cards for deck", cardsForDeck);
 
-  const card = cardsForDeck.map(function(card){
-  <DeckCardListItem sideOne={card.sideOneWord} sideTwo={card.sideTwoWord} />})
-    
-  
-  // function cardCheck(){
-  //   if (!cardsForDeck) {
-  //     console.log("no cards here")
-  //   } else {
-  //     const cardForList = cardsForDeck.map(card =>
-  //      <DeckCardListItem sideOne={sideOneWord} sideTwo={sideTwoWord} />)
-  //     console.log("cards here")
-  //   }
-  // }
-  // cardCheck()
+  const cardList = cardsForDeck.map((card) =>
+  <DeckCardListItem 
+  sideOne={card.sideOneWord} 
+  sideTwo={card.sideTwoWord} 
+  key={card._id}
+  />);
 
+  console.log('card list', cardList);
 
   return (
     <div>
-      <h1>Deck Card List</h1>
-          {/* {!cardsForDeck ? 'Loading...' : {cards}} */}
+      
         <ul>
-          {card}
+          {cardList}
         </ul>
-
     </div>
         
   )

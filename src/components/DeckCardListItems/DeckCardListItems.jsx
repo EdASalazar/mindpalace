@@ -1,6 +1,7 @@
-export default function DeckCardListItem({sideOne, sideTwo}) {
+export default function DeckCardListItem({sideOne, sideTwo, cardList}) {
+  console.log('deck card list', sideOne)
   return (
-   <li>
+    <li>
     {sideOne} : {sideTwo} 
    </li>
   )
