@@ -1,24 +1,17 @@
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
+import { useParams } from "react-router-dom";
 import "./DeckDetailPage.css"
 
-export default function DeckDetailPage({ setActiveDeck, activeDeck, deckId, deckName, cardsForDeck }) {
-  
-  //  const CardsInDeck = cardsForDeck.map((card) => 
-  //  <DeckCardList 
-  //   sideOneWord={card.sideOneWord}
-  //   sideTwoWord={card.sideTwoWord}
-  //   key={card._id}
-  //   deckName={deckName}
-  //   deckId={deckId}
-  //  />
-  //  )
-  
+export default function DeckDetailPage({ setActiveDeck, decks}) {
+  const { linkId } = useParams();
+  // const deckDetail = decks.filter(deck => deck._id === linkId);
+
+
 
 
   return (
-    <div className="DeckDetailPage" onClick={() => setActiveDeck(deckId)}>
-      <h4>{deckName}</h4>
-      <p>{deckId} </p>
+    <div className="DeckDetailPage">
+
     </div>
   );
 }
