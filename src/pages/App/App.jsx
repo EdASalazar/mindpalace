@@ -17,7 +17,7 @@ export default function App() {
   const [cards, setCards] = useState([]);
   const [decks, setDecks] = useState([]);
   const [activeDeck, setActiveDeck] = useState(null);
-  const [cardsForDeck, setCardsForDeck] = useState([]);
+  const [cardsForDeck, setCardsForDeck] = useState(decks[0]);
 
   // console.log("activeDeck at the use state", activeDeck)
 

@@ -5,7 +5,6 @@ import * as cardsAPI from '../../utilities/cards-api'
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 export default function DeckDetailPage({ setActiveDeck, decks}) {
-  const [cards, setCards] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState([]);
   const { deckId } = useParams();
 
