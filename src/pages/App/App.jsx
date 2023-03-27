@@ -43,20 +43,6 @@ useEffect(function() {
   getDecks();
 }, []);
 
-useEffect(function() {
-  if (!activeDeck) {
-    console.log("No active deck")
-  } else {
-  async function getCards() {
-    // console.log("activeDeck._id ", activeDeck._id)
-    const cards = await cardsAPI.getAllCardsForDeck(activeDeck._id);
-    setCardsForDeck(cards);
-  }
-  getCards();
-  }
-}, [activeDeck]);
-
-
 
 
   return (
@@ -68,8 +54,8 @@ useEffect(function() {
               {/* Route components in here */}
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
               <Route path="/cards/:id" element={<NewCardPage addCard={addCard} decks={decks}/>} />
-              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} decks={decks}/>}/>
-              <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck} setActiveDeck={setActiveDeck}/>} />
+              <Route path="/decks/:id" element={<DeckDetailPage decks={decks}/>}/>
+              <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
 
             </Routes>

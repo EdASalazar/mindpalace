@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import * as cardsAPI from '../../utilities/cards-api'
 import DeckInfoItems from '../../components/DeckInfoItems/DeckInfoItems';
 
 export default function DeckListPage({ decks }) {
