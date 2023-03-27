@@ -1,5 +1,6 @@
 export default function DeckCardList({sideOneWord, sideTwoWord, deckName, deckId  }) {
   return (
-        <li> {deckName}: {sideOneWord}:{sideTwoWord}</li>
+     <h1>Deck Card List</h1>
+        // <li> {deckName}: {sideOneWord}:{sideTwoWord}</li>
   )
 }

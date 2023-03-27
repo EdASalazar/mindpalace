@@ -1,0 +1,7 @@
+.DeckDetailPage {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  border: solid lime .25vw;
+  margin-bottom: 1vw;
+}
