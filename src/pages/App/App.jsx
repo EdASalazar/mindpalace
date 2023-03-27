@@ -5,7 +5,7 @@ import './App.css';
 import NewCardPage from '../NewCardPage/NewCardPage'
 import NewDeckPage from '../NewDeckPage/NewDeckPage';
 import DeckListPage from '../DeckListPage/DeckListPage';
-import DeckDetailPage from '../DeckDetailPage/DeckDetailPage';
+import DeckDetailPage from '../DeckDetailPage/DeckDetailPage'
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
@@ -68,9 +68,9 @@ useEffect(function() {
               {/* Route components in here */}
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
               <Route path="/cards/:id" element={<NewCardPage addCard={addCard} decks={decks}/>} />
+              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} decks={decks}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck} setActiveDeck={setActiveDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
-              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} decks={decks}/>}/>
 
             </Routes>
           </>

@@ -6,7 +6,7 @@ export default function DeckInfoItems({ deckName, deckId }) {
     <div className="DeckInfoItems">
       <Link to={{ pathname: `/decks/${deckId}`}} >
         <h1>{deckName}</h1>
-        <p>More inormation about the deck</p>
+        <p>More information about the deck</p>
       </Link>
     </div>
   )

@@ -3,8 +3,8 @@ import "./DeckDetailPage.css"
 
 export default function DeckDetailPage({ setActiveDeck, decks}) {
   const { deckId } = useParams();
-  const deckDetail = decks.filter(deck => deck._id === deckId);
   console.log('deckId', deckId)
+  const deckDetail = decks.filter(deck => deck._id === deckId);
   console.log('deckDetailFilter', deckDetail)
 
 
