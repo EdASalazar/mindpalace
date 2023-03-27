@@ -19,16 +19,16 @@ export default function App() {
   const [activeDeck, setActiveDeck] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState([]);
 
-  console.log("activeDeck at the use state", activeDeck)
+  // console.log("activeDeck at the use state", activeDeck)
 
 async function addCard(card) {
-  console.log("Card at app", card)
+  // console.log("Card at app", card)
   const newCard = await cardsAPI.create(card);
   setCards([...cards, newCard])
 };
 
 async function addDeck(deck) {
-  console.log("Deck at app", deck)
+  // console.log("Deck at app", deck)
   const newDeck = await decksAPI.create(deck);
   setDecks([...decks, newDeck])
 };
@@ -36,7 +36,7 @@ async function addDeck(deck) {
 useEffect(function() {
   async function getDecks() {
     const decks = await decksAPI.getAllForUser();
-    console.log("response at app getDecks", decks)
+    // console.log("response at app getDecks", decks)
     setDecks(decks);
     if (decks.length) setActiveDeck(decks[0])
   }
@@ -48,7 +48,7 @@ useEffect(function() {
     console.log("No active deck")
   } else {
   async function getCards() {
-    console.log("activeDeck._id ", activeDeck._id)
+    // console.log("activeDeck._id ", activeDeck._id)
     const cards = await cardsAPI.getAllCardsForDeck(activeDeck._id);
     setCardsForDeck(cards);
   }
@@ -70,7 +70,7 @@ useEffect(function() {
               <Route path="/cards/:id" element={<NewCardPage addCard={addCard} decks={decks}/>} />
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck} setActiveDeck={setActiveDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
-              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} activeDeck={activeDeck} decks={decks}/>}/>
+              <Route path="/decks/:id" element={<DeckDetailPage setActiveDeck={setActiveDeck} decks={decks}/>}/>
 
             </Routes>
           </>
