@@ -29,6 +29,7 @@ export default function DeckDetailPage({ setActiveDeck, decks}) {
     async function getCards() {
       // using "test" for the id so I can move forward 
       const cards = await cardsAPI.getAllCardsForDeck(test);
+      console.log('Card list for deck', cards)
       setCardsForDeck(cards);
     }
     getCards();
@@ -43,7 +44,7 @@ export default function DeckDetailPage({ setActiveDeck, decks}) {
       </div>
       <aside>
         <ul>
-         <DeckCardList />
+         <DeckCardList cardsForDeck={cardsForDeck}/>
         </ul>
       </aside>
     </div>
