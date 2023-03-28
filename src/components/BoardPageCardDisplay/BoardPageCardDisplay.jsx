@@ -1,9 +1,9 @@
 export default function BoardPageCardDisplay({ decks }) {
- 
-  // console.log("board page card display", cards)
   
+
   return (
     <li>
+      Board Page Card Display
     </li>
   )
 }
