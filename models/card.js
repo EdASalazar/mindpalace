@@ -17,11 +17,13 @@ const cardSchema = new Schema({
   },
   user:{
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true,
    },
    deck:{
     type: Schema.Types.ObjectId,
-    ref: 'Deck'
+    ref: 'Deck',
+    required: true,
    },
   text: String,
 }, {
