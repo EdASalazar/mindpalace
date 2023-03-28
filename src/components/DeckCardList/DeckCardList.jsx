@@ -10,6 +10,7 @@ export default function DeckCardList({ cardsForDeck }) {
   sideOne={card.sideOneWord} 
   sideTwo={card.sideTwoWord} 
   key={card._id}
+  cardId={card._id}
   />);
 
   console.log('card list', cardList);
