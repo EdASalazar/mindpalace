@@ -2,16 +2,16 @@ import { useState } from "react";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
-  const [currentDeckDropDown, setCurrentDeckDropDown] = useState('');
-  let deckValue = [currentDeckDropDown][0]
-
+  
   const [newCard, setNewCard] = useState({
+    deck: "",
     sideOneWord: "",
     sideTwoWord: "",
     image:"",
     text: "",
-    deck: deckValue,
   });
+
+  
 
   function handleChange(evt) {
     setNewCard({...newCard, [evt.target.name]: evt.target.value})
@@ -36,7 +36,7 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
      
       {/*---- Select the deck you want to add the card to  */}
      
-     <select name="deck" value={currentDeckDropDown} onChange={(e) => setCurrentDeckDropDown(e.target.value)}>
+     <select name="deck" value={newCard.deck} onChange={handleChange}>
         <option value="">Select A Deck</option>
         {decks.map((deck)=>(
           <option value={deck._id} key={deck._id} >
