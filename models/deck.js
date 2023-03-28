@@ -7,9 +7,18 @@ const card = require('./card')
 // Debating about how I want to share decks. 
 
 const deckSchema = new Schema({
-  name: String,
-  catagory: String,
-  subject: String,
+  name: {
+    type: String,
+    required: true,
+  },
+  category:  {
+    type: String,
+    required: true,
+  },
+  subject:  {
+    type: String,
+    required: true,
+  },
   lastUsed: Date,
   timesUsed: Number,
    card: [{

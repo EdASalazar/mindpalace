@@ -160,6 +160,10 @@ nav {
   border: solid var(--teal) 3vw;
 }
 
+nav > a {
+  text-decoration: none;
+}
+
 nav > span {
   padding: 5vw;
 }
