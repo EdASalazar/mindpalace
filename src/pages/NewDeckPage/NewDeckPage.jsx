@@ -26,8 +26,7 @@ function handleSubmit(evt) {
 
   return (
     <div className="NewDeck">
-      <h1>Add A New Deck</h1>
-      
+      <h1>Add A New Trunk</h1>
       <form onSubmit={handleSubmit} className="NewDeckForm">
         
         <input type="text" 
@@ -51,7 +50,7 @@ function handleSubmit(evt) {
         onChange={handleChange}
         />
 
-        <button type='submit'>Add A Deck</button>
+        <button type='submit'>Add A Trunk</button>
       </form>
 
     </div>

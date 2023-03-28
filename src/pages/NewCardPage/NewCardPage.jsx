@@ -31,13 +31,13 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
 
   return (
     <div className="NewCardPage">
-      <h4>Add A Card</h4>
+      <h4>Add A Tusk</h4>
       <form className="NewCardForm" onSubmit={handleSubmit}>
      
       {/*---- Select the deck you want to add the card to  */}
      
      <select name="deck" value={newCard.deck} onChange={handleChange}>
-        <option value="">Select A Deck</option>
+        <option value="">Select A Trunk</option>
         {decks.map((deck)=>(
           <option value={deck._id} key={deck._id} >
             {deck.name}
@@ -65,7 +65,7 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
         value={newCard.image}
         onChange={handleChange}
         />
-        <button type="submit">Add A Card</button>
+        <button type="submit">Add A Tusk</button>
       </form>
     </div>
   );
