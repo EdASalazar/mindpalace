@@ -5,7 +5,8 @@ const Deck =require('../../models/deck')
 module.exports = {
   create,
   index,
-  show
+  show,
+
 };
 
 async function index(req, res) {
@@ -32,3 +33,4 @@ async function create(req, res) {
     res.status(400).json(err)
   }
 }
+

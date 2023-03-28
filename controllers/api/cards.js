@@ -11,9 +11,14 @@ async function create(req, res){
   try {
     console.log("coming into create", req.body)
     req.body.user = req.user._id;
-    const card = await Card.create(req.body);
-    res.json(card);
-   
+    const newCard = await Card.create(req.body);
+    console.log('newCard', newCard)
+    const deck = await Deck.findById(newCard.deck);
+    console.log('getting deck for card', deck)
+    console.log('newCard._id', newCard._id)
+    deck.card.push(newCard._id);
+      deck.save();
+    res.json(newCard);
   } catch (err) {
     res.status(400).json(err)
   }
