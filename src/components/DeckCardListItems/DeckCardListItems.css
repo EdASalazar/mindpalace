@@ -1,0 +1,14 @@
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+  border: solid lime .25vw;
+  margin-bottom: .2vw;
+  border-radius: 5%;
+  filter: drop-shadow(5px 5px 4px darkgrey);
+  margin-left: 0;
+  background-color: rgb(251, 240, 234);
+  padding: .2vw;
+}

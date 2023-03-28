@@ -15,12 +15,8 @@ export default function DeckCardList({ cardsForDeck }) {
   console.log('card list', cardList);
 
   return (
-    <div>
-      
-        <ul>
-          {cardList}
-        </ul>
-    </div>
-        
+    <ul className="phraseList">
+      {cardList}
+    </ul>    
   )
 }
