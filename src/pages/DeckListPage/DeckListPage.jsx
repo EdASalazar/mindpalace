@@ -7,6 +7,8 @@ const deckList = decks.map((deck, idx) =>
 deckId={deck._id}
 user={deck.user}
 deckName={deck.name}
+category={deck.category}
+subject={deck.subject}
 key={deck._id}
 />)
 
