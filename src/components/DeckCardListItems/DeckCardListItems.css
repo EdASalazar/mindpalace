@@ -9,7 +9,7 @@ li {
   border: solid lime .25vw;
   border-radius: 5%;
   filter: drop-shadow(5px 5px 4px darkgrey);
-  background-color: rgb(251, 240, 234);
+  background-color: #f0e5cd;
   padding: .2vw;
   white-space: nowrap;
   overflow: hidden;

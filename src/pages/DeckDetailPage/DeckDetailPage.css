@@ -6,7 +6,7 @@
 .DeckDetails {
   display: flex;
   flex-direction: column;
-  background-color: bisque;
+  background-color: #f3d796;
   border: solid lime .25vw;
   margin-bottom: 1vw;
   width: 30vw;
@@ -20,7 +20,7 @@ aside {
   flex-direction: column;
   align-items: center;
   border: solid lime .25vw;
-  background-color: bisque;
+  background-color: #f3d796;;
   margin-bottom: 1vw;
   width: 30vw;
   border-radius: 3%;
