@@ -1,6 +1,10 @@
 export default function BoardDeckList({decks, deckName, deckId, setSelectedDeck }) {
 
+  function handleClick() {
+  setSelectedDeck(deckId)
+}
+
   return (
-    <li>{deckName}</li>
+    <li onClick={handleClick}>{deckName} {deckId}</li>
   )
 }
