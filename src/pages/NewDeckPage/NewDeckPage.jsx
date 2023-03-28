@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import "./NewDeckPage.css"
 
 export default function NewDeck({ addDeck }) {
 const [newDeck, setNewDeck] = useState({
@@ -20,7 +21,7 @@ function handleSubmit(evt) {
   return (
     <div className="NewDeck">
       <h1>Add A New Deck</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="NewDeckForm">
         <input type="text" 
         name="name"
         placeholder='Description...'
