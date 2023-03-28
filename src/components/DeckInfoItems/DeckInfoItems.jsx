@@ -5,9 +5,7 @@ export default function DeckInfoItems({ deckName, deckId, category, subject }) {
   return (
     <div className="DeckInfoItems">
       <Link to={{ pathname: `/decks/${deckId}`}} >
-        <h4>{deckName}</h4>
-        <p>{category}</p>
-        <p>{subject}</p>
+        <h4>{deckName}: {subject}</h4>
       </Link>
     </div>
   )

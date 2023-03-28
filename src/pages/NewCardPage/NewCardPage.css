@@ -1,4 +1,4 @@
-form {
+.NewCardForm {
   display: flex;
   flex-direction: column;
   width: 60vw;
@@ -10,10 +10,27 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .DeckItems > ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input {
+  height: 3vw;
+  font-size: 2vw;
+}
+
+select {
+  height: 3vw;
+  font-size: 2vw;
+}
+
+button {
+  height: 3vw;
+  font-size: 2vw;
+  width: 30vw;
 }

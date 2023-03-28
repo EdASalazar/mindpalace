@@ -28,8 +28,10 @@ export default function DeckDetailPage({ decks }) {
   return (
     <div className="DeckDetailPage">
       <div className="DeckDetails">
-        <h1>{deckArray.name}</h1>
-        <p>Date Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
+        <h2>{deckArray.name}</h2>
+        <h4>{deckArray.category}</h4>
+        <h4>{deckArray.subject}</h4>
+        <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
       <aside>
       <h1>Phrases:</h1>
