@@ -18,7 +18,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [cards, setCards] = useState([]);
   const [decks, setDecks] = useState([]);
-  const [activeDeck, setActiveDeck] = useState(null);
+  // const [activeDeck, setActiveDeck] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
 
@@ -36,7 +36,7 @@ useEffect(function() {
   async function getDecks() {
     const decks = await decksAPI.getAllForUser();
     setDecks(decks);
-    if (decks.length) setActiveDeck(decks[0])
+    // if (decks.length) setActiveDeck(decks[0])
   }
   getDecks();
 }, []);
@@ -54,7 +54,7 @@ useEffect(function() {
               <Route path="/decks/:deckId" element={<DeckDetailPage decks={decks}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
-              <Route path="/board" element={<BoardPage />}/> 
+              <Route path="/board" element={<BoardPage decks={decks} />}/> 
             </Routes>
           </>
           :
