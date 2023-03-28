@@ -1,7 +1,7 @@
 import './DeckInfoItems.css'
 import { Link } from 'react-router-dom'
 
-export default function DeckInfoItems({ deckName, deckId, category, subject }) {
+export default function DeckInfoItems({ deckName, deckId, subject }) {
   return (
     <div className="DeckInfoItems">
       <Link to={{ pathname: `/decks/${deckId}`}} >
