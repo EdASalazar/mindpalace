@@ -1,4 +1,5 @@
 import DeckInfoItems from '../../components/DeckInfoItems/DeckInfoItems';
+import "./DeckListPage.css"
 
 export default function DeckListPage({ decks }) {
 

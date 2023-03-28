@@ -19,4 +19,10 @@ form {
 
 .NewDeckForm > button {
   font-size: 2vw;
+  margin: 1vmin;
+  padding: 1vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
