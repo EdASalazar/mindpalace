@@ -8,7 +8,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const decks = await Deck.find({user: req.user._id}).sort('-name');
+  const decks = await Deck.find({user: req.user._id}).sort('_id');
   res.json(decks)
 }
 

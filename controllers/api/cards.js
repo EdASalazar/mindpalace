@@ -20,7 +20,7 @@ async function create(req, res){
 }
 
 async function show(req, res) {
-  const cards = await Card.find({deck: req.params.id});
+  const cards = await Card.find({deck: req.params.id}).sort('-_id');
   console.log("after fetch cards", cards)
   res.json(cards)
 }
