@@ -8,3 +8,8 @@ export async function create(newDeck) {
 export async function getAllForUser() {
   return sendRequest(BASE_URL);
 }
+
+export async function getAllCardsForDeck(id) {
+  // console.log("id at cards-api", id);
+  return sendRequest(`${BASE_URL}/${id}`);
+}

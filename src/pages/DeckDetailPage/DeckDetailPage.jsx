@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import "./DeckDetailPage.css"
-import * as cardsAPI from '../../utilities/cards-api'
+import * as decksAPI from '../../utilities/decks-api'
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 export default function DeckDetailPage({ decks }) {
@@ -18,7 +18,7 @@ export default function DeckDetailPage({ decks }) {
       console.log("No deck chosen")
     } else {
     async function getCards() {
-      const cards = await cardsAPI.getAllCardsForDeck(deckId);
+      const cards = await decksAPI.getAllCardsForDeck(deckId);
       setCardsForDeck(cards);
     }
     getCards();

@@ -3,7 +3,7 @@ import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
 export default function DeckCardList({ cardsForDeck }) {
-  console.log("cards for deck", cardsForDeck);
+ 
 
   const cardList = cardsForDeck.map((card) =>
   <DeckCardListItem 

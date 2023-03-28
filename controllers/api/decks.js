@@ -5,11 +5,19 @@ const Deck =require('../../models/deck')
 module.exports = {
   create,
   index,
+  show
 };
 
 async function index(req, res) {
   const decks = await Deck.find({user: req.user._id}).sort('_id');
   res.json(decks)
+}
+
+
+async function show(req, res) {
+  const cards = await Card.find({deck: req.params.id}).sort('-_id');
+  console.log("after fetch cards", cards)
+  res.json(cards)
 }
 
 async function create(req, res) {
