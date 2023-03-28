@@ -3,9 +3,6 @@
   grid-template-columns: repeat(6, 1fr);
 }
 
-
-
-
 .DeckDetails {
   display: flex;
   flex-direction: column;
@@ -30,4 +27,8 @@ aside {
   filter: drop-shadow(5px 5px 4px darkgrey);
   grid-column-start: 4;
 
+}
+
+h2 {
+  margin: .3vw 0 0 0;
 }

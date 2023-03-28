@@ -34,7 +34,7 @@ export default function DeckDetailPage({ decks }) {
         <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
       <aside>
-      <h1>Phrases:</h1>
+      <h2>Phrases:</h2>
          <DeckCardList cardsForDeck={cardsForDeck}/>
       </aside>
     </div>

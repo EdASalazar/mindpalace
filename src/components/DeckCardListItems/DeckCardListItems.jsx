@@ -6,7 +6,7 @@ export default function DeckCardListItem({sideOne, sideTwo, cardList}) {
   return (
     <li>
       <span className="sideOne">
-        {sideOne} : 
+        {sideOne}  
       </span>
       <span className="sideTwo">
         {sideTwo} 
