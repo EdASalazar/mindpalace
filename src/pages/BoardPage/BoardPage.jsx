@@ -15,7 +15,7 @@ export default function BoardPage({ decks }) {
       ))}
       </aside>
       <ul>
-        <BoardPageCardDisplay />
+        <BoardPageCardDisplay decks/>
       </ul>
     </div>
   )
