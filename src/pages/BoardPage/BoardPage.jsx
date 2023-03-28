@@ -1,4 +1,5 @@
 import DeckListPage from "../DeckListPage/DeckListPage";
+import "./BoardPage.css"
 
 export default function BoardPage({ decks }) {
  

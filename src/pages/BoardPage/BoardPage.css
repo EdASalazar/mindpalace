@@ -1,0 +1,18 @@
+.DeckListBoard:nth-child(2)  {
+  border: 0;
+  padding: 1vw;
+  margin: 0;
+}
+
+.DeckListBoard:nth-child(3):hover  {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: green;
+}
+
+.DeckListBoard > ul {
+  width: 100%;
+  padding: .5vw;
+  margin: 0;
+}
