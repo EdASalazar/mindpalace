@@ -11,6 +11,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
 import * as decksAPI from '../../utilities/decks-api'
+import BoardPage from '../BoardPage/BoardPage';
 
 
 export default function App() {
@@ -20,16 +21,13 @@ export default function App() {
   const [activeDeck, setActiveDeck] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
-  // console.log("activeDeck at the use state", activeDeck)
 
 async function addCard(card) {
-  // console.log("Card at app", card)
   const newCard = await cardsAPI.create(card);
   setCards([...cards, newCard])
 };
 
 async function addDeck(deck) {
-  // console.log("Deck at app", deck)
   const newDeck = await decksAPI.create(deck);
   setDecks([...decks, newDeck])
 };
@@ -37,14 +35,11 @@ async function addDeck(deck) {
 useEffect(function() {
   async function getDecks() {
     const decks = await decksAPI.getAllForUser();
-    // console.log("response at app getDecks", decks)
     setDecks(decks);
     if (decks.length) setActiveDeck(decks[0])
   }
   getDecks();
 }, []);
-
-
 
   return (
     <main className="App">
@@ -59,7 +54,7 @@ useEffect(function() {
               <Route path="/decks/:deckId" element={<DeckDetailPage decks={decks}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
-
+              <Route path="/board" element={<BoardPage />}/> 
             </Routes>
           </>
           :
