@@ -22,6 +22,5 @@ async function create(req, res){
 
 async function show(req, res) {
   const card = await Card.find({_id: req.params.id});
-  console.log("after fetch card", card)
   res.json(card)
 }

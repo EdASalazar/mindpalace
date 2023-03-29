@@ -18,7 +18,6 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [cards, setCards] = useState([]);
   const [decks, setDecks] = useState([]);
-  // const [activeDeck, setActiveDeck] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
 
@@ -36,7 +35,6 @@ useEffect(function() {
   async function getDecks() {
     const decks = await decksAPI.getAllForUser();
     setDecks(decks);
-    // if (decks.length) setActiveDeck(decks[0])
   }
   getDecks();
 }, []);
