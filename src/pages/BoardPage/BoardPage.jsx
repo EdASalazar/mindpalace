@@ -22,6 +22,10 @@ export default function BoardPage({ decks }) {
     setAnswer({...answer, [evt.target.name]: evt.target.value})
   };
 
+  // console.log(selectedDeck.cards)
+
+  // const questionCard = selectedDeck.cards[0].map(card => <BoardPageCardDisplay sideOne={card.sideOneWord} />)
+
   function handleSubmit(evt) {
     evt.preventDefault();
     console.log('submitted')

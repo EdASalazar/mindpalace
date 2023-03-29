@@ -1,6 +1,6 @@
 import "./BoardCardItem.css"
 
-export default function BoardCardItem({ sideOne, sideTwo, cardInfo }) {
+export default function BoardCardItem({ sideOne, sideTwo, cardInfo, }) {
   
   return(
     <div className="FlashCard">
