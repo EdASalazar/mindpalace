@@ -1,9 +1,12 @@
-export default function BoardCardItem({ sideOne }) {
+export default function BoardCardItem({ sideOne, sideTwo }) {
   
   return(
-    <div>
-      <div>
+    <div className="FlashCard">
+      <div className="FlashCardSideOne">
         {sideOne}
+      </div>
+      <div className="FlashCardSideTwo">
+        {sideTwo}
       </div>
     </div>
   )

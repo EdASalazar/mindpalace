@@ -21,7 +21,7 @@ const deckSchema = new Schema({
   },
   lastUsed: Date,
   timesUsed: Number,
-   card: [{
+   cards: [{
     type: Schema.Types.ObjectId,
     ref: 'Card',
    }],

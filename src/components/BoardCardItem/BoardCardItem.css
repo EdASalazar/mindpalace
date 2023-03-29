@@ -1,0 +1,10 @@
+.FlashCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 0 1vw 0 1vw;
+  background-color: tan;
+}

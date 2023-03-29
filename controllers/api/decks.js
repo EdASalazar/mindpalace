@@ -10,7 +10,8 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const decks = await Deck.find({user: req.user._id}).sort('_id');
+  const decks = await Deck.find({user: req.user._id})
+    .populate('card').sort('-createdAt');
   res.json(decks)
 }
 
