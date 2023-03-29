@@ -21,6 +21,7 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
     evt.preventDefault();
     addCard(newCard);
     setNewCard({
+      deck: newCard.deck,
       sideOneWord: "",
       sideTwoWord: "",
       image:"",
@@ -32,7 +33,7 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
   return (
     <div className="NewCardPage">
       <h4>Add A Tusk</h4>
-      <form className="NewCardForm" onSubmit={handleSubmit}>
+      <form className="NewCardForm">
      
       {/*---- Select the deck you want to add the card to  */}
      
@@ -65,7 +66,7 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
         value={newCard.image}
         onChange={handleChange}
         />
-        <button type="submit">Add A Tusk</button>
+        <button type="submit" onClick={handleSubmit}>Add A Tusk</button>
       </form>
     </div>
   );
