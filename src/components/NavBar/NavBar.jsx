@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <img src="../../public/logo192.png" alt="Elephluent Pic" />
+      
       <span className='Welcome'>Welcome to Eliphluent, {user.name}</span>
       &nbsp;&nbsp;
       <Link to="/decks">Trunks</Link>
@@ -19,7 +19,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/cards/new">New Tusk</Link>
       &nbsp; | &nbsp;
-      <Link to="/board">Let's Review</Link>
+      <Link to="/board">Review</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
