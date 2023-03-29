@@ -1,9 +1,18 @@
-export default function BoardPageCardDisplay({ decks, deck }) {
+import { useState } from 'react';
+import BoardCardItem from "../BoardCardItem/BoardCardItem";
+
+export default function BoardPageCardDisplay({ cardsForBoard }) {
+  const cardInfo = cardsForBoard.map((card) => <BoardCardItem sideOne={card.sideOneWord} />);
   
 
+
+
+
   return (
-    <li>
-      Board Page Card Display
-    </li>
+    <div className="BoardPageCardDisplay">
+      {cardInfo} 
+    </div>
+
+
   )
 }
