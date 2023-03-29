@@ -1,4 +1,4 @@
-export default function BoardDeckList({ deck, setSelectedDeck }) {
+export default function BoardDeck({ deck, setSelectedDeck }) {
 
 
   return (

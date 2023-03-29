@@ -12,7 +12,7 @@ async function create(req, res){
     req.body.user = req.user._id;
     const newCard = await Card.create(req.body);
     const deck = await Deck.findById(newCard.deck);
-    deck.card.push(newCard._id);
+    deck.cards.push(newCard._id);
       deck.save();
     res.json(newCard);
   } catch (err) {
