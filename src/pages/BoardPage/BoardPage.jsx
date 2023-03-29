@@ -21,6 +21,12 @@ export default function BoardPage({ decks }) {
   function handleChange(evt) {
     setAnswer({...answer, [evt.target.name]: evt.target.value})
   };
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    console.log('submitted')
+  }
+
     
 
   return (
@@ -36,7 +42,7 @@ export default function BoardPage({ decks }) {
       <div className="AnswerForm">
         <form action="">
           <input type="text" name="text" value={answer.text} onChange={handleChange}/>
-          <button>Submit Answer</button>
+          <button type='submit' onClick={handleSubmit}>Submit Answer</button>
         </form>
       </div>
     </div>
