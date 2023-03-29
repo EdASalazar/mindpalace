@@ -1,6 +1,6 @@
 import "./BoardCardItem.css"
 
-export default function BoardCardItem({ sideOne, sideTwo }) {
+export default function BoardCardItem({ sideOne, sideTwo, cardInfo }) {
   
   return(
     <div className="FlashCard">
@@ -10,6 +10,7 @@ export default function BoardCardItem({ sideOne, sideTwo }) {
       <div className="FlashCardSideTwo">
         {sideTwo}
       </div>
+      
     </div>
   )
 }

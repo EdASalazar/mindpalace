@@ -10,11 +10,19 @@ export default function BoardPageCardDisplay({ cardsForBoard }) {
   sideTwo={card.sideTwoWord}
   key={card._id} 
   />);
-  
+
+  // const cardInfo = cardsForBoard.map((card) => 
+  // <BoardCardItem 
+  // sideOne={card.sideOneWord}
+  // sideTwo={card.sideTwoWord}
+  // key={card._id} 
+  // />);
+  console.log("BoardPageCardDisplay cardInfo", cardInfo)
 
   return (
     <div className="BoardPageCardDisplay">
-      {cardInfo} 
+      {cardInfo}
+      <BoardCardItem cardInfo /> 
     </div>
 
 

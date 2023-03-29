@@ -8,7 +8,7 @@ export default function BoardPage({ decks }) {
   const[answer, setAnswer] = useState({
     text: ""
   });
-  console.log("selected deck", selectedDeck);
+ 
 
   const deckList = decks.map(deck => 
     <BoardDeck 
@@ -25,6 +25,11 @@ export default function BoardPage({ decks }) {
   function handleSubmit(evt) {
     evt.preventDefault();
     console.log('submitted')
+    // need to have one card
+    // compare side two to the input
+    // if correct increase card score by one
+    // if wrong decrease it the score by one
+    
   }
 
     

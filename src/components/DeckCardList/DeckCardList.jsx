@@ -13,6 +13,8 @@ export default function DeckCardList({ cardsForDeck }) {
   cardId={card._id}
   />);
 
+  
+
   return (
     <ul className="phraseList">
       {cardList}
