@@ -27,7 +27,8 @@ const deckSchema = new Schema({
    }],
    user:{
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'User',
+    required: true,
    }
 }, {
   timestamps: true

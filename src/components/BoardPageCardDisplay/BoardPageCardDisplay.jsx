@@ -1,4 +1,4 @@
-export default function BoardPageCardDisplay({ decks }) {
+export default function BoardPageCardDisplay({ decks, deck }) {
   
 
   return (

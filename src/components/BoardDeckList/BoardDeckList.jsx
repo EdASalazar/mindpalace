@@ -1,19 +1,5 @@
-export default function BoardDeckList({decks, deck,
-  deckName, deckId, setSelectedDeck }) {
-  console.log("deck on list", deck);
-  if (!deck) {
-    console.log("no deck on list")
-  } else {
-    
-    console.log("deck on list", deck)
-  };
-  
-
-
-  
-
-
-
+export default function BoardDeckList({ deckName, deckId, setSelectedDeck }) {
+ 
   function handleClick() {
   setSelectedDeck(deckId)
 };
