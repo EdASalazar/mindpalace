@@ -5,7 +5,7 @@ import "./BoardPage.css"
 import * as decksAPI from '../../utilities/decks-api'
 
 export default function BoardPage({ decks }) {
-  const[selectedDeck, setSelectedDeck] = useState(decks[0]._id)
+  const[selectedDeck, setSelectedDeck] = useState(null)
   const[cardsForBoard, setCardsForBoard] = useState(null)
   const deck = decks.filter(deck => deck._id === selectedDeck)
   console.log("selected deck", selectedDeck)

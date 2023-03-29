@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BoardCardItem from "../BoardCardItem/BoardCardItem";
 
 export default function BoardPageCardDisplay({ cardsForBoard }) {
-  const cardInfo = cardsForBoard.map((card) => <BoardCardItem sideOne={card.sideOneWord} />);
+  // const cardInfo = cardsForBoard.map((card) => <BoardCardItem sideOne={card.sideOneWord} />);
   
 
 
@@ -10,7 +10,7 @@ export default function BoardPageCardDisplay({ cardsForBoard }) {
 
   return (
     <div className="BoardPageCardDisplay">
-      {cardInfo} 
+      {/* {cardInfo}  */}
     </div>
 
 
