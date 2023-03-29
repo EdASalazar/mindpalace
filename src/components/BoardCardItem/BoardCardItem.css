@@ -1,10 +1,24 @@
 .FlashCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   list-style: none;
-  width: 100%;
-  padding: 0 1vw 0 1vw;
-  background-color: tan;
+  width: 95%;
+  padding: 1vw;
+  background-color: rgb(242, 221, 194);
+  border: solid lime 1px;
+  margin: 1vw 1vw 1vw 1vw;
+}
+
+.FlashCardSideOne {
+  grid-row-start: 1;
+  grid-column: span 6;
+  border-bottom: solid 1px rgb(177, 154, 123);;
+
+}
+.FlashCardSideTwo {
+  grid-row-start: 2;
+  grid-column: span 6;
+  
 }

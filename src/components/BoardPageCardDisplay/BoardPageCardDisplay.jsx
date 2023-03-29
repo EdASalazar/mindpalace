@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import BoardCardItem from "../BoardCardItem/BoardCardItem";
+import "./BoardPageCardDisplay.css"
 
 export default function BoardPageCardDisplay({ cardsForBoard }) {
   

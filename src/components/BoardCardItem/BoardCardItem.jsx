@@ -1,3 +1,5 @@
+import "./BoardCardItem.css"
+
 export default function BoardCardItem({ sideOne, sideTwo }) {
   
   return(

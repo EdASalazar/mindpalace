@@ -1,0 +1,12 @@
+.BoardPageCardDisplay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  width: 30vw;
+  background-color: #f3d796;
+  border: solid lime 1px;
+  border-radius: 5%;
+  
+}
+
