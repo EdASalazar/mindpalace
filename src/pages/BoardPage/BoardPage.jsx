@@ -4,8 +4,11 @@ import BoardPageCardDisplay from "../../components/BoardPageCardDisplay/BoardPag
 import "./BoardPage.css"
 
 export default function BoardPage({ decks }) {
-  const[selectedDeck, setSelectedDeck] = useState(null)
-  console.log("selected deck", selectedDeck)
+  const[selectedDeck, setSelectedDeck] = useState(decks[0]);
+  const[answer, setAnswer] = useState({
+    text: ""
+  });
+  console.log("selected deck", selectedDeck);
 
   const deckList = decks.map(deck => 
     <BoardDeck 
@@ -13,7 +16,11 @@ export default function BoardPage({ decks }) {
       deck={deck}
       setSelectedDeck={setSelectedDeck}
     />
-  )
+  );
+  
+  function handleChange(evt) {
+    setAnswer({...answer, [evt.target.name]: evt.target.value})
+  };
     
 
   return (
@@ -26,6 +33,12 @@ export default function BoardPage({ decks }) {
       <ul>
         {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
       </ul>
+      <div className="AnswerForm">
+        <form action="">
+          <input type="text" name="text" value={answer.text} onChange={handleChange}/>
+          <button>Submit Answer</button>
+        </form>
+      </div>
     </div>
   )
 } 
