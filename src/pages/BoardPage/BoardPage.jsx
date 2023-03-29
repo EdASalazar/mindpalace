@@ -5,12 +5,15 @@ import "./BoardPage.css"
 
 export default function BoardPage({ decks }) {
   const[selectedDeck, setSelectedDeck] = useState(null)
+
   const deckList = decks.map(deck => 
   <BoardDeckList 
   deckName={deck.name} 
   deckId={deck._id} 
   key={deck._id}
   setSelectedDeck={setSelectedDeck}/>)
+
+  // const reviewDeck = decks.filter()
 
   return (
     <div className="BoardPage">

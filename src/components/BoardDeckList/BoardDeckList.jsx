@@ -5,6 +5,6 @@ export default function BoardDeckList({decks, deckName, deckId, setSelectedDeck 
 }
 
   return (
-    <li onClick={handleClick}>{deckName} {deckId}</li>
+    <li onClick={handleClick}>{deckName}</li>
   )
 }
