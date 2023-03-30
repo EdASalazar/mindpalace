@@ -14,12 +14,9 @@ export default function BoardCardItem({
     setAnswer({...answer, [evt.target.name]: evt.target.value})
   };
 
-  function handleSubmit(evt) {
+   function handleSubmit(evt) {
     evt.preventDefault();
     console.log('submitted');
-    console.log('answer', answer)
-    console.log('?', sideTwo)
-
     if (answer.text === `${sideTwo}`) {
       alert('correct')
       setI(i + 1);
