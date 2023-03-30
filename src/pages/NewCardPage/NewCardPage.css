@@ -6,6 +6,10 @@
 
 }
 
+select {
+  width: 30vw;
+}
+
 .NewCardPage {
   display: flex;
   flex-direction: column;
