@@ -1,13 +1,23 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react"
 import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 export default function DeckDetailPage({ decks }) {
+  const [detailId, setDetailId] = useState(null);
+  const [cardUpdate, setCardUpdate] = useState(null)
+  const [cardDelete, setCardDelete] = useState(null)
+  console.log(detailId);
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
   const deckArray = deckDetail[0];
   const deckCards = deckArray.cards;
+
+
+  const cardDetail = deckCards.filter(card => card._id === detailId);
+  console.log("card detail",cardDetail)
+
 
   return (
     <div className="DeckDetailPage">
@@ -19,7 +29,10 @@ export default function DeckDetailPage({ decks }) {
       </div>
       <aside>
       <h2>Phrases:</h2>
-         <DeckCardList cardsForDeck={deckCards}/>
+         <DeckCardList cardsForDeck={deckCards} 
+         setDetailId={setDetailId} setCardUpdate={setCardUpdate} 
+         setCardDelete={setCardDelete}
+         />
       </aside>
     </div>
   );
