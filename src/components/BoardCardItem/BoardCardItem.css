@@ -1,7 +1,7 @@
 .FlashCard {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   align-items: center;
   width: 30vw;
   padding: 1vw;
@@ -22,8 +22,20 @@
   padding: 1vw;
 
 }
-.FlashCardSideTwo {
+
+.winCheckResponse {
   grid-row-start: 2;
+  grid-column: 1 / span 4;
+  width: 20vw;
+  border-radius: 5%;
+  padding: 1vw;
+
+
+}
+
+
+.FlashCardSideTwo {
+  grid-row-start: 3;
   grid-column: 1 / span 4;
   width: 20vw;
   background-color: #f0e5cd;
@@ -36,7 +48,7 @@
 
 .AnswerForm {
   grid-column: 1 / span 4;
-  grid-row-start: 3;
+  grid-row-start: 4;
 }
 
 input {
@@ -45,6 +57,6 @@ input {
 button {
   width: 20vw;
   margin-bottom: 3vw;
-  grid-row-start: 4;
+  grid-row-start: 5;
   grid-column: 1 / span 4;
 }
