@@ -23,10 +23,11 @@ export default function DeckDetailPage({ decks }) {
     <div className="DeckDetailPage">
       <div className="DeckDetails">
         <h2>{deckArray.name}</h2>
-        <h4>{deckArray.category}</h4>
-        <h4>{deckArray.subject}</h4>
+        <h4>Catagory: {deckArray.category}</h4>
+        <h4>Subject {deckArray.subject}</h4>
         <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
+      
       <aside>
       <h2>Phrases:</h2>
          <DeckCardList cardsForDeck={deckCards} 

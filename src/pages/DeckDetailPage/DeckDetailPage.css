@@ -1,6 +1,8 @@
 .DeckDetailPage {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  justify-content: space-around;
+  /* grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto; */
 }
 
 .DeckDetails {
@@ -11,8 +13,9 @@
   margin-bottom: 1vw;
   width: 30vw;
   border-radius: 3%;
-  filter: drop-shadow(5px 5px 4px darkgrey);
-  grid-column-start: 2;
+  filter: drop-shadow(2px 2px 1px darkgrey);
+  grid-column-start: 3;
+  grid-row: 1;
 }
 
 aside {
@@ -24,10 +27,12 @@ aside {
   margin-bottom: 1vw;
   width: 30vw;
   border-radius: 3%;
-  filter: drop-shadow(5px 5px 4px darkgrey);
-  grid-column-start: 4;
-
+  filter: drop-shadow(2px 2px 1px darkgrey);
+  grid-column-start: 8;
+  grid-row: 1;
 }
+
+
 
 h2 {
   margin: .3vw 0 0 0;
