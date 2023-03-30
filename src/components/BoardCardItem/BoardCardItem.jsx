@@ -11,9 +11,6 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ, setAnswer,
     return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
     }
     
-    
-
-
   function handleChange(evt) {
     setAnswer({...answer, [evt.target.name]: evt.target.value})
   };
