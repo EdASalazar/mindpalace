@@ -17,13 +17,6 @@
 .DeckInfoItems > a:hover {
   color: white;
   background-color: #29c089;
-  /* border: solid lime .25vw; */
+
 }
 
-/* Link {
-  display: flex;
-  flex-direction: column;
-  margin: 1vw;
-  width: 30vw;
-  border-radius: 3%;
-} */
