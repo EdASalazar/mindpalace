@@ -13,6 +13,8 @@ export default function NavBar({ user, setUser }) {
       
       <span className='Welcome'>Welcome to Eliphluent, {user.name}</span>
       &nbsp;&nbsp;
+      <Link to="/trunks/new">Icebox</Link>
+      &nbsp; | &nbsp;
       <Link to="/decks">Trunks</Link>
       &nbsp; | &nbsp;
       <Link to="/decks/new">Add A Trunk</Link>
