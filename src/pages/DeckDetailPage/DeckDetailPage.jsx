@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
@@ -18,6 +18,9 @@ export default function DeckDetailPage({ decks }) {
   const cardDetail = deckCards.filter(card => card._id === detailId);
   console.log("card detail",cardDetail)
 
+  
+
+
 
   return (
     <div className="DeckDetailPage">
@@ -27,7 +30,7 @@ export default function DeckDetailPage({ decks }) {
         <h4>Subject {deckArray.subject}</h4>
         <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
-      
+
       <aside>
       <h2>Phrases:</h2>
          <DeckCardList cardsForDeck={deckCards} 

@@ -5,10 +5,12 @@ const cardSchema = new Schema({
   name: String,
   sideOneWord: {
     type: String,
+    trim: true,
     required: true,
   },
   sideTwoWord: {
     type: String,
+    trim: true,
     required: true,
   },
   image: String,
