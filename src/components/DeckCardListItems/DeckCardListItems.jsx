@@ -1,7 +1,7 @@
 import "./DeckCardListItems.css"
 
 
-export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId}) {
+export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId, setCardUpdate,  setCardDelete  }) {
  
 
   return (

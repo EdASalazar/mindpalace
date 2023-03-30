@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
-export default function DeckCardList({ cardsForDeck, setDetailId }) {
+export default function DeckCardList({ cardsForDeck, setDetailId, setCardUpdate,  setCardDelete }) {
  
 
   const cardList = cardsForDeck.map((card) =>
@@ -13,6 +13,8 @@ export default function DeckCardList({ cardsForDeck, setDetailId }) {
   cardId={card._id}
   cards={cardsForDeck}
   setDetailId={setDetailId}
+  setCardUpdate={setCardUpdate}
+  setCardDelete={setCardDelete} 
   />);
 
   
