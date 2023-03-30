@@ -1,8 +1,10 @@
+import { useEffect } from "react";
+
 import "./BoardCardItem.css"
 
 export default function BoardCardItem({ 
   sideOne, sideTwo, setI, setJ, setAnswer,
-  i, j, answer 
+  i, j, answer, length 
 }) {
   
 
@@ -16,14 +18,24 @@ export default function BoardCardItem({
     console.log('answer', answer)
     console.log('?', sideTwo)
     if (answer.text === `${sideTwo}`) {
-      console.log("correct")
+      alert('correct')
       setI(i + 1);
       setJ(j + 1);
+      setAnswer("");
     } else {
-      console.log('try again')
+      alert('try again');
     }
-
   }
+
+  useEffect(function() {
+    if(j === length) {
+      setI(0);
+      setJ(1);
+    }
+  }, [j]);
+
+
+  
 
 
   return(

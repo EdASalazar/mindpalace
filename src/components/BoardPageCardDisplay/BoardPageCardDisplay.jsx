@@ -22,6 +22,7 @@ export default function BoardPageCardDisplay({ cardsForBoard }) {
   j={j}
   answer={answer}
   setAnswer={setAnswer}
+  length={cardsForBoard.length}
   />);
 
 
