@@ -1,26 +1,21 @@
 .BoardPage {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(6, 1fr);;
 }
 
 aside {
-  grid-column-start: 2 / span 3;
+  grid-column: 2;
+  -ms-grid-column-span: 4;
   grid-row: 1 / span 6;
   height: 80vh;
 }
 
-ul {
-  grid-column-start: 5;
-  grid-row: 1; 
+.FlashCardForm {
+  grid-column: 7;
+  grid-row: 1;
+  -ms-grid-column-span: 4;
 }
-
-.AnswerForm {
-  grid-column-start: 5;
-  grid-row-start: 2;
-  margin-left: 1vw;
-}
-
 
 .DeckListBoard:nth-child(2)  {
   border: 0;

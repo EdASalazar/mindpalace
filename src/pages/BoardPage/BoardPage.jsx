@@ -18,25 +18,6 @@ export default function BoardPage({ decks }) {
     />
   );
   
-  function handleChange(evt) {
-    setAnswer({...answer, [evt.target.name]: evt.target.value})
-  };
-
-  // console.log(selectedDeck.cards)
-
-  // const questionCard = selectedDeck.cards[0].map(card => <BoardPageCardDisplay sideOne={card.sideOneWord} />)
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    console.log('submitted')
-    // need to have one card
-    // compare side two to the input
-    // if correct increase card score by one
-    // if wrong decrease it the score by one
-    
-  }
-
-    
 
   return (
     <div className="BoardPage">
@@ -45,15 +26,10 @@ export default function BoardPage({ decks }) {
             {deckList}
         </ul>
       </aside>
-      <ul>
+      <div className="FlashCardForm">
         {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
-      </ul>
-      <div className="AnswerForm">
-        <form action="">
-          <input type="text" name="text" value={answer.text} onChange={handleChange}/>
-          <button type='submit' onClick={handleSubmit}>Submit Answer</button>
-        </form>
       </div>
+    
     </div>
   )
 } 
