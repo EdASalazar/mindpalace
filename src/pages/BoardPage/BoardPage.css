@@ -5,16 +5,20 @@
 }
 
 aside {
-  grid-column: 2 span 4;
-  -ms-grid-column-span: 4;
+  grid-column: 3 / span 4;
   grid-row: 1 / span 6;
-  height: 80vh;
+  width: 30vw;
+  height: 50vw;
+  padding: 1vw;
 }
 
 .FlashCardForm {
-  grid-column: 6 / span 4;
-  grid-row: 1;
-
+  grid-column: 7 / span 4;
+  grid-row: 1 / span 6;
+  width: 30vw;
+  height: 50vw;
+  padding: 1vw;
+  margin: 0;
 }
 
 .DeckListBoard:nth-child(2)  {

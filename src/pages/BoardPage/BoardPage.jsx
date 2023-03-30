@@ -29,7 +29,6 @@ export default function BoardPage({ decks }) {
       <div className="FlashCardForm">
         {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
       </div>
-    
     </div>
   )
 } 

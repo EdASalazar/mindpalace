@@ -57,7 +57,7 @@ function handleSubmit(evt) {
 
       </div>
       <div className="AnswerForm">
-        <form action="">
+        <form>
           <input type="text" name="text" value={answer.text} onChange={handleChange}/>
           <button type='submit' onClick={handleSubmit}>Submit Answer</button>
         </form>
