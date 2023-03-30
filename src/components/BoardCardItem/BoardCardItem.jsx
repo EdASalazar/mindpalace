@@ -6,6 +6,7 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ, setAnswer,
   i, j, answer, length 
 }) {
   const[visible, setVisible] = useState(false);
+  const[wrong, setWrong] = useState(false);
 
   async function sleep(seconds) {
     return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
@@ -21,13 +22,15 @@ function handleSubmit(evt) {
     async function checkWin() {
     if (answer.text === `${sideTwo}`) {
       setVisible(true)
-      await sleep(1)
+      await sleep(1.5)
       setVisible(false)
       setI(i + 1);
       setJ(j + 1);
       setAnswer("");
     } else {
-      alert('try again');
+      setWrong(true)
+      await sleep(1)
+      setWrong(false)
     }
   }
   checkWin();
@@ -47,9 +50,11 @@ function handleSubmit(evt) {
       </div>
       <div className="winCheckResponse">
         {visible && <h4>Correct!</h4>}
+        {wrong && <h4>Wrong!</h4>}
       </div>
       <div className="FlashCardSideTwo">
        {visible && <div>{sideTwo}</div>}
+
       </div>
       <div className="AnswerForm">
         <form action="">
