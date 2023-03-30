@@ -44,7 +44,7 @@ function handleSubmit(evt) {
   }, [j]);
 
   return(
-    <div className="FlashCard">
+    <div className="FlashCards">
       <div className="FlashCardSideOne">
         {sideOne}
       </div>
