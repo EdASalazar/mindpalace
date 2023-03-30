@@ -13,9 +13,16 @@ export default function BoardCardItem({
   function handleSubmit(evt) {
     evt.preventDefault();
     console.log('submitted');
+    console.log('answer', answer)
+    console.log('?', sideTwo)
+    if (answer.text === `${sideTwo}`) {
+      console.log("correct")
+      setI(i + 1);
+      setJ(j + 1);
+    } else {
+      console.log('try again')
+    }
 
-    setI(i + 1);
-    setJ(j + 1);
   }
 
 
