@@ -5,13 +5,19 @@ export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId,
  
 
   return (
-    <li onClick={()=>setDetailId(cardId)}>
-        <span className="sideOne">
+    <>
+      <li onClick={()=>setDetailId(cardId)}>
+        <div className="sideOne">
         Side One: {sideOne}  
-        </span>
-        <span className="sideTwo">
+        </div>
+        <div className="sideTwo">
         Side Two: {sideTwo} 
-        </span>
-   </li>
+        </div>
+      </li>
+      <div className="DeckCardListItemButtons"> 
+        <button className="DeckCardListItemUpdate" onClick={() => setCardUpdate(cardId)}>Update</button> 
+        <button className="DeckCardListItemDelete"  onClick={() => setCardDelete(cardId)}>Delete</button>
+      </div>
+    </>
   )
 }

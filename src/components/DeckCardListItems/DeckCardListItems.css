@@ -30,3 +30,24 @@ li > a:hover {
   color: white;
   background-color: #29c089;
 }
+.DeckCardListItemButtons {
+  display: flex;
+  direction: row;
+}
+
+.DeckCardListItemButtons > div {
+  margin: 0 .5vw 0 .5vw ;
+}
+
+.DeckCardListItemUpdate {
+  background-color: teal;
+  border-radius: 5%;
+  margin: .5vw;
+  width: 10vw;
+}
+.DeckCardListItemDelete {
+  background-color: rgb(195, 23, 23);
+  border-radius: 5%;
+  margin: .5vw;
+  width: 10vw;
+}

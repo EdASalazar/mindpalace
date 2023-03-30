@@ -7,7 +7,7 @@ export default function DeckDetailPage({ decks }) {
   const [detailId, setDetailId] = useState(null);
   const [cardUpdate, setCardUpdate] = useState(null)
   const [cardDelete, setCardDelete] = useState(null)
-  console.log(detailId);
+  console.log(detailId, cardUpdate, cardDelete);
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
