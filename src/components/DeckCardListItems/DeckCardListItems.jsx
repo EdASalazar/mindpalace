@@ -7,10 +7,12 @@ export default function DeckCardListItem({
   setCardUpdate, setCardsDeckDetail, cardsForDeck,
  }) {
   
-  console.log("start", cardsForDeck)
+console.log("start", cardsForDeck)
+
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
-  setCardsDeckDetail(cardsForDeck.deleteOne(id))
+  const cards = await cardsForDeck.filter(card => card._id !== id);
+  setCardsDeckDetail(cards)
 } 
 
 
