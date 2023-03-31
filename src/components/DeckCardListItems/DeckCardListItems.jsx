@@ -2,11 +2,11 @@ import "./DeckCardListItems.css"
 import * as cardsAPI from "../../utilities/cards-api"
 
 
-export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId, setCardUpdate, setCards }) {
+export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId, setCardUpdate, setCards, cards, cardsForDeck }) {
  
 async function deleteACard(id) {
   const deletedCard = cardsAPI.deleteCard(id);
-  
+  setCards((deletedCard) => deletedCard.filter((card) => !deletedCard))
 } 
 
 

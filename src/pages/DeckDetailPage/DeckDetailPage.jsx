@@ -33,6 +33,7 @@ export default function DeckDetailPage({ decks, setCards, cards}) {
          <DeckCardList cardsForDeck={deckCards} 
          setDetailId={setDetailId} 
          setCards={setCards}
+         cards={cards}
          />
       </aside>
     </div>
