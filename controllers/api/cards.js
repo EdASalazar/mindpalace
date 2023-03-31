@@ -5,6 +5,7 @@ const Deck =require('../../models/deck');
 module.exports = {
   create,
   show,
+  deleteCard
 };
 
 async function create(req, res){
@@ -23,4 +24,13 @@ async function create(req, res){
 async function show(req, res) {
   const card = await Card.find({_id: req.params.id});
   res.json(card)
+}
+
+function deleteCard(req, res) {
+  console.log('controller', req.params.id)
+  Card.findById(req.params.id)
+      .then(function (card) {
+          card.deleteOne();
+          res.json(card)
+      });
 }

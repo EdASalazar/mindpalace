@@ -2,12 +2,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react"
 import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
+import * as cardsAPI from '../../utilities/cards-api'
 
-export default function DeckDetailPage({ decks }) {
+export default function DeckDetailPage({ decks, setCards, cards}) {
   const [detailId, setDetailId] = useState(null);
   const [cardUpdate, setCardUpdate] = useState(null)
-  const [cardDelete, setCardDelete] = useState(null)
-  console.log(detailId, cardUpdate, cardDelete);
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
@@ -16,9 +15,7 @@ export default function DeckDetailPage({ decks }) {
 
 
   const cardDetail = deckCards.filter(card => card._id === detailId);
-  console.log("card detail",cardDetail)
 
-  
 
 
 
@@ -34,8 +31,8 @@ export default function DeckDetailPage({ decks }) {
       <aside>
       <h2>Phrases:</h2>
          <DeckCardList cardsForDeck={deckCards} 
-         setDetailId={setDetailId} setCardUpdate={setCardUpdate} 
-         setCardDelete={setCardDelete}
+         setDetailId={setDetailId} 
+         setCards={setCards}
          />
       </aside>
     </div>

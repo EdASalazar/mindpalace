@@ -1,8 +1,14 @@
 import "./DeckCardListItems.css"
+import * as cardsAPI from "../../utilities/cards-api"
 
 
-export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId, setCardUpdate,  setCardDelete  }) {
+export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId, setCardUpdate, setCards }) {
  
+async function deleteACard(id) {
+  const deletedCard = cardsAPI.deleteCard(id);
+  
+} 
+
 
   return (
     <>
@@ -16,7 +22,7 @@ export default function DeckCardListItem({sideOne, sideTwo, cardId, setDetailId,
       </li>
       <div className="DeckCardListItemButtons"> 
         <button className="DeckCardListItemUpdate" onClick={() => setCardUpdate(cardId)}>Update</button> 
-        <button className="DeckCardListItemDelete"  onClick={() => setCardDelete(cardId)}>Delete</button>
+        <button className="DeckCardListItemDelete"  onClick={() => deleteACard(cardId)}>Delete</button>
       </div>
     </>
   )

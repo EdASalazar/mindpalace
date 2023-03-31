@@ -7,5 +7,10 @@ export async function create(newCard) {
 
 export async function getCard(id) {
   // console.log("id at cards-api", id);
-  return sendRequest(`${BASE_URL}/${id}`);
+  return sendRequest(`${BASE_URL}/${id}`,);
+}
+
+export async function deleteCard(id) {
+  console.log("id at cards-api", id);
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
