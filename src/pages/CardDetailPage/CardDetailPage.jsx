@@ -23,7 +23,6 @@ if (!cardDetail) {
     async function getCard() {
       const card = await cardsAPI.getCard(cardId);
       setCardDetail(card);
-
     }
     getCard();
     }

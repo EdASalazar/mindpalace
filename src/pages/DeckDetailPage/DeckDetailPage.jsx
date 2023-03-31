@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
-import * as cardsAPI from '../../utilities/cards-api'
 
-export default function DeckDetailPage({ decks, setCards, cards}) {
+
+export default function DeckDetailPage({ decks }) {
   const [detailId, setDetailId] = useState(null);
-  const [cardUpdate, setCardUpdate] = useState(null)
+  const [cardUpdated, setCardUpdate] = useState(null)
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
@@ -32,8 +32,6 @@ export default function DeckDetailPage({ decks, setCards, cards}) {
         <div className="scroll">
           <DeckCardList cardsForDeck={deckCards} 
           setDetailId={setDetailId} 
-          setCards={setCards}
-          cards={cards}
           />
         </div>
       </aside>
