@@ -49,5 +49,9 @@ li > a:hover {
 
 form {
   margin: 0;
-  width: 100%
+  width: 100%;
+}
+
+input {
+  width: 30vw;
 }

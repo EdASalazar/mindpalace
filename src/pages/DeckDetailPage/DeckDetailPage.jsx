@@ -35,7 +35,8 @@ export default function DeckDetailPage({ decks }) {
 
       <aside >
         <div className="scroll">
-          <DeckCardList cardsForDeck={cardsDeckDetail} 
+          <DeckCardList 
+          cardsForDeck={cardsDeckDetail} 
           setDetailId={setDetailId}
           setCardsDeckDetail={setCardsDeckDetail} 
           />

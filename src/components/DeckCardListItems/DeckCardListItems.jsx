@@ -8,40 +8,85 @@ export default function DeckCardListItem({
   setCardUpdate, setCardsDeckDetail, cardsForDeck,
  }) {
   
-const [edit, setEdit] = useState(false)
+const [editId, setEditId] = useState(null)
 const [deleteCard, setDeleteCard] = useState(false)
+const [editCard, setEditCard] = useState({
+  sideOneWord: "",
+  sideTwoWord: "",
+});
+
+async function sleep(seconds) {
+  return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
+  }
+  
+
+async function getEditedCard(editId) {
+  const card = await cardsForDeck.filter(card => card._id === editId);
+  setEditCard(card)
+}
 
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
   const cards = await cardsForDeck.filter(card => card._id !== id);
-  setCardsDeckDetail(cards)
-} 
+  setCardsDeckDetail(cards);
+}; 
 
+function handleChange(evt) {
+  setEditCard({...editCard, [evt.target.name]: evt.target.value})
+};
+
+
+function handleClick(){
+
+  setEditId(null);
+  
+}
+
+function handleSubmit(evt) {
+  evt.preventDefault();
+  setEditId(null);
+}
+
+function handleDeleteButton(evt) {
+  evt.preventDefault();
+  async function deleteButtonStatus(){
+    setDeleteCard(true)
+    await sleep(2)
+    setDeleteCard(false)
+  }
+  deleteButtonStatus()
+}
 
 
   return (
     <li onClick={()=>setDetailId(cardId)}>
       <form action="">
         <div className="sideOne">
-        Side One: {sideOne}  
+        {editId === cardId ? <input type=" " />
+        :
+        <div>Side One: {sideOne}</div> } 
         </div>
         <div className="sideTwo">
-        Side Two: {sideTwo} 
+        
+        {editId === cardId ? <input type=" " />
+        : 
+        <div>Side Two: {sideTwo} </div> } 
         </div>
+        
+        {!editId ? 
+          <button className="DeckCardListItemUpdate" onClick={() => setEditId(cardId)}>
+            Update
+          </button> 
+          :
+          <button className="DeckCardListItemUpdate" onClick={handleSubmit}>
+            Submit
+          </button> 
+        }
+
       </form>
       <div className="DeckCardListItemButtons"> 
-      {!edit ? 
-        <button className="DeckCardListItemUpdate" onClick={() => setEdit(true)}>
-          Update
-        </button> 
-        :
-        <button className="DeckCardListItemUpdate" onClick={() => setCardUpdate(cardId)}>
-          Submit
-        </button> 
-
-      }
       {!deleteCard ?
-        <button className="DeckCardListItemDelete"  onClick={() => setDeleteCard(true)}>
+        <button className="DeckCardListItemDelete"  onClick={handleDeleteButton}>
           Delete
         </button>
         :

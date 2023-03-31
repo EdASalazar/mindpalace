@@ -1,8 +1,7 @@
 .DeckDetailPage {
   display: flex;
   justify-content: space-around;
-  /* grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto; */
+
 }
 
 .DeckDetails {
