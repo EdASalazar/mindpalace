@@ -1,12 +1,11 @@
 .DeckInfoItems {
   display: flex;
   flex-direction: column;
-  background-color: #f3d796;
-  border: solid lime .25vw;
+  background-color: var(--card-bg);
   margin: 1vw;
   width: 30vw;
   border-radius: 3%;
-  filter: drop-shadow(5px 5px 4px darkgrey);
+  filter: drop-shadow(2px 2px 1px darkgrey);
 }
 
 .DeckInfoItems > a {
@@ -16,7 +15,7 @@
 
 .DeckInfoItems > a:hover {
   color: white;
-  background-color: #29c089;
+  background-color: var(--teal);
 
 }
 
