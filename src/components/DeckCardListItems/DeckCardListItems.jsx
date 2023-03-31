@@ -4,11 +4,13 @@ import * as cardsAPI from "../../utilities/cards-api"
 
 export default function DeckCardListItem({  
   sideOne, sideTwo, cardId, setDetailId, 
-  setCardUpdate,
+  setCardUpdate, setCardsDeckDetail, cardsForDeck,
  }) {
   
+  console.log("start", cardsForDeck)
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
+  setCardsDeckDetail(cardsForDeck.deleteOne(id))
 } 
 
 

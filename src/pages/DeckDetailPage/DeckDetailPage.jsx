@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
@@ -7,11 +7,16 @@ import DeckCardList from "../../components/DeckCardList/DeckCardList";
 export default function DeckDetailPage({ decks }) {
   const [detailId, setDetailId] = useState(null);
   const [cardUpdated, setCardUpdate] = useState(null)
+  const [cardsDeckDetail, setCardsDeckDetail] = useState([])
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
   const deckArray = deckDetail[0];
   const deckCards = deckArray.cards;
+  
+  useEffect(function() {
+    setCardsDeckDetail(deckCards)
+  }, [deckCards]);
 
 
   const cardDetail = deckCards.filter(card => card._id === detailId);
@@ -30,8 +35,9 @@ export default function DeckDetailPage({ decks }) {
 
       <aside >
         <div className="scroll">
-          <DeckCardList cardsForDeck={deckCards} 
-          setDetailId={setDetailId} 
+          <DeckCardList cardsForDeck={cardsDeckDetail} 
+          setDetailId={setDetailId}
+          setCardsDeckDetail={setCardsDeckDetail} 
           />
         </div>
       </aside>

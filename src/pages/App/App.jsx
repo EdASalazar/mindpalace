@@ -17,7 +17,7 @@ import AddTrunkPage from '../AddTrunkPage/AddTrunkPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]); 
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
