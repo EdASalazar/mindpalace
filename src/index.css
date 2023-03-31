@@ -161,7 +161,7 @@ nav {
   background-color: var(--teal);
   width: 100%;
   margin: 0 0 1vw 0;
-  border: solid var(--teal) 3vw;
+  border: solid var(--teal) 1vw;
   margin-top: 0;
 }
 
