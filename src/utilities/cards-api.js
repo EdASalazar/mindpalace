@@ -6,11 +6,11 @@ export async function create(newCard) {
 }
 
 export async function update(updatedCard) {
+  console.log("id at cards-api", updatedCard);
   return sendRequest(BASE_URL, 'PUT', updatedCard);
 }
 
 export async function getCard(id) {
-  // console.log("id at cards-api", id);
   return sendRequest(`${BASE_URL}/${id}`,);
 }
 
