@@ -1,0 +1,4 @@
+#BoardDeck {
+  background-color: var(--card-item) !important;
+  border: none !important;
+}

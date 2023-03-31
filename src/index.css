@@ -1,7 +1,7 @@
 /* CSS Custom Properties */
 :root {
   --white: #FFFFFF;
-  --tan-1: #FBF9F6;
+  --tan-1: #8f8f8e;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
@@ -9,7 +9,9 @@
   --orange: #dc8a33;
   --text-light: #363340;
   --text-dark: #252427;
-  --card-bg: #f3d796;
+  --card-border: #5c5c5c;
+  --card-item: #c8c8c8;
+  --card-bg: #a9a9a9d7;
   height: 100vh;
   width: 100vw;
 }
@@ -173,4 +175,11 @@ nav > span {
 .App {
   height: 100vh;
   width: 100vw;
+}
+
+.scroll {
+  overflow-y: scroll;
+  white-space: nowrap;
+  margin-top: 1vw;
+  scrollbar-color: light;
 }

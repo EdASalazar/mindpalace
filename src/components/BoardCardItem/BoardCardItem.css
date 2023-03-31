@@ -5,8 +5,7 @@
   justify-content: center;
   width: 30vw;
   height: 50vw;
-  background-color: #f3d796;
-  border: solid lime 1px;
+  background-color: var(--card-bg);
   border-radius: 5%;
 }
 
@@ -18,8 +17,7 @@
   border-bottom: solid 1px rgb(177, 154, 123);
   width: 28vw;
   height: 10vw;
-  background-color: #f0e5cd;
-  border: solid lime 1px;
+  background-color: var(--card-item);
   border-radius: 5%;
   padding: 1vw;
   overflow: hidden;
@@ -40,8 +38,8 @@
 
 .FlashCardSideTwo {
   width: 28vw;
-  background-color: #f0e5cd;
-  border: solid lime 1px;
+  background-color: var(--card-item);
+  border: solid var(--tan1) 1px;
   border-radius: 5%;
   padding: 1vw;
   height: 10vw;

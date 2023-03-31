@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import "./BoardCardItem.css"
 
 export default function BoardCardItem({ sideOne, sideTwo, setI, setJ, setAnswer,

@@ -1,15 +1,12 @@
 li {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  /* justify-content: start; */
   margin: 0;
   width: 100%;
   margin: 0 0 .2vw 0;
-  border: solid lime .25vw;
   border-radius: 5%;
-  filter: drop-shadow(1px 1px 2px darkgrey);
-  background-color: #f0e5cd;
+  filter: drop-shadow(1px 1px 2px rgb(58, 58, 58));
+  background-color: var(--card-item);
   padding: .2vw;
   white-space: nowrap;
   overflow: hidden;
@@ -23,7 +20,8 @@ li > a {
   justify-content: start;
   text-decoration: none;
   text-decoration: none;
-  color: black
+  color: black;
+  
 }
 
 li > a:hover {
@@ -51,3 +49,4 @@ li > a:hover {
   margin: .5vw;
   width: 10vw;
 }
+

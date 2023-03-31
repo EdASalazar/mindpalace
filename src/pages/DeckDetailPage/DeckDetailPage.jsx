@@ -28,13 +28,14 @@ export default function DeckDetailPage({ decks, setCards, cards}) {
         <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
 
-      <aside>
-      <h2>Phrases:</h2>
-         <DeckCardList cardsForDeck={deckCards} 
-         setDetailId={setDetailId} 
-         setCards={setCards}
-         cards={cards}
-         />
+      <aside >
+        <div className="scroll">
+          <DeckCardList cardsForDeck={deckCards} 
+          setDetailId={setDetailId} 
+          setCards={setCards}
+          cards={cards}
+          />
+        </div>
       </aside>
     </div>
   );
