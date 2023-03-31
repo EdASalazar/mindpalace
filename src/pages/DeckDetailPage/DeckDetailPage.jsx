@@ -13,7 +13,7 @@ export default function DeckDetailPage({ decks }) {
   const deckDetail = decks.filter(deck => deck._id === deckId);
   const deckArray = deckDetail[0];
   const deckCards = deckArray.cards;
-  
+ 
   useEffect(function() {
     setCardsDeckDetail(deckCards)
   }, [deckCards]);

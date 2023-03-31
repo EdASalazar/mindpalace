@@ -1,5 +1,5 @@
 import "./DeckCardListItems.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as cardsAPI from "../../utilities/cards-api"
 
 
@@ -7,9 +7,10 @@ export default function DeckCardListItem({
   sideOne, sideTwo, cardId, setDetailId, 
   setCardUpdate, setCardsDeckDetail, cardsForDeck,
  }) {
-  
-const [editId, setEditId] = useState(null)
+
+const [submitButton, setSubmitButton] = useState(true)
 const [deleteCard, setDeleteCard] = useState(false)
+const [editCardId, setEditCardId] = useState(null)
 const [editCard, setEditCard] = useState({
   sideOneWord: "",
   sideTwoWord: "",
@@ -17,13 +18,16 @@ const [editCard, setEditCard] = useState({
 
 async function sleep(seconds) {
   return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
-  }
-  
-
-async function getEditedCard(editId) {
-  const card = await cardsForDeck.filter(card => card._id === editId);
-  setEditCard(card)
 }
+  
+useEffect(function (){
+  async function getEditedCard() {
+    const card = await cardsForDeck.filter(card => card._id === editCardId);
+    setEditCard(card);
+    console.log('card', card)
+  }
+ getEditedCard();
+}, [])
 
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
@@ -36,16 +40,10 @@ function handleChange(evt) {
 };
 
 
-function handleClick(){
-
-  setEditId(null);
-  
-}
-
-function handleSubmit(evt) {
-  evt.preventDefault();
-  setEditId(null);
-}
+// function handleSubmit(evt) {
+//   evt.preventDefault();
+//   setEditId(null);
+// }
 
 function handleDeleteButton(evt) {
   evt.preventDefault();
@@ -57,43 +55,56 @@ function handleDeleteButton(evt) {
   deleteButtonStatus()
 }
 
+function handleUpdateButton(id) {
+  setEditCardId(id);
+  setSubmitButton(false);
+
+}
 
   return (
     <li onClick={()=>setDetailId(cardId)}>
       <form action="">
         <div className="sideOne">
-        {editId === cardId ? <input type=" " />
+        {!submitButton ? <input type="text" 
+        name="sideOneWord"
+        onChange={handleChange}
+        />
         :
         <div>Side One: {sideOne}</div> } 
         </div>
         <div className="sideTwo">
         
-        {editId === cardId ? <input type=" " />
+        {!submitButton ? <input 
+        type="text"
+        name="sideTwoWord"
+        onChange={handleChange} 
+        />
         : 
         <div>Side Two: {sideTwo} </div> } 
         </div>
-        
-        {!editId ? 
-          <button className="DeckCardListItemUpdate" onClick={() => setEditId(cardId)}>
-            Update
-          </button> 
-          :
-          <button className="DeckCardListItemUpdate" onClick={handleSubmit}>
+        {submitButton && 
+          <button className="DeckCardListItemUpdate" value="cardId" onClick={() => handleUpdateButton(cardId)}>
             Submit
           </button> 
+          }
+        </form>
+        {!submitButton && 
+          <button className="DeckCardListItemUpdate" onClick={() => setSubmitButton(true)}>
+            Update
+          </button> 
+     
         }
 
-      </form>
       <div className="DeckCardListItemButtons"> 
-      {!deleteCard ?
-        <button className="DeckCardListItemDelete"  onClick={handleDeleteButton}>
-          Delete
-        </button>
-        :
-        <button className="DeckCardListItemDelete"  onClick={() => deleteACard(cardId)}>
-          Confirm
-        </button>
-      }  
+        {!deleteCard ?
+          <button className="DeckCardListItemDelete"  onClick={handleDeleteButton}>
+            Delete
+          </button>
+          :
+          <button className="DeckCardListItemDelete"  onClick={() => deleteACard(cardId)}>
+            Confirm
+          </button>
+        }  
       </div>
     </li>
   )
