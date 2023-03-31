@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav>
       
-      <span className='Welcome'>Welcome to Eliphluent, {user.name}</span>
+      <span className='Welcome'>Welcome to Elephluent, {user.name}</span>
       &nbsp;&nbsp;
       <Link to="/trunks/new">Icebox</Link>
       &nbsp; | &nbsp;

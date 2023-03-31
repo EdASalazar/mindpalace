@@ -6,7 +6,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 // All paths start with '/api/decks'
 
 // POST /api/decks (create a user - sign up)
-router.post('/', decksCtrl.create)
+router.post('/', ensureLoggedIn, decksCtrl.create)
 // GET /api/
 router.get('/', decksCtrl.index)
 // GET /api/:id
