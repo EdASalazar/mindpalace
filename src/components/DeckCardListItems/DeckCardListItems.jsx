@@ -8,7 +8,7 @@ export default function DeckCardListItem({
   setCardUpdate, setCardsDeckDetail, cardsForDeck,
  }) {
 
-const [submitButton, setSubmitButton] = useState(true)
+const [submitButton, setSubmitButton] = useState(false)
 const [deleteCard, setDeleteCard] = useState(false)
 const [editCardId, setEditCardId] = useState(null)
 const [editCard, setEditCard] = useState({
@@ -65,8 +65,10 @@ function handleUpdateButton(id) {
     <li onClick={()=>setDetailId(cardId)}>
       <form action="">
         <div className="sideOne">
-        {!submitButton ? <input type="text" 
+        {submitButton ? <input 
+        type="text" 
         name="sideOneWord"
+        value={editCard.sideOneWord}
         onChange={handleChange}
         />
         :
@@ -74,9 +76,10 @@ function handleUpdateButton(id) {
         </div>
         <div className="sideTwo">
         
-        {!submitButton ? <input 
+        {submitButton ? <input 
         type="text"
         name="sideTwoWord"
+        value={editCard.sideTwoWord}
         onChange={handleChange} 
         />
         : 
@@ -90,7 +93,7 @@ function handleUpdateButton(id) {
         </form>
         {!submitButton && 
           <button className="DeckCardListItemUpdate" onClick={() => setSubmitButton(true)}>
-            Update
+            Edit
           </button> 
      
         }
