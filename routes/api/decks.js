@@ -3,7 +3,7 @@ const router = express.Router();
 const decksCtrl = require('../../controllers/api/decks')
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
-// All paths start with '/api/cards'
+// All paths start with '/api/decks'
 
 // POST /api/decks (create a user - sign up)
 router.post('/', decksCtrl.create)
