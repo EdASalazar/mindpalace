@@ -16,7 +16,7 @@ export default function DeckCardList({ cardsForDeck,
   setDetailId={setDetailId}
   setCardUpdate={setCardUpdate}
   setCardsDeckDetail={setCardsDeckDetail}
-  updateCard
+  updateCard={updateCard}
   />);
 
   

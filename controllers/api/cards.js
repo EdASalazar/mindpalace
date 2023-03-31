@@ -5,7 +5,8 @@ const Deck =require('../../models/deck');
 module.exports = {
   create,
   show,
-  deleteCard
+  deleteCard,
+  update
 };
 
 async function create(req, res){
@@ -33,4 +34,8 @@ function deleteCard(req, res) {
           card.deleteOne();
           res.json(card)
       });
+}
+
+function update(req, res) {
+  console.log("controller update")
 }

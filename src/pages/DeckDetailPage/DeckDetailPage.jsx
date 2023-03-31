@@ -4,7 +4,7 @@ import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 
-export default function DeckDetailPage({ decks }) {
+export default function DeckDetailPage({ decks, updateCard }) {
   const [detailId, setDetailId] = useState(null);
   const [cardUpdated, setCardUpdate] = useState(null)
   const [cardsDeckDetail, setCardsDeckDetail] = useState([])
@@ -39,7 +39,7 @@ export default function DeckDetailPage({ decks }) {
           cardsForDeck={cardsDeckDetail} 
           setDetailId={setDetailId}
           setCardsDeckDetail={setCardsDeckDetail}
-          updateCard 
+          updateCard={updateCard} 
           />
         </div>
       </aside>

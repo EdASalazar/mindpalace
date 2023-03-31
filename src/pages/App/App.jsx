@@ -22,7 +22,8 @@ export default function App() {
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
 async function updateCard(card) {
-  
+  console.log("card at app", card)
+  const upDatedCard = await cardsAPI.update(card);
 }
 
 async function addCard(card) {
