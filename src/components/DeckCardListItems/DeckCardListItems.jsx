@@ -5,13 +5,14 @@ import * as cardsAPI from "../../utilities/cards-api"
 
 export default function DeckCardListItem({  
   sideOne, sideTwo, cardId, setDetailId, 
-  setCardUpdate, setCardsDeckDetail, cardsForDeck,
+ setCardsDeckDetail, cardsForDeck, updateCard,
  }) {
 
 const [submitButton, setSubmitButton] = useState(false)
 const [deleteCard, setDeleteCard] = useState(false)
 const [editCardId, setEditCardId] = useState(null)
 const [editCard, setEditCard] = useState({
+  _id: cardId,
   sideOneWord: "",
   sideTwoWord: "",
 });
@@ -20,14 +21,14 @@ async function sleep(seconds) {
   return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
 }
   
-useEffect(function (){
-  async function getEditedCard() {
-    const card = await cardsForDeck.filter(card => card._id === editCardId);
-    setEditCard(card);
-    console.log('card', card)
-  }
- getEditedCard();
-}, [])
+// useEffect(function (){
+//   async function getEditedCard() {
+//     const card = await cardsForDeck.filter(card => card._id === editCardId);
+//     setEditCard(card);
+//     console.log('card', card);
+//   }
+//  getEditedCard();
+// }, [])
 
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
@@ -48,17 +49,29 @@ function handleChange(evt) {
 function handleDeleteButton(evt) {
   evt.preventDefault();
   async function deleteButtonStatus(){
-    setDeleteCard(true)
-    await sleep(2)
-    setDeleteCard(false)
+    setDeleteCard(true);
+    await sleep(2);
+    setDeleteCard(false);
   }
-  deleteButtonStatus()
+  deleteButtonStatus();
 }
 
-function handleUpdateButton(id) {
+function handleEditButton(id) {
   setEditCardId(id);
-  setSubmitButton(false);
+  setSubmitButton(true);
+}
 
+console.log('Edit Card', editCard);
+
+function handleSubmit(evt) {
+  evt.preventDefault();
+  updateCard(editCard)
+  setSubmitButton(false);
+  setEditCard({
+    _id: "",
+    sideOneWord: "",
+    sideTwoWord: "",
+  })
 }
 
   return (
@@ -86,13 +99,13 @@ function handleUpdateButton(id) {
         <div>Side Two: {sideTwo} </div> } 
         </div>
         {submitButton && 
-          <button className="DeckCardListItemUpdate" value="cardId" onClick={() => handleUpdateButton(cardId)}>
+          <button className="DeckCardListItemUpdate" value="cardId" onClick={handleSubmit}>
             Submit
           </button> 
           }
         </form>
         {!submitButton && 
-          <button className="DeckCardListItemUpdate" onClick={() => setSubmitButton(true)}>
+          <button className="DeckCardListItemUpdate" onClick={() => handleEditButton(cardId)}>
             Edit
           </button> 
      

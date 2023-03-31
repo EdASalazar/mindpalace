@@ -38,7 +38,8 @@ export default function DeckDetailPage({ decks }) {
           <DeckCardList 
           cardsForDeck={cardsDeckDetail} 
           setDetailId={setDetailId}
-          setCardsDeckDetail={setCardsDeckDetail} 
+          setCardsDeckDetail={setCardsDeckDetail}
+          updateCard 
           />
         </div>
       </aside>

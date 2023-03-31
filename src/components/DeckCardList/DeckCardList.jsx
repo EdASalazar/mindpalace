@@ -3,7 +3,7 @@ import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
 export default function DeckCardList({ cardsForDeck, 
-  setDetailId, setCardUpdate, setCardsDeckDetail }) {
+  setDetailId, setCardUpdate, setCardsDeckDetail, updateCard }) {
  
 
   const cardList = cardsForDeck.map((card) =>
@@ -16,6 +16,7 @@ export default function DeckCardList({ cardsForDeck,
   setDetailId={setDetailId}
   setCardUpdate={setCardUpdate}
   setCardsDeckDetail={setCardsDeckDetail}
+  updateCard
   />);
 
   

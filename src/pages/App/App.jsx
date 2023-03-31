@@ -21,7 +21,9 @@ export default function App() {
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
-
+async function updateCard(card) {
+  
+}
 
 async function addCard(card) {
   const newCard = await cardsAPI.create(card);
@@ -51,7 +53,7 @@ useEffect(function() {
               <Route path="/trunks/new" element={<AddTrunkPage /> } />
               <Route path="/cards/:cardId" element={<CardDetailPage addCard={addCard} decks={decks}/>} />
               <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks}/>} />
-              <Route path="/decks/:deckId" element={<DeckDetailPage  decks={decks} cards={cards} setCards={setCards}/>}/>
+              <Route path="/decks/:deckId" element={<DeckDetailPage  updateCard={updateCard} decks={decks} cards={cards} setCards={setCards}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/new" element={<NewDeckPage addDeck={addDeck}/>}/>
               <Route path="/board" element={<BoardPage decks={decks} />}/> 
