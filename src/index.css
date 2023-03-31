@@ -6,7 +6,7 @@
   --tan-3: #E2D9D1;
   --tan-4: #D3C1AE;
   --teal: #29c089;
-  --orange: #dc8a33;
+  --lime: rgb(9, 222, 9);
   --text-light: #363340;
   --text-dark: #252427;
   --card-border: #5c5c5c;
@@ -86,7 +86,7 @@ code {
 .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid var(--teal);
   border-radius: 1vmin;
 }
 
@@ -119,7 +119,7 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: var(--lime);
 }
 
 button, a.button {
