@@ -99,7 +99,7 @@ function handleSubmit(evt) {
           }
         </form>
         {!submitButton && 
-          <button className="DeckCardListItemUpdate" data-value1="cardI" data-value2="sideOne" data-value3="sideTwo" onClick={() => handleEditButton(cardId)}>
+          <button className="DeckCardListItemUpdate" data-value1="cardId" data-value2="sideOne" data-value3="sideTwo" onClick={() => handleEditButton(cardId)}>
             Edit
           </button> 
      
