@@ -1,0 +1,44 @@
+.NewCardForm {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  justify-content: center;
+
+}
+
+select {
+  width: 30vw;
+}
+
+.NewCardPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.DeckItems > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  height: 3vw;
+  font-size: 2vw;
+}
+
+select {
+  height: 3vw;
+  font-size: 2vw;
+}
+
+button {
+  height: 3vw;
+  font-size: 2vw;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
