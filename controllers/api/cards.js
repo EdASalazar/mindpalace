@@ -60,7 +60,8 @@ async function update(req, res) {
   id = req.body.id;
   console.log("controller update", id)
   const card = await Card.findById(id);
-  console.log("control", card)
-
-
+  console.log("control", card.sideOneWord)
+  card.sideOneWord = req.body.sideOneWord;
+  card.sideTwoWord = req.body.sideOneWord;
+  card.save()
   }
