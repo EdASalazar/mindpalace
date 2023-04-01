@@ -50,16 +50,17 @@ function deleteCard(req, res) {
 //     {new: true}
 // }
 
-function update(req, res) {
-    id = req.body.id;
-    const card = Card.findOne(card => card._id === id);
-    console.log("update CARD", card)
-  }
+// function update(req, res) {
+//     id = req.body.id;
+//     const card = Card.findOne(card => card._id === id);
+//     console.log("update CARD", card)
+//   }
 
 async function update(req, res) {
-  try{
+  id = req.body.id;
+  console.log("controller update", id)
+  const card = await Card.findById(id);
+  console.log("control", card)
 
-  } catch(erro) {
-    
-  }
+
   }
