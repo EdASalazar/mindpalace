@@ -17,18 +17,12 @@ const [editCard, setEditCard] = useState({
   sideTwoWord: "",
 });
 
+
+
 async function sleep(seconds) {
   return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
 }
   
-// useEffect(function (){
-//   async function getEditedCard() {
-//     const card = await cardsForDeck.filter(card => card._id === editCardId);
-//     setEditCard(card);
-//     console.log('card', card);
-//   }
-//  getEditedCard();
-// }, [])
 
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
@@ -40,11 +34,6 @@ function handleChange(evt) {
   setEditCard({...editCard, [evt.target.name]: evt.target.value})
 };
 
-
-// function handleSubmit(evt) {
-//   evt.preventDefault();
-//   setEditId(null);
-// }
 
 function handleDeleteButton(evt) {
   evt.preventDefault();
@@ -59,6 +48,11 @@ function handleDeleteButton(evt) {
 function handleEditButton(id) {
   setEditCardId(id);
   setSubmitButton(true);
+  setEditCard({
+    id: cardId,
+    sideOneWord: sideOne,
+    sideTwoWord: sideTwo,
+  });
 }
 
 console.log('Edit Card', editCard);
@@ -105,7 +99,7 @@ function handleSubmit(evt) {
           }
         </form>
         {!submitButton && 
-          <button className="DeckCardListItemUpdate" onClick={() => handleEditButton(cardId)}>
+          <button className="DeckCardListItemUpdate" data-value1="cardI" data-value2="sideOne" data-value3="sideTwo" onClick={() => handleEditButton(cardId)}>
             Edit
           </button> 
      

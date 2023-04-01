@@ -36,26 +36,6 @@ function deleteCard(req, res) {
       });
 }
 
-// async function update(req, res) {
-//   console.log("controller update", req.body)
-//   Card.findOneAndUpdate({_id: req.body.id}),
-//     req.body,
-//     {new: true}
-// }
-
-// async function update(req, res) {
-//   console.log("controller update", req.body)
-//   const card = await Card.find({_id: req.body.id}),
-//     req.body,
-//     {new: true}
-// }
-
-// function update(req, res) {
-//     id = req.body.id;
-//     const card = Card.findOne(card => card._id === id);
-//     console.log("update CARD", card)
-//   }
-
 async function update(req, res) {
   id = req.body.id;
   console.log("controller update", id)
