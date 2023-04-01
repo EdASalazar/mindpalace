@@ -64,5 +64,6 @@ async function update(req, res) {
   card.sideOneWord = req.body.sideOneWord;
   card.sideTwoWord = req.body.sideOneWord;
   card.save()
+  res.json(card)
   console.log('after edit card', card)
   }
