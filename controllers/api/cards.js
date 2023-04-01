@@ -42,7 +42,7 @@ async function update(req, res) {
   const card = await Card.findById(id);
   console.log("control", card.sideOneWord)
   card.sideOneWord = req.body.sideOneWord;
-  card.sideTwoWord = req.body.sideOneWord;
+  card.sideTwoWord = req.body.sideTwoWord;
   card.save()
   res.json(card)
   console.log('after edit card', card)

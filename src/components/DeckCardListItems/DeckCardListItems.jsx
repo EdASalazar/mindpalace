@@ -12,7 +12,7 @@ const [submitButton, setSubmitButton] = useState(false)
 const [deleteCard, setDeleteCard] = useState(false)
 const [editCardId, setEditCardId] = useState(null)
 const [editCard, setEditCard] = useState({
-  id: cardId,
+  id: "",
   sideOneWord: "",
   sideTwoWord: "",
 });
@@ -99,7 +99,7 @@ function handleSubmit(evt) {
           }
         </form>
         {!submitButton && 
-          <button className="DeckCardListItemUpdate" data-value1="cardId" data-value2="sideOne" data-value3="sideTwo" onClick={() => handleEditButton(cardId)}>
+          <button className="DeckCardListItemUpdate" value="cardId" onClick={() => handleEditButton(cardId)}>
             Edit
           </button> 
      
