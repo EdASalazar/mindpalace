@@ -24,8 +24,9 @@ export default function App() {
 async function updateCard(card) {
   console.log("card at app", card)
   const upDatedCard = await cardsAPI.update(card);
-  // const cards = await cardsForDeck.filter(card => card._id !== updateCard._id);
-  // setCardsForDeck(cards.push(upDatedCard));
+  const cards = await cardsForDeck.filter(card => card._id !== updateCard._id);
+  console.log('cards minus change', cards)
+  setCardsForDeck(cards.push(upDatedCard));
 }
 
 
