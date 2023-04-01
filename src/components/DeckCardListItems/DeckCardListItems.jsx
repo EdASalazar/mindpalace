@@ -66,12 +66,12 @@ console.log('Edit Card', editCard);
 function handleSubmit(evt) {
   evt.preventDefault();
   updateCard(editCard)
-  // setSubmitButton(false);
-  // setEditCard({
-  //   _id: "",
-  //   sideOneWord: "",
-  //   sideTwoWord: "",
-  // })
+  setSubmitButton(false);
+  setEditCard({
+    _id: "",
+    sideOneWord: "",
+    sideTwoWord: "",
+  })
 }
 
   return (
