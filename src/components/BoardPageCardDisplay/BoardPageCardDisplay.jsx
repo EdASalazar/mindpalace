@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import BoardCardItem from "../BoardCardItem/BoardCardItem";
 import "./BoardPageCardDisplay.css"
 
-export default function BoardPageCardDisplay({ cardsForBoard }) {
+export default function BoardPageCardDisplay({ cardsForBoard, setSkip }) {
   const [i, setI] = useState(0);
   const [j, setJ] = useState(1)
   const[answer, setAnswer] = useState({
@@ -23,6 +23,7 @@ export default function BoardPageCardDisplay({ cardsForBoard }) {
   answer={answer}
   setAnswer={setAnswer}
   length={cardsForBoard.length}
+  setSkip={setSkip}
   />);
 
 

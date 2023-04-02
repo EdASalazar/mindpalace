@@ -21,12 +21,10 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid var(--tan1) .25vw;
-  background-color: var(--card-bg);
+  justify-content: center;
   margin-bottom: 1vw;
   width: 30vw;
   border-radius: 3%;
-  filter: drop-shadow(2px 2px 1px rgb(71, 71, 71));
   grid-column-start: 8;
   grid-row: 1;
 }

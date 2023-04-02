@@ -5,6 +5,7 @@ import "./BoardPage.css"
 
 export default function BoardPage({ decks }) {
   const[selectedDeck, setSelectedDeck] = useState(decks[0]);
+  const[skip, setSkip] = useState(false);
   const[answer, setAnswer] = useState({
     text: ""
   });
@@ -27,7 +28,7 @@ export default function BoardPage({ decks }) {
         </ul>
       </aside>
       <div className="FlashCardForm">
-        {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
+        {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards} setSkip={setSkip}/>}
       </div>
     </div>
   )

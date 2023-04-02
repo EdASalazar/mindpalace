@@ -83,24 +83,13 @@ code {
   font-size: 2vmin;
 }
 
-.form-container {
-  padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--teal);
-  border-radius: 1vmin;
-}
 
 p.error-message {
   color: var(--orange);
   text-align: center;
 }
 
-form {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 1.25vmin;
-  color: var(--text-light);
-}
+
 
 label {
   font-size: 2vmin;
@@ -108,15 +97,6 @@ label {
   align-items: center;
 }
 
-input {
-  padding: 1vmin;
-  font-size: 2vmin;
-  border: .1vmin solid var(--teal);
-  border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
-  outline: none;
-}
 
 input:focus {
   border-color: var(--lime);
@@ -152,10 +132,6 @@ button:disabled, form:invalid button[type="submit"] {
   background-color: var(--tan-4);
 }
 
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
-}
 
 nav {
   background-color: var(--teal);

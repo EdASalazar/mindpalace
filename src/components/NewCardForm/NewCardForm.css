@@ -1,13 +1,8 @@
-.NewCardForm {
+form {
   display: flex;
   flex-direction: column;
-  width: 60vw;
-  justify-content: center;
-
-}
-
-select {
   width: 30vw;
+  justify-content: center;
 }
 
 .NewCardPage {
@@ -24,12 +19,14 @@ select {
 }
 
 input {
-  height: 3vw;
-  font-size: 2vw;
+  height: 4vw;
+  font-size: 3vw;
 }
+
 
 select {
   height: 3vw;
+  width: 30vw;
   font-size: 2vw;
 }
 

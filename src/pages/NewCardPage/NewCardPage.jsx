@@ -8,12 +8,14 @@ export default function NewCardPage({ addCard, decks, addDeck, setCurrentDeckId 
 
   return (
     <div className="NewCardPage">
-      <div className="NewCardPageDeck">
-        <NewDeckForm decks={decks} addDeck={addDeck}/>
-      </div>
-      <div className="NewCardPageCard">
-        <NewCardForm addCard={addCard} decks={decks}/>
-      </div>
+      <aside>
+        <div className="NewCardPageDeck">
+          <NewDeckForm decks={decks} addDeck={addDeck}/>
+        </div>
+        <div className="NewCardPageCard">
+          <NewCardForm addCard={addCard} decks={decks}/>
+        </div>
+      </aside>
     </div>
   );
 }

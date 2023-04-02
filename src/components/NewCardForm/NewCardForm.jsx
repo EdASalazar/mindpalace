@@ -30,8 +30,6 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
   }
 
   return (
-    <div className="NewCardPage">
-      <h4>Add A Tusk</h4>
       <form className="NewCardForm">
      
       {/*---- Select the deck you want to add the card to  */}
@@ -67,6 +65,5 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
         />
         <button type="submit" onClick={handleSubmit}>Add A Tusk</button>
       </form>
-    </div>
   );
 }
