@@ -6,9 +6,15 @@
 
 }
 
+.NewDeckForm {
+  width: 30vw;
+}
+
 .NewCardPage {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  height: 100vh;
 }
 
 .DeckItems > ul {
@@ -17,6 +23,9 @@
   margin: 0;
 }
 
+.NewCardPageDeck {
+  width: 30vw;
+}
 
 button {
   height: 3vw;
@@ -28,10 +37,21 @@ button {
   
 }
 
-aside {
-  grid-column: 1;
+.NewCardPageAside {
+  grid-column: 3 / span 3;
+  grid-row: 1 / span 8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 30vh;
+  width: 30vw;
+  
+}
+
+.NewCardPageCardList {
+  grid-column: 7/ span 5;
+  grid-row: 2 / span 8;
+  width: 30vw;
+  height: 60vh;
 }

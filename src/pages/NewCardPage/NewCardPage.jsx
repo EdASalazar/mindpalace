@@ -4,22 +4,26 @@ import NewCardForm from "../../components/NewCardForm/NewCardForm"
 import NewDeckForm from "../../components/NewDeckForm/NewDeckForm";
 import './NewCardPage.css'
 
-export default function NewCardPage({ addCard, decks, addDeck, setCurrentDeckId, cardsForDeck }) {
+export default function NewCardPage({ addCard, decks, addDeck, 
+  cardsDeckDetail, setDetailId, setCardsDeckDetail, updateCard 
+}) {
 
 
   return (
     <div className="NewCardPage">
-      <aside>
-        <div className="NewCardPageDeck">
+      <div className="NewCardPageAside">
+          <h4>Add To Your Trunk:</h4>
           <NewDeckForm decks={decks} addDeck={addDeck}/>
+          <NewCardForm addCard={addCard} decks={decks} setDetailId={setDetailId}/>
+      </div>
+        <div className="NewCardPageCardList scroll">
+          <DeckCardList           
+          cardsForDeck={cardsDeckDetail} 
+          setDetailId={setDetailId}
+          setCardsDeckDetail={setCardsDeckDetail}
+          updateCard={updateCard}  
+          />
         </div>
-        <div className="NewCardPageCard">
-          <NewCardForm addCard={addCard} decks={decks}/>
-        </div>
-        <div>
-          <DeckCardList cardsForDeck={cardsForDeck} />
-        </div>
-      </aside>
     </div>
   );
 }

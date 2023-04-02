@@ -4,10 +4,7 @@ import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 
-export default function DeckDetailPage({ decks, updateCard }) {
-  const [detailId, setDetailId] = useState(null);
-  const [cardUpdated, setCardUpdate] = useState(null)
-  const [cardsDeckDetail, setCardsDeckDetail] = useState([])
+export default function DeckDetailPage({ decks, updateCard, setDetailId, detailId, setCardsDeckDetail, cardsDeckDetail }) {
   const { deckId } = useParams();
 
   const deckDetail = decks.filter(deck => deck._id === deckId);
