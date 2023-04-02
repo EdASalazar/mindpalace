@@ -51,7 +51,7 @@ useEffect(function() {
             <Routes>
               {/* Route components in here */}
               <Route path="/cards/:cardId" element={<CardDetailPage addCard={addCard} decks={decks}/>} />
-              <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks} addDeck={addDeck}/>} />
+              <Route path="/cards/new" element={<NewCardPage addCard={addCard} decks={decks} addDeck={addDeck} cardsForDeck={cardsForDeck}/>} />
               <Route path="/decks/:deckId" element={<DeckDetailPage  updateCard={updateCard} decks={decks} cards={cards} setCards={setCards}/>}/>
               <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
               <Route path="/board" element={<BoardPage decks={decks} />}/> 
