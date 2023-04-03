@@ -19,7 +19,7 @@ export default function App() {
   const [cardsForDeck, setCardsForDeck] = useState(null);
   // Not sure if I need this.
   // can you update the same state from different pages?
-  const [cardsForCreate, setCardsForCreate] = useState(null);
+  // const [cardsForCreate, setCardsForCreate] = useState(null);
 
 async function updateCard(card) {
   const upDatedCard = await cardsAPI.update(card);
@@ -55,9 +55,9 @@ useEffect(function() {
                 addCard={addCard} 
                 addDeck={addDeck}
                 updateCard={updateCard}
-                setCardsForCreate={setCardsForCreate}
+                // setCardsForCreate={setCardsForCreate}
                 setCardsForDeck={setCardsForDeck}
-                cardsForCreate={cardsForCreate} 
+                // cardsForCreate={cardsForCreate} 
                 decks={decks}
                 cardsForDeck={cardsForDeck} 
                 />} 
@@ -72,6 +72,7 @@ useEffect(function() {
               <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/board" element={<BoardPage decks={decks} />}/>
               <Route page="*" element={<Navigate to="/board"/>} />
+              {/* <Route page="/" element={<Navigate to="/decks"/>} /> */}
             </Routes>
           </>
           :

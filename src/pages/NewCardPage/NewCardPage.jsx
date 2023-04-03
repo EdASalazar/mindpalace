@@ -9,15 +9,15 @@ export default function NewCardPage({ addCard, decks, addDeck,
 }) {
 
 
-  const [deckId, setDeckId] = useState(decks[0]._id)
+  const [deckId, setDeckId] = useState(decks[0]._id);
 
   useEffect(function() {
     async function getCards() {
       const deck = decks.filter(deck => deck._id === deckId);
-    const deckArray = deck[0];
-    const cards = deckArray.cards;
-    setCardsForDeck(cards)
-      };
+      const deckArray = deck[0];
+      const cards = deckArray.cards;
+      setCardsForDeck(cards);
+    };
     getCards();
   }, [deckId]);
 
