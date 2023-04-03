@@ -20,10 +20,11 @@ export default function App() {
   // Not sure if I need this.
   // can you update the same state from different pages?
   // const [cardsForCreate, setCardsForCreate] = useState(null);
+// console.log('user', user._id)
 
 async function updateCard(card) {
   const upDatedCard = await cardsAPI.update(card);
-}
+};
 
 
 async function addCard(card) {
@@ -37,15 +38,21 @@ async function addDeck(deck) {
 
 useEffect(function() {
   async function getDecks() {
-    const decks = await decksAPI.getAllForUser();
-    setDecks(decks);
+    if (!user) {
+      console.log('loading ')
+    } else {
+      const decks = await decksAPI.getAllForUser();
+      setDecks(decks);
+    }
   }
   getDecks();
-}, []);
+}, [user]);
+
+
 
   return (
     <main className="App">
-      { user ?
+      { user ?  
           <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
@@ -75,7 +82,8 @@ useEffect(function() {
               {/* <Route page="/" element={<Navigate to="/decks"/>} /> */}
             </Routes>
           </>
-          :
+      
+          : 
           <AuthPage setUser={setUser} />
 
       }
