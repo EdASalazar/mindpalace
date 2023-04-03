@@ -29,7 +29,7 @@ if (!deckArray) return null;
             <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
         </div>
       }
-      <aside>
+      <aside className="DeckDetailAside">
         <div className="scroll">
           <DeckCardList 
           cardsForDeck={cardsForDeck}
