@@ -14,9 +14,10 @@ useEffect(() => {
   const cards =  deckArray.cards;
   setDeckArray(deckArray);
   setCardsForDeck(cards);
-}, [deckId, decks, setCardsForDeck]);
+}, [deckId, decks, setCardsForDeck, updateCard]);
 
 if (!deckArray) return null;
+if (!decks) return null;
 
   return (
     <div className="DeckDetailPage">

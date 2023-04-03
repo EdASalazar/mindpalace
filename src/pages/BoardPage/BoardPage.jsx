@@ -28,6 +28,7 @@ export default function BoardPage({ decks }) {
         </ul>
       </aside>
       <div className="FlashCardForm">
+        {!selectedDeck && "Selected A Deck "}
         {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards} setSkip={setSkip}/>}
       </div>
     </div>

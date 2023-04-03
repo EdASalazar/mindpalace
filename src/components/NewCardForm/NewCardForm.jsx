@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './NewCardForm.css'
 
-export default function NewCardPage({ addCard, decks, setDeckId, setDeckDetailId }) {
+export default function NewCardPage({ addCard, decks, setDeckId }) {
   const [newCard, setNewCard] = useState({
     deck: "",
     sideOneWord: "",
@@ -36,12 +36,12 @@ export default function NewCardPage({ addCard, decks, setDeckId, setDeckDetailId
       {/*---- Select the deck you want to add the card to  */}
      
      <select name="deck" value={newCard.deck} onChange={handleChange}>
+       <option value="null">Add A Trunk</option>
         {decks.map((deck)=>(
           <option value={deck._id} key={deck._id} >
             {deck.name}
           </option>
         ))}
-        <option value="">Add A Trunk</option>
       </select>
 
         {/* --- form inputs for the flash card below -- */}
