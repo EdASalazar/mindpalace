@@ -28,7 +28,6 @@ async function show(req, res) {
 }
 
 function deleteCard(req, res) {
-  console.log('controller', req.params.id)
   Card.findById(req.params.id)
       .then(function (card) {
           card.deleteOne();

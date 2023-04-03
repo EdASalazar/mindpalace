@@ -4,7 +4,7 @@ import './DeckCardList.css'
 
 export default function DeckCardList({ cardsForDeck, updateCard, setCardsForDeck, }) {
 
-//  console.log('list', cardsForDeck)
+ console.log('list', cardsForDeck)
 
 
 const cardList = cardsForDeck.map((card) =>

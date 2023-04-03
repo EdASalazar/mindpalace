@@ -15,13 +15,14 @@ export default function NewCardPage({ addCard, decks, addDeck,
     async function getCards() {
       const deck = decks.filter(deck => deck._id === deckId);
       const deckArray = deck[0];
-      const cards = deckArray.cards;
+      const cards = await deckArray.cards;
       setCardsForDeck(cards);
+      console.log('this function runs!');
     };
     getCards();
   }, [deckId]);
 
-
+  if (!decks) return null;
 
   return (
     <div className="NewCardPage">

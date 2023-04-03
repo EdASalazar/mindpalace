@@ -6,32 +6,30 @@ import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 export default function DeckDetailPage({  decks, updateCard, setCardsForDeck, cardsForDeck }) {
   const { deckId } = useParams();
+  const [deckArray, setDeckArray ] = useState(null);
   
-
+useEffect(() => {
   const deck = decks.filter(deck => deck._id === deckId);
   const deckArray = deck[0];
   const cards =  deckArray.cards;
-  setCardsForDeck(cards)
+  setDeckArray(deckArray);
+  setCardsForDeck(cards);
+}, [deckId, decks, setCardsForDeck]);
 
-
-  useEffect(function() {
-    async function getCards() {
-
-      };
-    getCards();
-  }, [deckId]);
-
-
+if (!deckArray) return null;
 
   return (
     <div className="DeckDetailPage">
-      <div className="DeckDetails">
-          <h2>{deckArray.name}</h2>
-          <h4>Catagory: {deckArray.category}</h4>
-          <h4>Subject: {deckArray.subject}</h4>
-          <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
-      </div>
-      <aside >
+      {!deckId ?  <div>"Loading.."</div>
+      :  
+        <div className="DeckDetails">
+            <h2>{deckArray.name}</h2>
+            <h4>Catagory: {deckArray.category}</h4>
+            <h4>Subject: {deckArray.subject}</h4>
+            <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
+        </div>
+      }
+      <aside>
         <div className="scroll">
           <DeckCardList 
           cardsForDeck={cardsForDeck}
