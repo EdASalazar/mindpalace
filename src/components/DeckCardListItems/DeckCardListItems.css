@@ -1,5 +1,6 @@
 .DeckCardLi {
   width: 30vw;
+  height: 20vh;
   margin: 0 0 .5vh 0;
   border-radius: 5%;
   filter: drop-shadow(1px 1px 2px rgb(186, 186, 186));
@@ -8,6 +9,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 2vw;
 }
 
 .DeckCardLi > a {
@@ -33,16 +35,19 @@
 
 .DeckCardListItemButtons > div {
   margin: 0 .5vw 0 .5vw ;
+  display: flex;
 }
 
 .DeckCardListItemUpdate {
   margin: .5vw;
   width: 10vw;
+  display: inline;
 }
 .DeckCardListItemDelete {
   background-color: rgb(195, 23, 23);
   margin: .5vw;
   width: 10vw;
+  display: inline;
 }
 
 input {
@@ -52,9 +57,18 @@ input {
 
 .DeckCardListItemsRow {
   width: 25vw;
-  height: 10vh;
+  height: 5vh;
+  font-size: 4vh;
+
+
 }
 
 .DeckCardLi form {
   width: 30vw;
+}
+
+.DeckCardLi input {
+  height: 5vh;
+  width: 20vw;
+  margin: 0;
 }
