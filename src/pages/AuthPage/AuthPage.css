@@ -1,0 +1,23 @@
+.AuthPageMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../../public/Images//ElephantForAuth.jpg');
+  background-blend-mode: hard-light;
+  background-color: rgb(111, 104, 95);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+}
+
+
+.AuthPageMain form {
+  width: 30vw;
+  opacity: 1;
+}
+
+.AuthPageMain h1 {
+  color: var(--teal);
+}
