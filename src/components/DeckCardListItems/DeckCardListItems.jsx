@@ -4,8 +4,7 @@ import * as cardsAPI from "../../utilities/cards-api"
 
 
 export default function DeckCardListItem({  
-  sideOne, sideTwo, cardId, setDetailId, 
- setCardsDeckDetail, cardsForDeck, updateCard,
+  sideOne, sideTwo, cardId, key, updateCard, setCardsForDeck, cardsForDeck
  }) {
 
 const [submitButton, setSubmitButton] = useState(false)
@@ -17,17 +16,14 @@ const [editCard, setEditCard] = useState({
   sideTwoWord: "",
 });
 
-
-
 async function sleep(seconds) {
   return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
 }
   
-
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
   const cards = await cardsForDeck.filter(card => card._id !== id);
-  setCardsDeckDetail(cards);
+  setCardsForDeck(cards);
 }; 
 
 function handleChange(evt) {
@@ -69,7 +65,7 @@ function handleSubmit(evt) {
 }
 
   return (
-    <li onClick={()=>setDetailId(cardId)}>
+    <li>
       <form action="">
         <div className="sideOne">
         {submitButton ? <input 

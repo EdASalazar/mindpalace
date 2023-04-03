@@ -4,42 +4,34 @@ import "./DeckDetailPage.css"
 import DeckCardList from "../../components/DeckCardList/DeckCardList";
 
 
-export default function DeckDetailPage({ decks, updateCard, setDetailId, detailId, setCardsDeckDetail, cardsDeckDetail }) {
+export default function DeckDetailPage({  decks, updateCard, setCardsForDeck, cardsForDeck }) {
   const { deckId } = useParams();
+  
 
-  const deckDetail = decks.filter(deck => deck._id === deckId);
-  const deckArray = deckDetail[0];
-  const deckCards = deckArray.cards;
- 
-  useEffect(function() {
-    setCardsDeckDetail(deckCards)
-  }, [deckCards]);
-
-
-  const cardDetail = deckCards.filter(card => card._id === detailId);
-
-
+  const deck = decks.filter(deck => deck._id === deckId);
+  const deckArray = deck[0];
+  const cards =  deckArray.cards;
+  setCardsForDeck(cards)
 
 
   return (
     <div className="DeckDetailPage">
       <div className="DeckDetails">
-        <h2>{deckArray.name}</h2>
-        <h4>Catagory: {deckArray.category}</h4>
-        <h4>Subject {deckArray.subject}</h4>
-        <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
+          <h2>{deckArray.name}</h2>
+          <h4>Catagory: {deckArray.category}</h4>
+          <h4>Subject: {deckArray.subject}</h4>
+          <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
       </div>
-
       <aside >
         <div className="scroll">
           <DeckCardList 
-          cardsForDeck={cardsDeckDetail} 
-          setDetailId={setDetailId}
-          setCardsDeckDetail={setCardsDeckDetail}
-          updateCard={updateCard} 
+          cardsForDeck={cardsForDeck}
+          updateCard={updateCard}
+          setCardsForDeck={setCardsForDeck}
           />
         </div>
       </aside>
+  
     </div>
   );
 }

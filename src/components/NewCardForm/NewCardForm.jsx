@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './NewCardForm.css'
 
-export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
+export default function NewCardPage({ addCard, decks, setCurrentDeckId, setDeckDetailId }) {
   const [newCard, setNewCard] = useState({
     deck: "",
     sideOneWord: "",
@@ -13,7 +13,8 @@ export default function NewCardPage({ addCard, decks, setCurrentDeckId }) {
   
 
   function handleChange(evt) {
-    setNewCard({...newCard, [evt.target.name]: evt.target.value})
+    setNewCard({...newCard, [evt.target.name]: evt.target.value});
+    setDeckDetailId(newCard.deck)
   }
 
   function handleSubmit(evt) {

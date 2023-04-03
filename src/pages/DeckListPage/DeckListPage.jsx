@@ -11,6 +11,7 @@ deckName={deck.name}
 category={deck.category}
 subject={deck.subject}
 key={deck._id}
+
 />)
 
 

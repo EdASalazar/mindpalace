@@ -1,23 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
-export default function DeckCardList({ cardsForDeck, 
-  setDetailId, setCardUpdate, setCardsDeckDetail, updateCard }) {
- 
+export default function DeckCardList({ cardsForDeck, updateCard, setCardsForDeck, }) {
+
+
+
 
   const cardList = cardsForDeck.map((card) =>
-  <DeckCardListItem 
-  sideOne={card.sideOneWord} 
-  sideTwo={card.sideTwoWord} 
-  key={card._id}
-  cardId={card._id}
-  cardsForDeck={cardsForDeck}
-  setDetailId={setDetailId}
-  setCardUpdate={setCardUpdate}
-  setCardsDeckDetail={setCardsDeckDetail}
-  updateCard={updateCard}
-  />);
+    <DeckCardListItem 
+      sideOne={card.sideOneWord} 
+      sideTwo={card.sideTwoWord} 
+      key={card._id}
+      cardId={card._id}
+      updateCard={updateCard}
+      cardsForDeck={cardsForDeck}
+      setCardsForDeck={setCardsForDeck}
+    />);
 
   
 

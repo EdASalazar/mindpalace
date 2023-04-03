@@ -15,22 +15,16 @@ import BoardPage from '../BoardPage/BoardPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-  const [cards, setCards] = useState([]); 
   const [decks, setDecks] = useState([]);
-  const [detailId, setDetailId] = useState(null);
-  const [cardsDeckDetail, setCardsDeckDetail] = useState([])
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
-
 async function updateCard(card) {
-  // console.log("card at app", card, "cardsForDeck", cardsForDeck)
   const upDatedCard = await cardsAPI.update(card);
 }
 
 
 async function addCard(card) {
   const newCard = await cardsAPI.create(card);
-  setCards([...cards, newCard])
 };
 
 async function addDeck(deck) {
@@ -56,26 +50,21 @@ useEffect(function() {
               <Route path="/cards/:cardId" element={<CardDetailPage addCard={addCard} decks={decks}/>} />
               <Route path="/cards/new" element={<NewCardPage 
                 addCard={addCard} 
+                addDeck={addDeck}
+                updateCard={updateCard}
+                setCardsForDeck={setCardsForDeck}
+                cardsForDeck={cardsForDeck} 
                 decks={decks} 
-                addDeck={addDeck} 
-                cardsForDeck={cardsForDeck}
-                setDetailId={setDetailId}
-                detailId={detailId}
-                setCardsDeckDetail={setCardsDeckDetail}
-                cardsDeckDetail={cardsDeckDetail}/>} 
+                />} 
               />
               <Route path="/decks/:deckId" element={<DeckDetailPage  
                 updateCard={updateCard} 
-                decks={decks} 
-                cards={cards} 
-                setCards={setCards}
-                setDetailId={setDetailId}
-                detailId={detailId}
-                setCardsDeckDetail={setCardsDeckDetail}
-                cardsDeckDetail={cardsDeckDetail}
+                setCardsForDeck={setCardsForDeck} 
+                decks={decks}
+                cardsForDeck={cardsForDeck}  
                 />}
               />
-              <Route path="/decks" element={<DeckListPage decks={decks} cardsForDeck={cardsForDeck}/>} />
+              <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/board" element={<BoardPage decks={decks} />}/> 
             </Routes>
           </>
