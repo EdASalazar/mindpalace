@@ -5,9 +5,17 @@ import NewDeckForm from "../../components/NewDeckForm/NewDeckForm";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, addDeck, 
-  cardsDeckDetail, setDetailId, setCardsDeckDetail, updateCard, setDeckDetailId 
+ setCardsForDeck, updateCard, cardsForDeck 
 }) {
- 
+  const [deckId, setDeckId] =useState(decks[0]._id)
+
+
+  const deck = decks.filter(deck => deck._id === deckId);
+  const deckArray = deck[0];
+  const cards =  deckArray.cards;
+  setCardsForDeck(cards)
+
+
 
   return (
     <div className="NewCardPage">
@@ -16,16 +24,14 @@ export default function NewCardPage({ addCard, decks, addDeck,
           <NewDeckForm decks={decks} addDeck={addDeck}/>
           <NewCardForm addCard={addCard} 
           decks={decks} 
-          setDetailId={setDetailId}
-          setDeckDetailId={setDeckDetailId}
+          setDeckId={setDeckId}
         />
       </div>
         <div className="NewCardPageCardList scroll">
           <DeckCardList           
-          cardsForDeck={cardsDeckDetail} 
-          setDetailId={setDetailId}
-          setCardsDeckDetail={setCardsDeckDetail}
+          cardsForDeck={cardsForDeck} 
           updateCard={updateCard}  
+          setCardsForDeck={setCardsForDeck}
           />
         </div>
     </div>
