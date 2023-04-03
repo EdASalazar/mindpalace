@@ -14,6 +14,15 @@ export default function DeckDetailPage({  decks, updateCard, setCardsForDeck, ca
   setCardsForDeck(cards)
 
 
+  useEffect(function() {
+    async function getCards() {
+
+      };
+    getCards();
+  }, [deckId]);
+
+
+
   return (
     <div className="DeckDetailPage">
       <div className="DeckDetails">

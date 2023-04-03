@@ -10,16 +10,6 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
 
   const [deckId, setDeckId] = useState(decks[0]._id)
-  // console.log("deckId", deckId)
-  // const deck = decks.filter(deck => deck._id === deckId);
-  // // console.log('deck', deck)
-  // const deckArray = deck[0];
-  // // console.log('deckArray', deckArray)
-  // const cards = deckArray.cards;
-  // console.log('create cards', cards, deckArray)
-  // setCardsForDeck(cards)
-  // console.log('what Im sending',cardsForDeck)
-
 
   useEffect(function() {
     async function getCards() {

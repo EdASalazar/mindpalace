@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav>
       
-      <span className='Welcome'>Welcome to Elephluent, {user.name}</span>
+      <span className='Welcome'>Elephluent</span>
       &nbsp;&nbsp;
       <Link to="/decks">Trunks</Link>
       &nbsp; | &nbsp;
