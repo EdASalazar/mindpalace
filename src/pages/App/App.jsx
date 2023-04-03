@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import NewCardPage from '../NewCardPage/NewCardPage'
@@ -70,7 +70,8 @@ useEffect(function() {
                 />}
               />
               <Route path="/decks" element={<DeckListPage decks={decks}/>} />
-              <Route path="/board" element={<BoardPage decks={decks} />}/> 
+              <Route path="/board" element={<BoardPage decks={decks} />}/>
+              <Route page="*" element={<Navigate to="/board"/>} />
             </Routes>
           </>
           :
