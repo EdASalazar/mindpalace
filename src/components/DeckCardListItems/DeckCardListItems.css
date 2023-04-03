@@ -2,7 +2,7 @@
   width: 30vw;
   height: 20vh;
   margin: 0 0 .5vh 0;
-  border-radius: 5%;
+  border-radius: 2%;
   filter: drop-shadow(1px 1px 2px rgb(186, 186, 186));
   background-color: var(--card-item);
   padding: .2vw;

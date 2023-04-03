@@ -14,7 +14,7 @@ useEffect(() => {
   const cards =  deckArray.cards;
   setDeckArray(deckArray);
   setCardsForDeck(cards);
-}, [deckId, decks]);
+}, [deckId]);
 
 if (!deckArray) return null;
 if (!decks) return null;
