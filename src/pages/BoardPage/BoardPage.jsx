@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import BoardDeck from '../../components/BoardDeck/BoardDeck';
 import BoardPageCardDisplay from "../../components/BoardPageCardDisplay/BoardPageCardDisplay";
 import "./BoardPage.css"

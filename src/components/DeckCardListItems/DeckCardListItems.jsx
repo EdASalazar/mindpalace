@@ -1,5 +1,5 @@
 import "./DeckCardListItems.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import * as cardsAPI from "../../utilities/cards-api"
 
 

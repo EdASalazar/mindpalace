@@ -1,11 +1,7 @@
-import { useEffect, useState } from "react";
 import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
 export default function DeckCardList({ cardsForDeck, updateCard, setCardsForDeck, }) {
-
- console.log('list', cardsForDeck)
-
 
 const cardList = cardsForDeck.map((card) =>
 <DeckCardListItem 
@@ -17,7 +13,6 @@ const cardList = cardsForDeck.map((card) =>
         cardsForDeck={cardsForDeck}
         setCardsForDeck={setCardsForDeck}
         />);
-        
         
 if (!cardsForDeck) return null;
 
