@@ -1,9 +1,9 @@
 .NewCardForm {
   display: flex;
   flex-direction: column;
-  width: 30vw;
   justify-content: center;
-
+  width: 30vw;
+  height: auto;
 }
 
 .NewDeckForm {
@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  height: 100vh;
+
 }
 
 .DeckItems > ul {
@@ -39,19 +39,19 @@ button {
 
 .NewCardPageAside {
   grid-column: 3 / span 3;
-  grid-row: 1 / span 8;
+  grid-row: 1 / span 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: auto;
   width: 30vw;
   
 }
 
 .NewCardPageCardList {
   grid-column: 7/ span 5;
-  grid-row: 2 / span 8;
+  grid-row: 2 / span 1;
   width: 60vw;
-  height: 60vh;
+  height: auto;
 }

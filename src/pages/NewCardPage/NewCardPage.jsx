@@ -5,7 +5,7 @@ import NewDeckForm from "../../components/NewDeckForm/NewDeckForm";
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, addDeck, 
-  setCardsForCreate, updateCard, cardsForCreate 
+  setCardsForDeck, updateCard, cardsForDeck 
 }) {
   const [deckId, setDeckId] = useState(decks[2]._id)
   console.log("deckId", deckId)
@@ -15,8 +15,8 @@ export default function NewCardPage({ addCard, decks, addDeck,
   console.log('deckArray', deckArray)
   const cards = deckArray.cards[0];
   console.log('create cards', cards, deckArray)
-  setCardsForCreate(cards)
-  console.log('what Im sending',cardsForCreate)
+  setCardsForDeck(cards)
+  console.log('what Im sending',cardsForDeck)
 
 
   // useEffect(function() {
@@ -39,9 +39,9 @@ export default function NewCardPage({ addCard, decks, addDeck,
       </div>
         {/* <div className="NewCardPageCardList scroll">
           <DeckCardList           
-          cardsForDeck={cardsForCreate} 
+          cardsForDeck={cardsForDeck} 
           updateCard={updateCard}  
-          setCardsForDeck={setCardsForCreate}
+          setCardsForDeck={setCardsForDeck}
           />
         </div> */}
     </div>
