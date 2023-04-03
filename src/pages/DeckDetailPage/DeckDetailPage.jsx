@@ -25,7 +25,7 @@ if (!decks) return null;
       :  
         <div className="DeckDetails">
             <h2>{deckArray.name}</h2>
-            <h4>Catagory: {deckArray.category}</h4>
+            <h4>Category: {deckArray.category}</h4>
             <h4>Subject: {deckArray.subject}</h4>
             <p>Created: {new Date(deckArray.createdAt).toLocaleDateString()}</p>
         </div>

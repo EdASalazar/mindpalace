@@ -28,7 +28,6 @@ export default function NewCardPage({ addCard, decks, addDeck,
   return (
     <div className="NewCardPage">
       <div className="NewCardPageAside">
-          <h4>Add To Your Trunk:</h4>
           <NewDeckForm decks={decks} addDeck={addDeck}/>
           <NewCardForm addCard={addCard} 
             decks={decks} 

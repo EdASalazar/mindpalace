@@ -1,11 +1,8 @@
 .DeckCardLi {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  width: 100%;
-  margin: 0 0 .2vw 0;
+  width: 30vw;
+  margin: 0 0 .5vh 0;
   border-radius: 5%;
-  filter: drop-shadow(1px 1px 2px rgb(58, 58, 58));
+  filter: drop-shadow(1px 1px 2px rgb(186, 186, 186));
   background-color: var(--card-item);
   padding: .2vw;
   white-space: nowrap;
@@ -50,9 +47,17 @@
 
 form {
   margin: 0;
-  width: 100%;
+  width: 30vw;
 }
 
 input {
   width: 30vw;
+}
+
+.DeckCardListItemsRow {
+  width: 30vw;
+}
+
+.DeckCardLi button {
+  display: inline-block;
 }

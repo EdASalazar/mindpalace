@@ -44,7 +44,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: auto;
+  height: 80vh;
   width: 30vw;
   
 }
@@ -52,6 +52,6 @@ button {
 .NewCardPageCardList {
   grid-column: 7/ span 5;
   grid-row: 1 / span 1;
-  width: 60vw;
-  height: auto;
+  width: 33vw;
+  height: 80vh;
 }

@@ -1,18 +1,20 @@
 .DeckDetailPage {
   display: flex;
   justify-content: space-around;
+  height: 100vh;
 
 }
 
 .DeckDetails {
   display: flex;
   flex-direction: column;
-  background-color: var(--card-bg);
+  background-color: var(--card-item);
   border: solid var(--tan1) .25vw;
   margin-bottom: 1vw;
   width: 30vw;
+  height: 50vh;
   border-radius: 3%;
-  filter: drop-shadow(2px 2px 1px rgb(71, 71, 71));
+  filter: drop-shadow(2px 2px 1px var(--card-bg));
   grid-column-start: 3;
   grid-row: 1;
 }
@@ -24,6 +26,7 @@
   justify-content: center;
   margin-bottom: 1vw;
   width: 30vw;
+  height: 80vh;
   border-radius: 3%;
   grid-column-start: 8;
   grid-row: 1;

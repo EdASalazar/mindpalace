@@ -72,9 +72,10 @@ function handleSubmit(evt) {
         name="sideOneWord"
         value={editCard.sideOneWord}
         onChange={handleChange}
+        className="DeckCardListItemsRow"
         />
         :
-        <div>Side One: {sideOne}</div> } 
+        <div className="DeckCardListItemsRow">Side One: {sideOne}</div> } 
         </div>
         <div className="sideTwo">
         
@@ -82,23 +83,25 @@ function handleSubmit(evt) {
         type="text"
         name="sideTwoWord"
         value={editCard.sideTwoWord}
-        onChange={handleChange} 
+        onChange={handleChange}
+        className="DeckCardListItemsRow" 
         />
         : 
-        <div>Side Two: {sideTwo} </div> } 
+        <div className="DeckCardListItemsRow">Side Two: {sideTwo} </div> } 
         </div>
-        {submitButton && 
+
+      
+        {submitButton ?
           <button className="DeckCardListItemUpdate" value="cardId" onClick={handleSubmit}>
             Submit
           </button> 
-          }
-        </form>
-        {!submitButton && 
+            :
           <button className="DeckCardListItemUpdate" value="cardId" onClick={() => handleEditButton(cardId)}>
-            Edit
-          </button> 
+          Edit
+          </button>
+        } 
+          </form>
      
-        }
 
       <div className="DeckCardListItemButtons"> 
         {!deleteCard ?
@@ -110,7 +113,7 @@ function handleSubmit(evt) {
             Confirm
           </button>
         }  
-      </div>
+        </div>
     </li>
   )
 }
