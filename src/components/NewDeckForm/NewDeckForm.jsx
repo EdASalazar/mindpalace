@@ -10,8 +10,6 @@ const [newDeck, setNewDeck] = useState({
 
 function handleChange(evt) {
   setNewDeck({...newDeck, [evt.target.name]: evt.target.value})
-  console.log("newDeck", newDeck._id)
-  setDeckId(newDeck._id)
 }
 
 function handleSubmit(evt) {
@@ -23,7 +21,6 @@ function handleSubmit(evt) {
     subject: "",
     });
   }
-
 
 
   return (
