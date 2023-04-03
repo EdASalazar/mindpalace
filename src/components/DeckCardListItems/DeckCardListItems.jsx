@@ -17,7 +17,7 @@ const [editCard, setEditCard] = useState({
 });
 
 async function sleep(seconds) {
-  return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
+  return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 }
   
 async function deleteACard(id) {
@@ -50,8 +50,6 @@ function handleEditButton(id) {
     sideTwoWord: sideTwo,
   });
 }
-
-console.log('Edit Card', editCard);
 
 function handleSubmit(evt) {
   evt.preventDefault();

@@ -17,6 +17,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
+  const [cardsForCreate, setCardsForCreate] = useState(null);
 
 async function updateCard(card) {
   const upDatedCard = await cardsAPI.update(card);
@@ -52,8 +53,8 @@ useEffect(function() {
                 addCard={addCard} 
                 addDeck={addDeck}
                 updateCard={updateCard}
-                setCardsForDeck={setCardsForDeck}
-                cardsForDeck={cardsForDeck} 
+                setCardsForCreate={setCardsForCreate}
+                cardsForCreate={cardsForCreate} 
                 decks={decks} 
                 />} 
               />
