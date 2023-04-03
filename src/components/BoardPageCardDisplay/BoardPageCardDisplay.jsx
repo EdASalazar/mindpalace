@@ -6,7 +6,7 @@ export default function BoardPageCardDisplay({ cardsForBoard, setSkip }) {
   const [i, setI] = useState(0);
   const [j, setJ] = useState(1)
   const[answer, setAnswer] = useState({
-    text: null,
+    text: "",
   });
   
   
