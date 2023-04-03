@@ -14,7 +14,7 @@ export default function NewCardPage({ addCard, decks, setDeckId, setDeckDetailId
 
   function handleChange(evt) {
     setNewCard({...newCard, [evt.target.name]: evt.target.value});
-    setDeckId(newCard.deck)
+    // setDeckId(newCard.deck)
   }
 
   function handleSubmit(evt) {

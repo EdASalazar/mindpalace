@@ -7,18 +7,23 @@ import './NewCardPage.css'
 export default function NewCardPage({ addCard, decks, addDeck, 
   setCardsForCreate, updateCard, cardsForCreate 
 }) {
-  const [deckId, setDeckId] = useState(decks[0]._id)
+  const [deckId, setDeckId] = useState(decks[2]._id)
+  console.log("deckId", deckId)
+  const deck = decks.filter(deck => deck._id === deckId);
+  console.log('deck', deck)
+  const deckArray = deck[0];
+  console.log('deckArray', deckArray)
+  const cards = deckArray.cards[0];
+  console.log('create cards', cards, deckArray)
+  setCardsForCreate(cards)
+  console.log('what Im sending',cardsForCreate)
 
-  useEffect(function() {
-    async function getCards() {
-      const deck = decks.filter(deck => deck._id === deckId);
-      const deckArray = await deck[0];
-      const cards =  await deckArray.cards;
-      console.log('create cards', cards)
-      setCardsForCreate(cards)
-    };
-    getCards();
-  }, [deckId]);
+
+  // useEffect(function() {
+  //   async function getCards() {
+  //   };
+  //   getCards();
+  // }, [deckId]);
 
 
 
@@ -32,13 +37,13 @@ export default function NewCardPage({ addCard, decks, addDeck,
           setDeckId={setDeckId}
         />
       </div>
-        <div className="NewCardPageCardList scroll">
+        {/* <div className="NewCardPageCardList scroll">
           <DeckCardList           
           cardsForDeck={cardsForCreate} 
           updateCard={updateCard}  
           setCardsForDeck={setCardsForCreate}
           />
-        </div>
+        </div> */}
     </div>
   );
 }
