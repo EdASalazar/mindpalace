@@ -7,13 +7,15 @@ import './NewCardPage.css'
 export default function NewCardPage({ addCard, decks, addDeck, 
   setCardsForDeck, updateCard, cardsForDeck 
 }) {
+
+
   const [deckId, setDeckId] = useState(decks[2]._id)
-  console.log("deckId", deckId)
+  // console.log("deckId", deckId)
   const deck = decks.filter(deck => deck._id === deckId);
-  console.log('deck', deck)
+  // console.log('deck', deck)
   const deckArray = deck[0];
-  console.log('deckArray', deckArray)
-  const cards = deckArray.cards[0];
+  // console.log('deckArray', deckArray)
+  const cards = deckArray.cards;
   console.log('create cards', cards, deckArray)
   setCardsForDeck(cards)
   console.log('what Im sending',cardsForDeck)
@@ -37,13 +39,13 @@ export default function NewCardPage({ addCard, decks, addDeck,
           setDeckId={setDeckId}
         />
       </div>
-        {/* <div className="NewCardPageCardList scroll">
+        <div className="NewCardPageCardList scroll">
           <DeckCardList           
           cardsForDeck={cardsForDeck} 
           updateCard={updateCard}  
           setCardsForDeck={setCardsForDeck}
           />
-        </div> */}
+        </div>
     </div>
   );
 }

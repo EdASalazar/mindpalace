@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import "./NewDeckForm.css"
 
-export default function NewDeckForm({ addDeck }) {
+export default function NewDeckForm({ addDeck, setDeckId }) {
 const [newDeck, setNewDeck] = useState({
   name: "",
   category: "",
@@ -10,6 +10,8 @@ const [newDeck, setNewDeck] = useState({
 
 function handleChange(evt) {
   setNewDeck({...newDeck, [evt.target.name]: evt.target.value})
+  console.log("newDeck", newDeck._id)
+  setDeckId(newDeck._id)
 }
 
 function handleSubmit(evt) {

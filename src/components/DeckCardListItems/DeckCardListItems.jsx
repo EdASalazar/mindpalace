@@ -4,7 +4,7 @@ import * as cardsAPI from "../../utilities/cards-api"
 
 
 export default function DeckCardListItem({  
-  sideOne, sideTwo, cardId, key, updateCard, setCardsForDeck, cardsForDeck
+  sideOne, sideTwo, cardId, updateCard, setCardsForDeck, cardsForDeck
  }) {
 
 const [submitButton, setSubmitButton] = useState(false)
