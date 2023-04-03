@@ -23,12 +23,12 @@ async function sleep(seconds) {
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
   const cards =  cardsForDeck.filter(card => card._id !== id);
-  console.log('deleted cards', cards)
+  console.log('deleted cards', cards);
   setCardsForDeck(cards);
 }; 
 
 function handleChange(evt) {
-  setEditCard({...editCard, [evt.target.name]: evt.target.value})
+  setEditCard({...editCard, [evt.target.name]: evt.target.value});
 };
 
 
@@ -54,7 +54,7 @@ function handleEditButton(id) {
 
 function handleSubmit(evt) {
   evt.preventDefault();
-  updateCard(editCard)
+  updateCard(editCard);
   setSubmitButton(false);
   setEditCard({
     _id: "",
@@ -67,27 +67,26 @@ function handleSubmit(evt) {
     <li className="DeckCardLi">
       <form action="">
         <div className="sideOne">
-        {submitButton ? <input 
-        type="text" 
-        name="sideOneWord"
-        value={editCard.sideOneWord}
-        onChange={handleChange}
-        className="DeckCardListItemsRow"
-        />
+          {submitButton ? <input 
+            type="text" 
+            name="sideOneWord"
+            value={editCard.sideOneWord}
+            onChange={handleChange}
+            className="DeckCardListItemsRow"
+          />
         :
         <div className="DeckCardListItemsRow">Side One: {sideOne}</div> } 
         </div>
         <div className="sideTwo">
-        
-        {submitButton ? <input 
-        type="text"
-        name="sideTwoWord"
-        value={editCard.sideTwoWord}
-        onChange={handleChange}
-        className="DeckCardListItemsRow" 
-        />
-        : 
-        <div className="DeckCardListItemsRow">Side Two: {sideTwo} </div> } 
+          {submitButton ? <input 
+            type="text"
+            name="sideTwoWord"
+            value={editCard.sideTwoWord}
+            onChange={handleChange}
+            className="DeckCardListItemsRow" 
+          />
+          :
+          <div className="DeckCardListItemsRow">Side Two: {sideTwo} </div> } 
         </div>
 
       
