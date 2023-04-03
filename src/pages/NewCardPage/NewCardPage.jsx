@@ -20,7 +20,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
       console.log('this function runs!');
     };
     getCards();
-  }, [deckId]);
+  }, [deckId, decks, cardsForDeck, setCardsForDeck]);
 
   if (!decks) return null;
 

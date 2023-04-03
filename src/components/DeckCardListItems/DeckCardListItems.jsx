@@ -64,7 +64,7 @@ function handleSubmit(evt) {
 }
 
   return (
-    <li>
+    <li className="DeckCardLi">
       <form action="">
         <div className="sideOne">
         {submitButton ? <input 

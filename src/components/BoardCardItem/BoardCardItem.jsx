@@ -56,7 +56,7 @@ function handleSubmit(evt) {
       setI(0);
       setJ(1);
     }
-  }, [j]);
+  }, [j, i]);
 
   return(
     <div className="FlashCards">
