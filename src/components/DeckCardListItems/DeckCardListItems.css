@@ -45,19 +45,16 @@
   width: 10vw;
 }
 
-form {
-  margin: 0;
-  width: 30vw;
-}
-
 input {
-  width: 30vw;
+  width: 25vw;
+  height: 10vh;
 }
 
 .DeckCardListItemsRow {
-  width: 30vw;
+  width: 25vw;
+  height: 10vh;
 }
 
-.DeckCardLi button {
-  display: inline-block;
+.DeckCardLi form {
+  width: 30vw;
 }

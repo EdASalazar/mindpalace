@@ -89,7 +89,6 @@ function handleSubmit(evt) {
           <div className="DeckCardListItemsRow">Side Two: {sideTwo} </div> } 
         </div>
 
-      
         {submitButton ?
           <button className="DeckCardListItemUpdate" value="cardId" onClick={handleSubmit}>
             Submit
@@ -100,9 +99,7 @@ function handleSubmit(evt) {
           </button>
         } 
           </form>
-     
-
-      <div className="DeckCardListItemButtons"> 
+      
         {!deleteCard ?
           <button className="DeckCardListItemDelete"  onClick={handleDeleteButton}>
             Delete
@@ -112,7 +109,7 @@ function handleSubmit(evt) {
             Confirm
           </button>
         }  
-        </div>
+   
     </li>
   )
 }
