@@ -33,7 +33,7 @@ function handleSubmit(evt) {
     evt.preventDefault();
     console.log('submitted');
     async function checkWin() {
-    if (answer.text === `${sideTwo}`) {
+    if (answer.text.toLowerCase === sideTwo.toLowerCase) {
       setVisible(true)
       setCorrect(true)
       await sleep(1.5)
@@ -56,7 +56,7 @@ function handleSubmit(evt) {
       setI(0);
       setJ(1);
     }
-  }, [j, i]);
+  }, [j, i, length]);
 
   return(
     <div className="FlashCards">
@@ -73,7 +73,7 @@ function handleSubmit(evt) {
       </div>
       <div className="AnswerForm">
         <form>
-          <input type="text" name="text" value={answer.text} onChange={handleChange}/>
+          <input type="text" name="text" onChange={handleChange}/>
           <button type='submit' onClick={handleSubmit}>Submit Answer</button>
         </form>
         <button type="submit" onClick={handleClickSkip}>Skip</button>

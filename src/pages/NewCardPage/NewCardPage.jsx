@@ -13,14 +13,16 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
   useEffect(function() {
     async function getCards() {
-      const deck = decks.find(deck => deck._id === deckId);
+      const deck = await decks.find(deck => deck._id === deckId);
       setDeck(deck);
       setCardsForDeck(deck.cards);
       console.log('this function runs!');
     };
     getCards();
   }, [deckId, decks, cardsForDeck, setCardsForDeck]);
-
+  
+ 
+  
   if (!decks) return <h1>Waiting For the Pack</h1>;
 
 
