@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       
       <span className='Welcome'>Elephluent</span>
       &nbsp;&nbsp;
-      <Link to="/">Create</Link>
+      <Link to="/">Manage</Link>
       &nbsp; | &nbsp;
       <Link to="/board">Practice</Link>
       &nbsp; | &nbsp;
