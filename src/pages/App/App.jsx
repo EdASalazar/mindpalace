@@ -20,7 +20,7 @@ export default function App() {
 async function updateCard(cardData) {
   const upDatedCard = await cardsAPI.update(cardData);
   const cards = cardsForDeck.filter(card => card._id !== cardData._id);
-  setCardsForDeck([...cards, upDatedCard])
+  setCardsForDeck(cards)
 };
 
 
