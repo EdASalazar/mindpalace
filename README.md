@@ -45,11 +45,11 @@ Once you add a Trunk it is time to start adding Tusks to the Trunk.
 After you've built your first Trunk head over to the practice area and start reviewing. 
 
 ## Next Steps
--Adding sound effects.
--Tracking the number of days in a row a user has used the app.
--Creating a leaderboard for the most days in a row a user has used the app.
--Integrating the Webster Dictionary API.
--Making the board a component instead of seperate page.
--Creating a search function. 
+1. Adding sound effects.
+2. Tracking the number of days in a row a user has used the app.
+3. Creating a leaderboard for the most days in a row a user has used the app.
+4. Integrating the Webster Dictionary API.
+5. Making the board a component instead of seperate page.
+6. Creating a search function. 
 
 
