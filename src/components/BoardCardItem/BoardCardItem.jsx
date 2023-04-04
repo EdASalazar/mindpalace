@@ -73,7 +73,7 @@ function handleSubmit(evt) {
       </div>
       <div className="AnswerForm">
         <form>
-          <input type="text" name="text" autofocus="autofocus" onChange={handleChange}/>
+          <input type="text" name="text" autoFocus onChange={handleChange}/>
           <button type='submit' onClick={handleSubmit}>Submit Answer</button>
         </form>
         <button type="submit" onClick={handleClickSkip}>Skip</button>
