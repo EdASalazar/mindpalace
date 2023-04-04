@@ -36,12 +36,12 @@ export default function NewCardPage({ addCard, decks, addDeck,
         <NewDeckForm decks={decks} addDeck={addDeck}/>
         :
         <ul><DeckDetailComponent deck={deck}/></ul>
-        
       }
       </div>
-        <div className="NewCardPageCardList scroll">
-      {!deck ? <h4>Added A Trunk</h4> 
-       :
+
+      <div className="NewCardPageCardList scroll">
+        {!deck ? <h4>Added A Trunk</h4> 
+          :
           <DeckCardList
             deck={deck}           
             cardsForDeck={cardsForDeck} 
@@ -49,7 +49,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
             setCardsForDeck={setCardsForDeck}
           />
         }
-        </div>
+      </div>
     </div>
   );
 }

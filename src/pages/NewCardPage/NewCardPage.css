@@ -28,14 +28,6 @@
   width: 30vw;
 }
 
-button {
-  height: 3vw;
-  font-size: 2vw;
-  width: 20vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .NewCardPageAside {
   display: flex;
@@ -62,4 +54,14 @@ button {
   height: 6vh !important;
   font-size: 5vh !important;
   margin: 1vh;
+}
+.NewCardPageAside input:focus {
+  height: 6vh !important;
+  font-size: 5vh !important;
+  margin: 1vh;
+}
+
+
+.NewCardPageAside button {
+  font-size: 6vh;
 }

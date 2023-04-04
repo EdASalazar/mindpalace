@@ -19,7 +19,7 @@ export default function DeckCardList({ deck, cardsForDeck, updateCard, setCardsF
 
 
   return (
-    <ul className="phraseList">
+    <ul className="phraseList scrolly">
       {cardList}
     </ul>    
   )

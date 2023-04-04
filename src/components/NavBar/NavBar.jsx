@@ -13,9 +13,9 @@ export default function NavBar({ user, setUser }) {
       
       <span className='Welcome'>Elephluent</span>
       &nbsp;&nbsp;
-      <Link to="/cards/new">Create</Link>
+      <Link to="/">Create</Link>
       &nbsp; | &nbsp;
-      <Link to="/board">Review</Link>
+      <Link to="/board">Practice</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>

@@ -17,10 +17,10 @@ export default function App() {
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
-async function updateCard(card) {
-  const upDatedCard = await cardsAPI.update(card);
-  const cards = cardsForDeck.filter(card => card._id !== upDatedCard._id)
-  console.log('cards app', cards)
+async function updateCard(cardData) {
+  const upDatedCard = await cardsAPI.update(cardData);
+  const cards = cardsForDeck.filter(card => card._id !== cardData._id)
+  console.log('cards app', upDatedCard, cards)
   setCardsForDeck(...cards, upDatedCard)
 
 };
@@ -28,7 +28,7 @@ async function updateCard(card) {
 
 async function addCard(card) {
   const newCard = await cardsAPI.create(card);
-  setCardsForDeck(...cardsForDeck, newCard)
+  // setCardsForDeck(...cardsForDeck, newCard)
 };
 
 async function addDeck(deck) {
@@ -58,7 +58,7 @@ useEffect(function() {
             <Routes>
               {/* Route components in here */}
               <Route path="/cards/:cardId" element={<CardDetailPage addCard={addCard} decks={decks}/>} />
-              <Route path="/cards/new" element={<NewCardPage 
+              <Route path="/" element={<NewCardPage 
                 addCard={addCard} 
                 addDeck={addDeck}
                 updateCard={updateCard}

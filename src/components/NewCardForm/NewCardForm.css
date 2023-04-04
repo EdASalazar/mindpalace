@@ -11,24 +11,10 @@ form {
   margin: 0;
 }
 
-input {
-  height: 4vw;
-  font-size: 3vw;
-}
 
-
-select {
+.DeckItems > select {
   height: 3vw;
   width: 30vw;
   font-size: 2vw;
 }
 
-button {
-  height: 3vw;
-  font-size: 2vw;
-  width: 30vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
