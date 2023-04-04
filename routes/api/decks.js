@@ -8,9 +8,9 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 // POST /api/decks (create a user - sign up)
 router.post('/', ensureLoggedIn, decksCtrl.create)
 // GET /api/
-router.get('/', decksCtrl.index)
+router.get('/',  ensureLoggedIn, decksCtrl.index)
 // GET /api/:id
-router.get('/:id', decksCtrl.show)
+router.get('/:id',  ensureLoggedIn, decksCtrl.show)
 
 
 module.exports = router;

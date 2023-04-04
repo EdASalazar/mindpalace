@@ -8,10 +8,10 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 // POST /api/cards (create a user - sign up)
 router.post('/', ensureLoggedIn, cardsCtrl.create);
 // GET /api/cards/:id (get cards for deck)
-router.get('/:id', cardsCtrl.show);
+router.get('/:id',  ensureLoggedIn, cardsCtrl.show);
 // DELTE /api/card/:id
 router.delete('/:id', ensureLoggedIn, cardsCtrl.deleteCard);
 // put /api/card/updateCard
-router.put('/', cardsCtrl.update);
+router.put('/',  ensureLoggedIn, cardsCtrl.update);
 
 module.exports = router;
