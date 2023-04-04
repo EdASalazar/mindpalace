@@ -1,0 +1,41 @@
+.BoardPage {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);;
+}
+
+aside {
+  grid-column: 3 / span 4;
+  grid-row: 1 / span 6;
+  width: 30vw;
+  height: 50vw;
+  padding: 1vw;
+}
+
+.FlashCardForm {
+  grid-column: 7 / span 4;
+  grid-row: 1 / span 6;
+  width: 30vw;
+  height: 50vw;
+  padding: 1vw;
+  margin: 0;
+}
+
+.DeckListBoard:nth-child(2)  {
+  border: 0;
+  padding: 1vw;
+  margin: 0;
+}
+
+.DeckListBoard:nth-child(3):hover  {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: green;
+}
+
+.DeckListBoard > ul {
+  width: 100%;
+  padding: .5vw;
+  margin: 0;
+}

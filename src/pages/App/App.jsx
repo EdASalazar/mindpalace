@@ -3,8 +3,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import NewCardPage from '../NewCardPage/NewCardPage'
-import CardDetailPage from '../CardDetailPage/CardDetailPage';
-import DeckListPage from '../DeckListPage/DeckListPage';
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
@@ -55,7 +53,6 @@ useEffect(function() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/cards/:cardId" element={<CardDetailPage addCard={addCard} decks={decks}/>} />
               <Route path="/" element={<NewCardPage 
                 addCard={addCard} 
                 addDeck={addDeck}
@@ -65,7 +62,6 @@ useEffect(function() {
                 cardsForDeck={cardsForDeck} 
                 />} 
               />
-              <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/board" element={<BoardPage decks={decks} />}/>
               <Route page="*" element={<Navigate to="/board"/>} />
             </Routes>
