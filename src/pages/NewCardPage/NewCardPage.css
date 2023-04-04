@@ -16,7 +16,6 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-
 }
 
 .DeckItems > ul {
@@ -28,7 +27,6 @@
 .NewCardPageDeck {
   width: 30vw;
 }
-
 
 .NewCardPageAside {
   display: flex;
@@ -56,6 +54,7 @@
   font-size: 5vh !important;
   margin: 1vh;
 }
+
 .NewCardPageAside input:focus {
   height: 6vh !important;
   font-size: 5vh !important;
@@ -65,7 +64,6 @@
 .NewCardPageDeckDetail {
   min-height: 50vh;
 }
-
 
 .DeckDetailComponent {
   background-color: var(--card-item);
