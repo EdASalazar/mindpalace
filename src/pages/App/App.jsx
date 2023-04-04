@@ -19,16 +19,14 @@ export default function App() {
 
 async function updateCard(cardData) {
   const upDatedCard = await cardsAPI.update(cardData);
-  // const cards = cardsForDeck.filter(card => card._id !== cardData._id)
-  // console.log('cards app', upDatedCard, cards)
-  // setCardsForDeck(...cards, upDatedCard)
-
+  const cards = cardsForDeck.filter(card => card._id !== cardData._id);
+  setCardsForDeck([...cards, upDatedCard])
 };
 
 
 async function addCard(card) {
   const newCard = await cardsAPI.create(card);
-  // setCardsForDeck(...cardsForDeck, newCard)
+  setCardsForDeck([...cardsForDeck, newCard])
 };
 
 async function addDeck(deck) {
@@ -46,7 +44,7 @@ useEffect(function() {
     }
   }
   getDecks();
-}, [user]);
+}, [user, setCardsForDeck, setCardsForDeck]);
 
 
 

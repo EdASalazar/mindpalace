@@ -21,10 +21,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
     getCards();
   }, [deckId, decks, cardsForDeck, setCardsForDeck]);
   
- 
-  
   if (!decks) return <h1>Waiting For the Pack</h1>;
-
 
   return (
     <div className="NewCardPage">
