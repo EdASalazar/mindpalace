@@ -10,7 +10,6 @@ export default function DeckDetailComponent({ deck }) {
         <h2>{deck.name}</h2>
         <p>Category: {deck.category}</p>
         <p>Subject: {deck.subject}</p>
-        <p>Subject: {deck._id}</p>
         <p>Created: {new Date(deck.createdAt).toLocaleDateString()}</p>      
     </div>
   );

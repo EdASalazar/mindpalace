@@ -9,9 +9,9 @@
   --lime: rgb(9, 222, 9);
   --text-light: #363340;
   --text-dark: #252427;
-  --card-border: #bbbaba;
-  --card-item: #c8c8c8;
-  --card-bg: #e1dfdfd7;
+  --card-border: #a2a0a0;
+  --card-item: #f9f4f48f;
+  --card-bg: #f2f5f393;
   height: 100vh;
   width: 100vw;
 }
