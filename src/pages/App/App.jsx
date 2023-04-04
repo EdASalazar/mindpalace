@@ -15,34 +15,34 @@ export default function App() {
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
-async function updateCard(cardData) {
-  const upDatedCard = await cardsAPI.update(cardData);
-  const cards = cardsForDeck.filter(card => card._id !== cardData._id);
-  setCardsForDeck(cards)
-};
+  async function updateCard(cardData) {
+    const upDatedCard = await cardsAPI.update(cardData);
+    const cards = cardsForDeck.filter(card => card._id !== cardData._id);
+    setCardsForDeck(cards)
+  };
 
 
-async function addCard(card) {
-  const newCard = await cardsAPI.create(card);
-  setCardsForDeck([...cardsForDeck, newCard])
-};
+  async function addCard(card) {
+    const newCard = await cardsAPI.create(card);
+    setCardsForDeck([...cardsForDeck, newCard])
+  };
 
-async function addDeck(deck) {
-  const newDeck = await decksAPI.create(deck);
-  setDecks([...decks, newDeck])
-};
+  async function addDeck(deck) {
+    const newDeck = await decksAPI.create(deck);
+    setDecks([...decks, newDeck])
+  };
 
-useEffect(function() {
-  async function getDecks() {
-    if (!user) {
-      console.log('loading ')
-    } else {
-      const decks = await decksAPI.getAllForUser();
-      setDecks(decks);
+  useEffect(function() {
+    async function getDecks() {
+      if (!user) {
+        console.log('loading ')
+      } else {
+        const decks = await decksAPI.getAllForUser();
+        setDecks(decks);
+      }
     }
-  }
-  getDecks();
-}, [user, setDecks, setCardsForDeck, cardsForDeck]);
+    getDecks();
+  }, [user, setDecks, setCardsForDeck, cardsForDeck]);
 
 
 
