@@ -13,9 +13,9 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
   useEffect(function() {
     async function getCards() {
-      const deck = await decks.find(deck => deck._id === deckId);
-      setDeck(deck);
-      setCardsForDeck(deck.cards);
+      const deckDetail = await decks.find(deck => deck._id === deckId);
+      setDeck(deckDetail);
+      setCardsForDeck(deckDetail.cards);
       console.log('this function runs!');
     };
     getCards();

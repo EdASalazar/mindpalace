@@ -44,7 +44,8 @@ useEffect(function() {
     }
   }
   getDecks();
-}, [user, setCardsForDeck, setCardsForDeck]);
+  // added setCardsForDeck and se
+}, [user, setCardsForDeck, setDecks]);
 
 
 
