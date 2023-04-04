@@ -17,6 +17,7 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
   }
   
   setDeckId(newCard.deck)
+  console.log(newCard.deck)
 
   function handleSubmit(evt) {
     evt.preventDefault();
