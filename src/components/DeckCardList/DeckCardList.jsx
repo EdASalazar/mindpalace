@@ -3,8 +3,8 @@ import './DeckCardList.css'
 
 export default function DeckCardList({ deck, cardsForDeck, updateCard, setCardsForDeck, }) {
  
-  console.log('cardsForDeck', cardsForDeck);
-  if (!cardsForDeck) return <h1>Choose A Deck</h1>;
+
+  if (!cardsForDeck) return <h1>Choose A Trunk</h1>;
 
   const cardList = cardsForDeck.map((card) =>
     <DeckCardListItem 

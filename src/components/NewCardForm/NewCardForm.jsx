@@ -10,15 +10,12 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
     text: "",
   });
 
-  
-
   function handleChange(evt) {
     setNewCard({...newCard, [evt.target.name]: evt.target.value});
   }
   
   setDeckId(newCard.deck)
-  console.log(newCard.deck)
-
+  
   function handleSubmit(evt) {
     evt.preventDefault();
     addCard(newCard);
