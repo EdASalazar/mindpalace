@@ -3,8 +3,8 @@
 
 ## Programmed by Edward Salazar
 [Linkdin](https://www.linkedin.com/in/edward-salazar-1744228b/)  
-Website: [Food Forecast](https://elephluent.herokuapp.com//)
-Github: [Food Forecast](https://github.com/EdASalazar/mindpalace)
+Website: [Elepluent](https://elephluent.herokuapp.com//)
+Github: [Elepluent](https://github.com/EdASalazar/mindpalace)
 
 ## Technolgies Used
 * JavaScript
@@ -34,7 +34,7 @@ Manage your "Trunks":
 Elephluent is a simple and easy to use app to help people learn. The flashcards can be customized and the UI is very simple. 
 
 ## Getting Started 
-Website: [Food Forecast](https://elephluent.herokuapp.com//)
+Website: [Elephluent](https://elephluent.herokuapp.com//)
 [Intial Design](https://trello.com/b/I7iNtudy/mind-palace)
 
 
