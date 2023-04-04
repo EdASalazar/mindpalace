@@ -55,10 +55,11 @@ input {
 }
 
 .DeckCardListItemsRow {
-  width: 25vw;
+  width: 23vw;
   height: 5vh;
   font-size: 3vh !important;
-
+  text-align: start;
+  padding-left: .30vw;
 
 }
 
