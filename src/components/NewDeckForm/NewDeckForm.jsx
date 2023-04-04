@@ -28,21 +28,21 @@ function handleSubmit(evt) {
       <form onSubmit={handleSubmit} className="NewDeckForm">
         <input type="text" 
         name="name"
-        placeholder='Name...'
+        placeholder='Name'
         value={newDeck.name}
         onChange={handleChange}
         />
 
         <input type="text" 
         name="category"
-        placeholder='Category...'
+        placeholder='Category'
         value={newDeck.category}
         onChange={handleChange}
         />
 
         <input type="text" 
         name="subject"
-        placeholder='Subject...'
+        placeholder='Subject'
         value={newDeck.subject}
         onChange={handleChange}
         />
