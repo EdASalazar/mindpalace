@@ -42,7 +42,7 @@ useEffect(function() {
     }
   }
   getDecks();
-}, [user, setDecks, setCardsForDeck]);
+}, [user, setDecks, setCardsForDeck, cardsForDeck]);
 
 
 

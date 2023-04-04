@@ -33,7 +33,10 @@ export default function NewCardPage({ addCard, decks, addDeck,
           {!deck ?
             <NewDeckForm decks={decks} addDeck={addDeck}/>
             :
-            <ul className="DeckDetailUl"><DeckDetailComponent deck={deck}/></ul>
+            <div className="DeckDetailUl">
+              <ul className="DeckDetailUl"><DeckDetailComponent deck={deck}/></ul>
+              <button>Practice</button>
+            </div>
           }
         </div>
       </div>
