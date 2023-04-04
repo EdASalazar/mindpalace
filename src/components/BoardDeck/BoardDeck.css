@@ -4,3 +4,9 @@
   list-style: none;
   margin: 1vmin;
 }
+
+#BoardDeck:hover {
+  background-color: var(--teal);
+  border: solid var(--teal);
+  color: var(--teal);
+}

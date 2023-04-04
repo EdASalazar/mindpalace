@@ -60,12 +60,16 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
         value={newCard.sideTwoWord}
         onChange={handleChange}
       />
-      <input type="text" 
+
+      {/* add link for images below  */}
+
+      {/* <input type="text" 
         name="image" 
         placeholder="Add link to an image..."
         value={newCard.image}
         onChange={handleChange}
-      />
+      /> */}
+      
       <button type="submit" onClick={handleSubmit}>Add A Tusk</button>
     </form>
   );
