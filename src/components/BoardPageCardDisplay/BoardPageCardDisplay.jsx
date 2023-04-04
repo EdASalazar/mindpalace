@@ -27,12 +27,6 @@ export default function BoardPageCardDisplay({ cardsForBoard, setSkip }) {
   />);
 
 
-    
-
-
-
-
-    
   return (
     <div className="BoardPageCardDisplay">
       {cardInfo}
