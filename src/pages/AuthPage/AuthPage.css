@@ -9,6 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  color: aliceblue;
 
 }
 
@@ -21,3 +22,4 @@
 .AuthPageMain h1 {
   color: var(--teal);
 }
+
