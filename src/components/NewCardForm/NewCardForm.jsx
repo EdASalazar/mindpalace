@@ -14,8 +14,9 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
 
   function handleChange(evt) {
     setNewCard({...newCard, [evt.target.name]: evt.target.value});
-    setDeckId(newCard.deck)
   }
+  
+  setDeckId(newCard.deck)
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -39,7 +40,7 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
        <option value="null">Add A Trunk</option>
         {decks.map((deck)=>(
           <option value={deck._id} key={deck._id} >
-            {deck.name}
+            {deck.name} {deck._id}
           </option>
         ))}
       </select>

@@ -5,7 +5,6 @@ import './App.css';
 import NewCardPage from '../NewCardPage/NewCardPage'
 import CardDetailPage from '../CardDetailPage/CardDetailPage';
 import DeckListPage from '../DeckListPage/DeckListPage';
-import DeckDetailPage from '../DeckDetailPage/DeckDetailPage'
 import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
@@ -17,17 +16,13 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [decks, setDecks] = useState([]);
   const [cardsForDeck, setCardsForDeck] = useState(null);
-  // Not sure if I need this.
-  // can you update the same state from different pages?
-  // const [cardsForCreate, setCardsForCreate] = useState(null);
-// console.log('user', user._id)
 
 async function updateCard(card) {
   const upDatedCard = await cardsAPI.update(card);
   const cards = cardsForDeck.filter(card => card._id !== upDatedCard._id)
   console.log('cards app', cards)
   setCardsForDeck(...cards, upDatedCard)
-  
+
 };
 
 
@@ -67,24 +62,15 @@ useEffect(function() {
                 addCard={addCard} 
                 addDeck={addDeck}
                 updateCard={updateCard}
-                // setCardsForCreate={setCardsForCreate}
-                setCardsForDeck={setCardsForDeck}
-                // cardsForCreate={cardsForCreate} 
+                setCardsForDeck={setCardsForDeck} 
                 decks={decks}
                 cardsForDeck={cardsForDeck} 
                 />} 
               />
-              <Route path="/decks/:deckId" element={<DeckDetailPage  
-                updateCard={updateCard} 
-                setCardsForDeck={setCardsForDeck} 
-                decks={decks}
-                cardsForDeck={cardsForDeck}  
-                />}
-              />
               <Route path="/decks" element={<DeckListPage decks={decks}/>} />
               <Route path="/board" element={<BoardPage decks={decks} />}/>
               <Route page="*" element={<Navigate to="/board"/>} />
-              {/* <Route page="/" element={<Navigate to="/decks"/>} /> */}
+              <Route page="/" element={<Navigate to="/decks"/>} />
             </Routes>
           </>
       

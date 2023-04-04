@@ -4,6 +4,7 @@ import './DeckCardList.css'
 export default function DeckCardList({ deck, cardsForDeck, updateCard, setCardsForDeck, }) {
  
   console.log('cardsForDeck', cardsForDeck);
+  if (!cardsForDeck) return <h1>Choose A Deck</h1>;
 
   const cardList = cardsForDeck.map((card) =>
     <DeckCardListItem 
@@ -16,7 +17,6 @@ export default function DeckCardList({ deck, cardsForDeck, updateCard, setCardsF
       setCardsForDeck={setCardsForDeck}
     />);
 
-if (!cardsForDeck) return null;
 
   return (
     <ul className="phraseList">

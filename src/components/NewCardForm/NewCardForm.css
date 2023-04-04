@@ -5,13 +5,6 @@ form {
   justify-content: center;
 }
 
-.NewCardPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .DeckItems > ul {
   list-style: none;
   padding: 0;
