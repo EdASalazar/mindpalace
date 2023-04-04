@@ -1,4 +1,4 @@
-.NewCardForm {
+#NewCardPageAside form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,6 +59,7 @@ button {
 }
 
 .NewCardPageAside input {
-  height: 6vh;
-  font-size: 5vh;
+  height: 3vh !important;
+  font-size: 2vh !important;
+  margin: 1vh;
 }

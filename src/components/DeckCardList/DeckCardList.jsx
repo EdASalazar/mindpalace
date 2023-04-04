@@ -1,9 +1,9 @@
 import DeckCardListItem from "../DeckCardListItems/DeckCardListItems";
 import './DeckCardList.css'
 
-export default function DeckCardList({ cardsForDeck, updateCard, setCardsForDeck, }) {
+export default function DeckCardList({ deck, cardsForDeck, updateCard, setCardsForDeck, }) {
  
-
+  console.log('cardsForDeck', cardsForDeck);
 
   const cardList = cardsForDeck.map((card) =>
     <DeckCardListItem 
@@ -15,7 +15,6 @@ export default function DeckCardList({ cardsForDeck, updateCard, setCardsForDeck
       cardsForDeck={cardsForDeck}
       setCardsForDeck={setCardsForDeck}
     />);
-
 
 if (!cardsForDeck) return null;
 

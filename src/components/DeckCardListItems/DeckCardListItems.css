@@ -9,7 +9,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 2vw;
 }
 
 .DeckCardLi > a {
@@ -58,7 +57,7 @@ input {
 .DeckCardListItemsRow {
   width: 25vw;
   height: 5vh;
-  font-size: 4vh;
+  font-size: 3vh !important;
 
 
 }

@@ -37,12 +37,12 @@ function deleteCard(req, res) {
 
 async function update(req, res) {
   id = req.body.id;
-  console.log("controller update", id)
+  console.log("controller update", id);
   const card = await Card.findById(id);
-  console.log("control", card.sideOneWord)
+  console.log("control", card.sideOneWord);
   card.sideOneWord = req.body.sideOneWord;
   card.sideTwoWord = req.body.sideTwoWord;
   card.save()
   res.json(card)
   console.log('after edit card', card)
-  }
+}
