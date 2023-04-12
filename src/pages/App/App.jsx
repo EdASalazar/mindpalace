@@ -15,7 +15,7 @@ export default function App() {
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
   async function updateCard(cardData) {
-    const upDatedCard = await cardsAPI.update(cardData);
+    cardsAPI.update(cardData);
     const cards = cardsForDeck.filter(card => card._id !== cardData._id);
     setCardsForDeck(cards)
   };
@@ -41,9 +41,7 @@ export default function App() {
       }
     }
     getDecks();
-  }, [user, cardsForDeck]);
-
-
+  }, [user, cardsForDeck, setDecks]);
 
   return (
     <main className="App">

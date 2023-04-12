@@ -12,9 +12,6 @@ export default function NavBar({ user, setUser }) {
     <nav>
       
       <span className='Welcome'>Elephluent</span>
-      &nbsp;&nbsp;
-      <Link to="/">Manage</Link>
-      &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
   );
