@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import "./BoardCardItem.css"
 
-export default function BoardCardItem({ sideOne, sideTwo, setI, setJ, setAnswer,
-  i, j, answer, length,  
+export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
+  i, j, length,  
 }) {
+
   const[visible, setVisible] = useState(false);
   const[wrong, setWrong] = useState(false);
   const[correct, setCorrect] = useState(false)
+  const[answer, setAnswer] = useState({
+    text: "",
+  });
+  
 
   async function sleep(seconds) {
     return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
@@ -16,39 +21,39 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ, setAnswer,
     setAnswer({...answer, [evt.target.name]: evt.target.value})
   };
 
-async function handleClickSkip(evt) {
-  evt.preventDefault();
-  setVisible(true)
-  setCorrect(false)
-  setWrong(true)
-  await sleep(1.5)
-  setVisible(false)
-  setWrong(false)
-  setI(i + 1);
-  setJ(j + 1);
-  setAnswer("");
-}
-
-function handleSubmit(evt) {
+  async function handleClickSkip(evt) {
     evt.preventDefault();
-    async function checkWin() {
-      if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
-      setVisible(true)
-      setCorrect(true)
-      await sleep(1.5)
-      setVisible(false)
-      setI(i + 1);
-      setJ(j + 1);
-      setAnswer("");
-     
-    } else {
-      setWrong(true)
-      await sleep(1)
-      setWrong(false)
-    }
+    setVisible(true)
+    setCorrect(false)
+    setWrong(true)
+    await sleep(1.5)
+    setVisible(false)
+    setWrong(false)
+    setI(i + 1);
+    setJ(j + 1);
+    setAnswer("");
   }
-  checkWin();
-}
+
+  function handleSubmit(evt) {
+      evt.preventDefault();
+      async function checkWin() {
+        if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
+        setVisible(true)
+        setCorrect(true)
+        await sleep(1.5)
+        setVisible(false)
+        setI(i + 1);
+        setJ(j + 1);
+        setAnswer("");
+      
+      } else {
+        setWrong(true)
+        await sleep(1)
+        setWrong(false)
+      }
+    }
+    checkWin();
+  }
 
   useEffect(function() {
     if(j === length) {

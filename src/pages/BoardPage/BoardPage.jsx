@@ -5,11 +5,6 @@ import "./BoardPage.css"
 
 export default function BoardPage({ decks }) {
   const[selectedDeck, setSelectedDeck] = useState(decks[0]);
-  const[skip, setSkip] = useState(false);
-  const[answer, setAnswer] = useState({
-    text: ""
-  });
- 
 
   const deckList = decks.map(deck => 
     <BoardDeck 
@@ -29,7 +24,7 @@ export default function BoardPage({ decks }) {
       </aside>
       <div className="FlashCardForm">
         {!selectedDeck && "Select A Trunk "}
-        {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards} setSkip={setSkip}/>}
+        {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
       </div>
     </div>
   )
