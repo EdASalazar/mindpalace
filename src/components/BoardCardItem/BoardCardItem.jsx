@@ -31,9 +31,8 @@ async function handleClickSkip(evt) {
 
 function handleSubmit(evt) {
     evt.preventDefault();
-    console.log('submitted');
     async function checkWin() {
-    if (answer.text.toLowerCase === sideTwo.toLowerCase) {
+      if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
       setVisible(true)
       setCorrect(true)
       await sleep(1.5)
@@ -56,7 +55,7 @@ function handleSubmit(evt) {
       setI(0);
       setJ(1);
     }
-  }, [j, i, length]);
+  }, [j, i, setI, setJ, length]);
 
   return(
     <div className="FlashCards">
