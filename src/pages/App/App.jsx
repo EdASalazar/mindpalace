@@ -7,7 +7,6 @@ import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import * as cardsAPI from '../../utilities/cards-api'
 import * as decksAPI from '../../utilities/decks-api'
-import BoardPage from '../BoardPage/BoardPage';
 
 
 export default function App() {
@@ -42,7 +41,7 @@ export default function App() {
       }
     }
     getDecks();
-  }, [user, setDecks, setCardsForDeck, cardsForDeck]);
+  }, [user, cardsForDeck]);
 
 
 
@@ -62,8 +61,7 @@ export default function App() {
                 cardsForDeck={cardsForDeck} 
                 />} 
               />
-              <Route path="/board" element={<BoardPage decks={decks} />}/>
-              <Route page="*" element={<Navigate to="/board"/>} />
+              <Route page="*" element={<Navigate to="/"/>} />
             </Routes>
           </>
       

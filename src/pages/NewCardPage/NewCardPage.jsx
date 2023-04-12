@@ -12,6 +12,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
   const [deck, setDeck ] = useState(null);
   const [deckId, setDeckId] = useState(null);
+  const [boardVisible, setBoardVisible] = useState(false);
 
   useEffect(function() {
     async function getCards() {
@@ -22,11 +23,10 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId, decks, setCardsForDeck]);
+  }, [deckId]);
 
   return (
     <div className="NewCardPage">
-      <Board deck={deck}/>
       <div id="NewCardPageAside" className="NewCardPageAside">
           <NewCardForm addCard={addCard} 
             decks={decks} 
@@ -38,24 +38,33 @@ export default function NewCardPage({ addCard, decks, addDeck,
             :
             <div className="DeckDetailUl">
               <ul className="DeckDetailUl"><DeckDetailComponent deck={deck}/></ul>
-              <button>Practice</button>
+              {!boardVisible ?
+                <button onClick={()=> setBoardVisible(true)}>Practice</button>
+                :
+                <button onClick={()=> setBoardVisible(false)}>Manage</button>
+              }
             </div>
           }
         </div>
       </div>
 
-
-      <div className="NewCardPageCardList scroll">
-        {!deck ? <h4>Added A Trunk</h4> 
-          :
-          <DeckCardList
+      {!boardVisible ?
+        <div className="NewCardPageCardList scroll">
+          {!deck ? <h4>Added A Trunk</h4> 
+            :
+            <DeckCardList
             deck={deck}           
             cardsForDeck={cardsForDeck} 
             updateCard={updateCard}  
             setCardsForDeck={setCardsForDeck}
-          />
-        }
-      </div>
+            />
+          }
+        </div>
+        :
+        <div className="NewCardPageBoard">
+          <Board deck={deck}/>
+        </div>
+      }
     </div>
   );
 }
