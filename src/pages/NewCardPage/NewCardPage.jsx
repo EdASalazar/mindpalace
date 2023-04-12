@@ -23,7 +23,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId]);
+  }, [deckId, cardsForDeck, setDeck]);
 
   return (
     <div className="NewCardPage">

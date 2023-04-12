@@ -36,8 +36,8 @@ export default function App() {
       if (!user) {
         console.log('loading ')
       } else {
-        const decks = await decksAPI.getAllForUser();
-        setDecks(decks);
+        const userDecks = await decksAPI.getAllForUser();
+        setDecks(userDecks);
       }
     }
     getDecks();
