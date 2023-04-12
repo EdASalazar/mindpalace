@@ -1,29 +1,12 @@
-import { useState } from 'react'
-import BoardDeck from '../../components/BoardDeck/BoardDeck';
 import BoardPageCardDisplay from "../../components/BoardPageCardDisplay/BoardPageCardDisplay";
-import "./BoardPage.css"
+import "./Board.css"
 
-export default function BoardPage({ decks }) {
-  const[selectedDeck, setSelectedDeck] = useState(decks[0]);
- 
-  const deckList = decks.map(deck => 
-    <BoardDeck 
-      key={deck._id}
-      deck={deck}
-      setSelectedDeck={setSelectedDeck}
-    />
-  );
+export default function Board({ deck }) {
   
   return (
     <div className="BoardPage">
-      <aside className="DeckListBoard">
-        <ul>
-            {deckList}
-        </ul>
-      </aside>
       <div className="FlashCardForm">
-        {!selectedDeck && "Select A Trunk "}
-        {selectedDeck && <BoardPageCardDisplay cardsForBoard={selectedDeck.cards}/>}
+        {deck && <BoardPageCardDisplay cardsForBoard={deck.cards}/>}
       </div>
     </div>
   )

@@ -3,11 +3,13 @@ import DeckCardList from "../../components/DeckCardList/DeckCardList";
 import DeckDetailComponent from "../../components/DeckDetailComponent/DeckDetailComponent";
 import NewCardForm from "../../components/NewCardForm/NewCardForm"
 import NewDeckForm from "../../components/NewDeckForm/NewDeckForm";
+import Board from  "../../components/Board/Board"
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, addDeck, 
   setCardsForDeck, updateCard, cardsForDeck 
 }) {
+
   const [deck, setDeck ] = useState(null);
   const [deckId, setDeckId] = useState(null);
 
@@ -20,10 +22,11 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId, decks]);
+  }, [deckId, decks, setCardsForDeck]);
 
   return (
     <div className="NewCardPage">
+      <Board deck={deck}/>
       <div id="NewCardPageAside" className="NewCardPageAside">
           <NewCardForm addCard={addCard} 
             decks={decks} 
