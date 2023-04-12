@@ -7,10 +7,10 @@ import Board from  "../../components/Board/Board"
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, addDeck, 
-  setCardsForDeck, updateCard, cardsForDeck 
+  setCardsForDeck, updateCard, cardsForDeck, setDeck, deck, 
 }) {
 
-  const [deck, setDeck ] = useState(null);
+  
   const [deckId, setDeckId] = useState(null);
   const [boardVisible, setBoardVisible] = useState(false);
 
@@ -23,7 +23,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId, cardsForDeck, setDeck]);
+  }, [deckId, cardsForDeck, setDeck, deck]);
 
   return (
     <div className="NewCardPage">

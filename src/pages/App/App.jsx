@@ -12,6 +12,7 @@ import * as decksAPI from '../../utilities/decks-api'
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [decks, setDecks] = useState([]);
+  const [deck, setDeck ] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState(null);
 
   async function updateCard(cardData) {
@@ -41,7 +42,7 @@ export default function App() {
       }
     }
     getDecks();
-  }, [user, cardsForDeck, setDecks]);
+  }, [user, cardsForDeck, setDecks, deck]);
 
   return (
     <main className="App">
@@ -54,7 +55,9 @@ export default function App() {
                 addCard={addCard} 
                 addDeck={addDeck}
                 updateCard={updateCard}
-                setCardsForDeck={setCardsForDeck} 
+                setCardsForDeck={setCardsForDeck}
+                setDeck={setDeck}
+                deck={deck} 
                 decks={decks}
                 cardsForDeck={cardsForDeck} 
                 />} 
