@@ -49,7 +49,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
       </div>
 
       {!boardVisible ?
-        <div className="NewCardPageCardList scroll">
+        <div className="NewCardPageCardList scrolly">
           {!deck ? <h4>Added A Trunk</h4> 
             :
             <DeckCardList
