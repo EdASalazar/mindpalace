@@ -52,7 +52,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
       {!boardVisible ?
         <div className="NewCardPageCardList scrolly">
-          {!cardsForDeck ? 
+          {!deck ? 
             <div className="NewCardCPageInstructions">
               <label>
                 Let's start your learning journey by creating a "Trunk".
