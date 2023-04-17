@@ -3,6 +3,7 @@ form {
   flex-direction: column;
   width: 30vw;
   justify-content: center;
+  margin-top: 4vh;
 }
 
 .DeckItems > ul {
