@@ -16,10 +16,6 @@ export default function App() {
   const [cardsForDeck, setCardsForDeck] = useState(null);
   const [deckId, setDeckId] = useState(null);
   
-
-  
-
-
   async function updateCard(cardData) {
     const updatedCard  = cardsAPI.update(cardData);
     const cards = cardsForDeck.filter(card => card._id !== cardData._id);
