@@ -51,22 +51,25 @@ export default function NewCardPage({ addCard, decks, addDeck,
       {!boardVisible ?
         <div className="NewCardPageCardList scrolly">
           {!deck ? 
-            <div>
+            <div className="NewCardCPageInstructions">
               <label>
-                First things first. You'll need to create a "Trunk".
+                Let's start your learning journey by creating a "Trunk".
               </label>
               <ol>
-                <li>
+                <li className="NewCardPageInstructionLi">
                   Add the name you want to give the trunk.
                 </li>
-                <li>
+                <li className="NewCardPageInstructionLi">
                   Add a category to your trunk.
                 </li>
-                <li>
+                <li className="NewCardPageInstructionLi">
                   Add a subject to your trunk.
                 </li>
-                <li>
+                <li className="NewCardPageInstructionLi">
                   Click the "Add A Trunk" button.
+                </li>
+                <li className="NewCardPageInstructionLi">
+                  Then select the trunk you just created from the drop down menu and start adding "Tusks".
                 </li>
               </ol>
             </div>
