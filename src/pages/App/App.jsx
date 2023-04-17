@@ -42,7 +42,7 @@ export default function App() {
       }
     }
     getDecks();
-  }, [user, cardsForDeck, setDecks, deck]);
+  }, [user, setCardsForDeck]);
 
   return (
     <main className="App">

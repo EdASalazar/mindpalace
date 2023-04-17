@@ -23,15 +23,17 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId, cardsForDeck, setCardsForDeck, setDeck, setDeck]);
+  }, [deckId, cardsForDeck, setDeck, decks]);
 
   return (
     <div className="NewCardPage">
       <div id="NewCardPageAside" className="NewCardPageAside">
-          <NewCardForm addCard={addCard} 
-            decks={decks} 
-            setDeckId={setDeckId}
-            /> 
+        
+        <NewCardForm addCard={addCard} 
+          decks={decks} 
+          setDeckId={setDeckId}
+        /> 
+
         <div className="NewCardPageDeckDetail">
           {!deck ?
             <NewDeckForm decks={decks} addDeck={addDeck}/>
@@ -50,7 +52,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
       {!boardVisible ?
         <div className="NewCardPageCardList scrolly">
-          {!deck ? 
+          {!cardsForDeck ? 
             <div className="NewCardCPageInstructions">
               <label>
                 Let's start your learning journey by creating a "Trunk".
