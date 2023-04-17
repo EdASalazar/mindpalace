@@ -50,7 +50,27 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
       {!boardVisible ?
         <div className="NewCardPageCardList scrolly">
-          {!deck ? <h4>Added A Trunk</h4> 
+          {!deck ? 
+            <div>
+              <label>
+                First things first. You'll need to create a "Trunk".
+              </label>
+              <ol>
+                <li>
+                  Add the name you want to give the trunk.
+                </li>
+                <li>
+                  Add a category to your trunk.
+                </li>
+                <li>
+                  Add a subject to your trunk.
+                </li>
+                <li>
+                  Click the "Add A Trunk" button.
+                </li>
+              </ol>
+            </div>
+
             :
             <DeckCardList
             deck={deck}           
