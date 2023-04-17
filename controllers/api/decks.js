@@ -17,7 +17,7 @@ async function index(req, res) {
 
 
 async function show(req, res) {
-  const cards = await Card.find({deck: req.params.id}).sort('-_id');
+  const cards = await Card.find({deck: req.params.id}).sort('-createdAt');
   res.json(cards)
 }
 

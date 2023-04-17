@@ -104,22 +104,24 @@
   grid-column: 7/ span 5;
   grid-row: 2 / span 1;
   width: 33vw;
-  height: 40vh;
-  font-size: 2vmin;
+  height: 60vh;
+  font-size: 3vmin;
   text-align: left;
   margin-top: 5vmin;
 
 }
 
 .NewCardCPageInstructions > label {
+  font-size: 4vmin;
   font-weight: bold;
   color: var(--teal);
-  padding: .5vmin;
+  padding: 1vmin;
   text-align: center;
+  margin-top: 2vmin;
 }
 
 .NewCardPageInstructionLi {
   margin-bottom: 1vmin;
-  padding: .5vmin;
+  padding: 1vmin;
   
 } 

@@ -4,14 +4,12 @@ import * as cardsAPI from "../../utilities/cards-api"
 
 
 export default function DeckCardListItem({  
-  sideOne, sideTwo, key, cardId, updateCard, setCardsForDeck, cardsForDeck
+  sideOne, sideTwo, cardId, updateCard, setCardsForDeck, cardsForDeck
  }) {
 
 const [submitButton, setSubmitButton] = useState(false)
 const [deleteCard, setDeleteCard] = useState(false)
-const [editCardId, setEditCardId] = useState(null)
 const [editCard, setEditCard] = useState({
-  key: key,
   id: "",
   sideOneWord: "",
   sideTwoWord: "",
@@ -24,7 +22,6 @@ async function sleep(seconds) {
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
   const cards =  cardsForDeck.filter(card => card._id !== id);
-  console.log('deleted cards', cards);
   setCardsForDeck(cards);
 }; 
 
@@ -44,7 +41,6 @@ function handleDeleteButton(evt) {
 }
 
 function handleEditButton(id) {
-  setEditCardId(id);
   setSubmitButton(true);
   setEditCard({
     id: cardId,
