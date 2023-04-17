@@ -21,7 +21,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
       }
     };
     getCards();
-  }, [deckId, decks]);
+  }, [deckId, decks, setDeck, setCardsForDeck]);
 
   return (
     <div className="NewCardPage">

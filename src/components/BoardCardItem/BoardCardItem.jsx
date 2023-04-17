@@ -41,10 +41,11 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
         setVisible(true)
         setCorrect(true)
         await sleep(1.5)
-        setVisible(false)
         setI(i + 1);
         setJ(j + 1);
+        setVisible(false)
         setAnswer("");
+        console.log(i, length)
       
       } else {
         setWrong(true)
@@ -56,7 +57,7 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
   }
 
   useEffect(function() {
-    if(j === length) {
+    if(i === length -1) {
       setI(0);
       setJ(1);
     }

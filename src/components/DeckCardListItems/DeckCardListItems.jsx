@@ -21,7 +21,7 @@ async function sleep(seconds) {
   
 async function deleteACard(id) {
   const deletedCard = await cardsAPI.deleteCard(id);
-  const cards =  cardsForDeck.filter(card => card._id !== id);
+  const cards =  cardsForDeck.filter(card => card._id !== deletedCard._id);
   setCardsForDeck(cards);
 }; 
 
