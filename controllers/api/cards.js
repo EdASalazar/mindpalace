@@ -32,6 +32,7 @@ function deleteCard(req, res) {
       .then(function (card) {
           card.deleteOne();
           res.json(card)
+
       });
 }
 
