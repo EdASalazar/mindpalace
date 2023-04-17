@@ -14,6 +14,11 @@ export default function App() {
   const [decks, setDecks] = useState([]);
   const [deck, setDeck ] = useState(null);
   const [cardsForDeck, setCardsForDeck] = useState(null);
+  const [deckId, setDeckId] = useState(null);
+  
+
+  
+
 
   async function updateCard(cardData) {
     const updatedCard  = cardsAPI.update(cardData);
@@ -42,7 +47,7 @@ export default function App() {
       }
     }
     getDecks();
-  }, [user, cardsForDeck]);
+  }, [user, setCardsForDeck, deckId]);
 
   return (
     <main className="App">
@@ -59,7 +64,9 @@ export default function App() {
                 setDeck={setDeck}
                 deck={deck} 
                 decks={decks}
-                cardsForDeck={cardsForDeck} 
+                cardsForDeck={cardsForDeck}
+                setDeckId={setDeckId}
+                deckId={deckId} 
                 />} 
               />
               <Route page="*" element={<Navigate to="/"/>} />

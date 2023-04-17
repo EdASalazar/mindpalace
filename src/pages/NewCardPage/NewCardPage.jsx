@@ -7,24 +7,24 @@ import Board from  "../../components/Board/Board"
 import './NewCardPage.css'
 
 export default function NewCardPage({ addCard, decks, addDeck, 
-  setCardsForDeck, updateCard, cardsForDeck, setDeck, deck, 
+  setCardsForDeck, updateCard, cardsForDeck, setDeck, deck, deckId, setDeckId,
 }) {
 
   
-  const [deckId, setDeckId] = useState(null);
+  // const [deckId, setDeckId] = useState(null);
   const [boardVisible, setBoardVisible] = useState(false);
-  const [cardList, setCardList] = useState(null);
+  // const [cardList, setCardList] = useState(null);
 
   useEffect(function() {
     async function getCards() {
       const deckDetail = await decks.find(deck => deck._id === deckId);
       setDeck(deckDetail);
       if (deckDetail) {
-        setCardList(deckDetail.cards);
+        setCardsForDeck(deckDetail.cards);
       }
     };
     getCards();
-  }, [deckId, decks, cardsForDeck]);
+  }, [deckId, decks]);
 
   return (
     <div className="NewCardPage">
@@ -80,7 +80,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
             :
             <DeckCardList
             deck={deck}           
-            cardsForDeck={cardList} 
+            cardsForDeck={cardsForDeck} 
             updateCard={updateCard}  
             setCardsForDeck={setCardsForDeck}
             />
