@@ -22,7 +22,6 @@ export default function App() {
     setCardsForDeck([...cardsForDeck, updatedCard])
   };
 
-
   async function addCard(card) {
     const newCard = await cardsAPI.create(card);
     setCardsForDeck([...cardsForDeck, newCard])

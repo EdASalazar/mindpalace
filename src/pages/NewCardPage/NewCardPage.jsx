@@ -10,10 +10,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
   setCardsForDeck, updateCard, cardsForDeck, setDeck, deck, deckId, setDeckId,
 }) {
 
-  
-  // const [deckId, setDeckId] = useState(null);
   const [boardVisible, setBoardVisible] = useState(false);
-  // const [cardList, setCardList] = useState(null);
 
   useEffect(function() {
     async function getCards() {
