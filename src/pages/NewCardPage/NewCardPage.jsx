@@ -13,17 +13,18 @@ export default function NewCardPage({ addCard, decks, addDeck,
   
   const [deckId, setDeckId] = useState(null);
   const [boardVisible, setBoardVisible] = useState(false);
+  const [cardList, setCardList] = useState(null);
 
   useEffect(function() {
     async function getCards() {
       const deckDetail = await decks.find(deck => deck._id === deckId);
       setDeck(deckDetail);
       if (deckDetail) {
-        setCardsForDeck(deckDetail.cards);
+        setCardList(deckDetail.cards);
       }
     };
     getCards();
-  }, [deckId, cardsForDeck, decks]);
+  }, [deckId, decks, cardsForDeck]);
 
   return (
     <div className="NewCardPage">
@@ -79,7 +80,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
             :
             <DeckCardList
             deck={deck}           
-            cardsForDeck={cardsForDeck} 
+            cardsForDeck={cardList} 
             updateCard={updateCard}  
             setCardsForDeck={setCardsForDeck}
             />
