@@ -40,13 +40,17 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
         if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
         setVisible(true)
         setCorrect(true)
+        console.log(i, j)
         await sleep(1.5)
-        setI(i + 1);
-        setJ(j + 1);
         setVisible(false)
         setAnswer("");
-        console.log(i, length)
-      
+          if(i === length -1) {
+            setI(0)
+            setJ(1)
+          } else {
+            setI(i + 1);
+            setJ(j + 1);   
+          }
       } else {
         setWrong(true)
         await sleep(1)
@@ -56,12 +60,7 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
     checkWin();
   }
 
-  useEffect(function() {
-    if(i === length -1) {
-      setI(0);
-      setJ(1);
-    }
-  }, [j, i, setI, setJ, length]);
+
 
   return(
     <div className="FlashCards">
