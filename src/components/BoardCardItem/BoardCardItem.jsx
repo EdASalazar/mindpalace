@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./BoardCardItem.css"
 
 export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
-  i, j, length,  
+  i, j, length,
 }) {
 
-  const[visible, setVisible] = useState(false);
-  const[wrong, setWrong] = useState(false);
-  const[correct, setCorrect] = useState(false)
-  const[answer, setAnswer] = useState({
+  const [visible, setVisible] = useState(false);
+  const [wrong, setWrong] = useState(false);
+  const [correct, setCorrect] = useState(false)
+  const [answer, setAnswer] = useState({
     text: "",
   });
-  
+
 
   async function sleep(seconds) {
-    return new Promise((resolve) =>setTimeout(resolve, seconds * 1000));
-    }
-    
+    return new Promise((resolve) => setTimeout(resolve, seconds * 1000));
+  }
+
   function handleChange(evt) {
-    setAnswer({...answer, [evt.target.name]: evt.target.value})
+    setAnswer({ ...answer, [evt.target.name]: evt.target.value })
   };
 
   async function handleClickSkip(evt) {
@@ -35,22 +35,22 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
   }
 
   function handleSubmit(evt) {
-      evt.preventDefault();
-      async function checkWin() {
-        if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
+    evt.preventDefault();
+    async function checkWin() {
+      if (answer.text.toLowerCase() === sideTwo.toLowerCase()) {
         setVisible(true)
         setCorrect(true)
         console.log(i, j)
         await sleep(1.5)
         setVisible(false)
         setAnswer("");
-          if(i === length -1) {
-            setI(0)
-            setJ(1)
-          } else {
-            setI(i + 1);
-            setJ(j + 1);   
-          }
+        if (i === length - 1) {
+          setI(0)
+          setJ(1)
+        } else {
+          setI(i + 1);
+          setJ(j + 1);
+        }
       } else {
         setWrong(true)
         await sleep(1)
@@ -62,7 +62,7 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
 
 
 
-  return(
+  return (
     <div className="FlashCards">
       <div className="FlashCardSideOne">
         {sideOne}
@@ -72,12 +72,12 @@ export default function BoardCardItem({ sideOne, sideTwo, setI, setJ,
         {wrong && <h4>Wrong!</h4>}
       </div>
       <div className="FlashCardSideTwo">
-       {visible && <div>{sideTwo}</div>}
+        {visible && <div>{sideTwo}</div>}
 
       </div>
       <div className="AnswerForm">
         <form>
-          <input type="text" name="text" autoFocus onChange={handleChange}/>
+          <input type="text" name="text" autoFocus onChange={handleChange} />
           <button type='submit' onClick={handleSubmit}>Submit Answer</button>
         </form>
         <button type="submit" onClick={handleClickSkip}>Skip</button>
