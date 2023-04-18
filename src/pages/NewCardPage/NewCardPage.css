@@ -105,8 +105,13 @@
 
 }
 
+.NewCardCPageInstructions > h4 {
+  color: var(--teal);
+  text-align: center;
+}
+
 .NewCardCPageInstructions > label {
-  font-size: 3vmin;
+  font-size: 2vmin;
   font-weight: bold;
   color: var(--teal);
   padding: 1vmin;
@@ -117,5 +122,5 @@
 .NewCardPageInstructionLi {
   margin-bottom: 1vmin;
   padding: 1vmin;
-  
+  font-size: 2vmin;
 } 

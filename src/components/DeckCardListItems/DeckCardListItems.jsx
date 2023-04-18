@@ -72,7 +72,7 @@ function handleSubmit(evt) {
             className="DeckCardListItemsRow"
           />
         :
-        <div className="DeckCardListItemsRow">Side One: {sideOne}</div> } 
+        <div className="DeckCardListItemsRow">Question: {sideOne}</div> } 
         </div>
         <div className="sideTwo">
           {submitButton ? <input 
@@ -83,7 +83,7 @@ function handleSubmit(evt) {
             className="DeckCardListItemsRow" 
           />
           :
-          <div className="DeckCardListItemsRow">Side Two: {sideTwo} </div> } 
+          <div className="DeckCardListItemsRow">Answer: {sideTwo} </div> } 
         </div>
 
           </form>

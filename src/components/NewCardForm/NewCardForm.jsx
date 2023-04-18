@@ -47,14 +47,14 @@ export default function NewCardPage({ addCard, decks, setDeckId }) {
 
       <input type="text" 
         name="sideOneWord" 
-        placeholder="Side One"
+        placeholder="Question"
         value={newCard.sideOneWord}
         onChange={handleChange}
         autoFocus
       />
       <input type="text" 
         name="sideTwoWord" 
-        placeholder="Side Two"
+        placeholder="Answer"
         value={newCard.sideTwoWord}
         onChange={handleChange}
       />

@@ -22,16 +22,17 @@ export default function NewCardPage({ addCard, decks, addDeck,
     };
     getCards();
   }, [deckId, decks, setDeck, setCardsForDeck]);
-
+  
+  console.log(deck, decks)
   return (
     <div className="NewCardPage">
       <div id="NewCardPageAside" className="NewCardPageAside">
-        
-        <NewCardForm addCard={addCard} 
-          decks={decks} 
-          setDeckId={setDeckId}
-        /> 
-
+       
+          <NewCardForm addCard={addCard} 
+            decks={decks} 
+            setDeckId={setDeckId}
+          /> 
+   
         <div className="NewCardPageDeckDetail">
           {!deck ?
             <NewDeckForm decks={decks} addDeck={addDeck}/>
@@ -52,6 +53,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
         <div className="NewCardPageCardList scrolly">
           {!deck ? 
             <div className="NewCardCPageInstructions">
+               <h4>Welcome to Elephluent flahscards. </h4>
               <label>
                 Let's start your learning journey by creating a "Trunk".
               </label>
