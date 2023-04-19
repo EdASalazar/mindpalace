@@ -44,7 +44,7 @@ export default function NewCardPage({ addCard, decks, setDeckId, deckId, deck })
       </select>
 
       {/* --- form inputs for the flash card below -- */}
-      {!deck ? 
+      {!deckId ? 
         <div className="NewCardFromWelcome">
           <h4>Welceome To Elephluent</h4>
         </div>
