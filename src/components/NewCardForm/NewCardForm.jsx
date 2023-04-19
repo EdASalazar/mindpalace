@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './NewCardForm.css'
 
-export default function NewCardPage({ addCard, decks, setDeckId, deckId }) {
+export default function NewCardPage({ addCard, decks, setDeckId, deckId, deck }) {
   const [newCard, setNewCard] = useState({
     deck: "",
     sideOneWord: "",
@@ -44,7 +44,7 @@ export default function NewCardPage({ addCard, decks, setDeckId, deckId }) {
       </select>
 
       {/* --- form inputs for the flash card below -- */}
-      {!deckId  ? 
+      {!deck ? 
         <div className="NewCardFromWelcome">
           <h4>Welceome To Elephluent</h4>
         </div>

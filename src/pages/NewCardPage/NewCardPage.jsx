@@ -35,7 +35,7 @@ export default function NewCardPage({ addCard, decks, addDeck,
 
         <div className="NewCardPageDeckDetail">
           {!deck ?
-            <NewDeckForm decks={decks} addDeck={addDeck} />
+            <NewDeckForm decks={decks} addDeck={addDeck} deck={deck}/>
             :
             <div className="DeckDetailUl">
               <ul className="DeckDetailUl"><DeckDetailComponent deck={deck} /></ul>
