@@ -19,3 +19,6 @@ form {
   font-size: 2vw;
 }
 
+.NewCardFromWelcome {
+  color: var(--teal)
+}
